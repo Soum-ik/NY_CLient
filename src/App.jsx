@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
 import CouresPage from "./components/pages/CouresPage";
-// import Server from "./components/backend/backend";
+
 
 export default function App() {
   return (

@@ -1,6 +1,11 @@
 import Layout from "../Layout/layout";
+import { useParams } from "react-router-dom";
 import CustomData from "../CustomData";
+
 const BootCamp = () => {
+  const params = useParams();
+  console.log(params);
+
   const data = `
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint illo blanditiis veniam earum, perspiciatis unde ipsa expedita sapiente commodi minus doloribus aliquid molestiae hic iste nostrum! Explicabo sequi eos perferendis?`;
   return (
@@ -9,7 +14,7 @@ const BootCamp = () => {
         <div className=" sm:pt-10 pt-5 ">
           <CustomData
             offer={"NEW YORK CITY"}
-            heading={"Software ingeniware bootcam"}
+            heading={params.id}
             tittle={data}
             button={"Apply Now"}
             more={"Request"}
