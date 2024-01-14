@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Jacques+Francois&family=JetBrains+Mono&family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Shippori+Mincho+B1:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .headingTextSize {
+    @apply font-Headingfont font-extrabold  xs:text-[32px] text-[19px] xs:leading-[45.8px];
+  }
+  .paragrahp {
+    @apply font-textFont font-normal  xs:text-[20px] text-[14px] leading-[30.8px];
+  }
+}
+
+@layer utilities {
+  .bg-color {
+    @apply bg-gradient-to-r from-red-800 to-red-700  border-red-500 text-white;
+  }
+  .botton {
+    @apply bg-gradient-to-r from-red-800 to-red-700 rounded-md text-white select-none cursor-pointer font-Poppins;
+  }
+  .testing {
+    @apply bg-gradient-to-r from-slate-900 via-purple-900/20 to-slate-900 blur-3xl;
+  }
+  .white {
+    @apply bg-gradient-to-r from-rose-100/10 to-teal-100/20 blur-[200px];
+  }
+  .candy {
+    @apply bg-gradient-to-r from-pink-950/70 via-purple-300 to-indigo-400 blur-[200px];
+  }
+}
+
+.maincolor {
+  @apply bg-gradient-to-r from-red-800 to-red-700;
+}
+.blue__gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  filter: blur(123px);
+}
+
+.pink__gradient {
+  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  filter: blur(900px);
+}
+
+.white__gradient {
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(750px);
+}
+
+.backgroundImage {
+  position: relative;
+
+  background-image: url(../public/images/wel.jpg);
+}

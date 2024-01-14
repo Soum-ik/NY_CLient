@@ -1,0 +1,19 @@
+{
+  "upcoming_courses": [
+    {
+      "start_date": "Feb 01",
+      "end_date": "Mar 15",
+      "action": "Online Apply"
+    },
+    {
+      "start_date": "Mar 01",
+      "end_date": "Apr 15",
+      "action": "Online Apply"
+    },
+    {
+      "start_date": "Apr 01",
+      "end_date": "May 15",
+      "action": "Online Apply"
+    }
+  ]
+}
