@@ -14,7 +14,7 @@ const BootCamp = () => {
         <div className=" sm:pt-10 pt-5 ">
           <CustomData
             offer={"NEW YORK CITY"}
-            heading={params.id}
+            heading={params.id || "Software Ingerninner BootCampe"}
             tittle={data}
             button={"Apply Now"}
             more={"Request"}
