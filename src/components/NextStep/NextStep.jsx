@@ -2,7 +2,7 @@ import { Tab } from "@headlessui/react";
 import styles from "../../style/style";
 import { offers } from "../NextStep/CardDetails";
 import Card from "./Card";
-import { useFetch } from "../../libs/choosefetchData";
+import { useFetch } from "../../libs/choosefetchDatas";
 
 const NextStep = () => {
   const CardDetails = useFetch("http://localhost:5000/choosepath");
