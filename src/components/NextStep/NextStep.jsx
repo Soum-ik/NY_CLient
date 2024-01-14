@@ -1,9 +1,11 @@
 import { Tab } from "@headlessui/react";
 import styles from "../../style/style";
-import { CardDetails, offers } from "../NextStep/CardDetails";
+import { offers } from "../NextStep/CardDetails";
 import Card from "./Card";
+import { useFetch } from "../../libs/choosefetchData";
 
 const NextStep = () => {
+  const CardDetails = useFetch("http://localhost:5000/choosepath");
   return (
     <div
       className={`${styles.paddingX} ${styles.flexCenter} ${styles.paddingY}  relative`}

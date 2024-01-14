@@ -10,8 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutPage />} />
-        <Route path="/coures" element={<CouresPage />} />
-        {/* <Route path="/backend" element={<Server />} /> */}
+        <Route path="/coures/:id" element={<CouresPage />} />
       </Routes>
     </div>
   );

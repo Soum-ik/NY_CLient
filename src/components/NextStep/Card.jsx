@@ -11,12 +11,11 @@ const Card = ({ image, name, btn, shortD }) => {
       <h3 className=" text-[20px] sm:text-[27px] py-3 font-Headingfont  max-w-xs">
         {name}
       </h3>
-      <p className=" max-w-xs text-center tracking-wide font-textFont">{shortD}</p>
-      <button
-        to={"/"}
-        className=" px-3 flex items-center gap-2 py-3 cursor-pointer botton text-center"
-      >
-        <Link>{btn}</Link>
+      <p className=" max-w-xs text-center tracking-wide font-textFont">
+        {shortD}
+      </p>
+      <button className=" px-3 flex items-center gap-2 py-3 cursor-pointer botton text-center">
+        <Link to={`/coures/${name}`}>{btn}</Link>
       </button>
     </div>
   );
