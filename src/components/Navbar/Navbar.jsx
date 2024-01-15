@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styles from "../../style/style";
 import MobileNav from "./MobileNav";
 import NavContact from "./NavbarContact";
