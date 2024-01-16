@@ -12,28 +12,51 @@ import {
 import { Button, Menu } from "antd";
 
 const { SubMenu } = Menu;
-
-function getItem(label, key, icon, children, type) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  };
-}
-
 const items = [
-  getItem("Overview", "overview", <PieChartOutlined />),
-  getItem("Components", "components", <MailOutlined />, [
-    getItem("Hero Component", "hero"),
-    getItem("Course We offer", "course-offer"),
-    getItem("About This Course", "about-course"),
-    getItem("knowledge ", "knowledge"),
-  ]),
-  getItem("Courses", "courses", <AppstoreOutlined />),
-  getItem("Customer Review", "customer-review", <DesktopOutlined />),
-  getItem("Social Media", "social-media", <ContainerOutlined />),
+  {
+    name: "Overview",
+    key: "overview",
+    icon: <PieChartOutlined />,
+    href: "panel",
+  },
+  {
+    name: "Components",
+    key: "panel",
+    icon: <MailOutlined />,
+    // href: "/",
+    subItems: [
+      { name: "Hero Component", key: "hero", href: "hero" },
+      {
+        name: "Course We offer",
+        key: "course-offer",
+        href: "course-offer",
+      },
+      {
+        name: "About This Course",
+        key: "about-course",
+        href: "about-course",
+      },
+      { name: "knowledge", key: "knowledge", href: "knowledge" },
+    ],
+  },
+  {
+    name: "Courses",
+    key: "courses",
+    icon: <AppstoreOutlined />,
+    href: "courses",
+  },
+  {
+    name: "Customer Review",
+    key: "customer-review",
+    icon: <DesktopOutlined />,
+    href: "customer-review",
+  },
+  {
+    name: "Social Media",
+    key: "social-media",
+    icon: <ContainerOutlined />,
+    href: "social-media",
+  },
 ];
 
 const App = () => {
@@ -44,9 +67,9 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className=" mt-10">
       <div
-        className=" mt-10"
+        className=""
         style={{
           minWidth: 300,
           height: 500,
@@ -70,12 +93,12 @@ const App = () => {
           inlineCollapsed={collapsed}
         >
           {items.map((item) => {
-            if (item.children) {
+            if (item.subItems) {
               return (
-                <SubMenu key={item.key} icon={item.icon} title={item.label}>
-                  {item.children.map((subItem) => (
+                <SubMenu key={item.key} icon={item.icon} title={item.name}>
+                  {item.subItems.map((subItem) => (
                     <Menu.Item key={subItem.key}>
-                      <Link to={`/panel/${subItem.key}`}>{subItem.label}</Link>
+                      <Link to={`/${subItem.href}`}>{subItem.name}</Link>
                     </Menu.Item>
                   ))}
                 </SubMenu>
@@ -83,7 +106,7 @@ const App = () => {
             } else {
               return (
                 <Menu.Item key={item.key} icon={item.icon}>
-                  <Link to={`/panel/${item.key}`}>{item.label}</Link>
+                  <Link to={`/${item.href}`}>{item.name}</Link>
                 </Menu.Item>
               );
             }
