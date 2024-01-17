@@ -37,6 +37,7 @@ const items = [
         href: "about-course",
       },
       { name: "knowledge", key: "knowledge", href: "knowledge" },
+      { name: "CEO", key: "CEO", href: "CEO" },
     ],
   },
   {

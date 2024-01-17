@@ -7,7 +7,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
 
-function HeroDesh() {
+function CeoDesh() {
   const [form, setForm] = useState({
     heading: "",
     button: "",
@@ -38,7 +38,7 @@ function HeroDesh() {
     const sendingData = async () => {
       try {
         const response = await axios.put(
-          "http://localhost:5000/course-offer/65a35edf17019b47567c980d",
+          "http://localhost:5000/CeoDesh/65a3e5afe6b4cdcc39e9e098",
           form
         );
         console.log(response.data);
@@ -47,7 +47,7 @@ function HeroDesh() {
           heading: "",
           button: "",
           dic: "",
-          image: null,
+          image: " ",
         });
         // setLoading(false);
       } catch (error) {
@@ -63,7 +63,7 @@ function HeroDesh() {
     <Admin>
       <div className="min-w-[1000px] rounded-lg shadow-2xl min-h-screen mt-11 px-5 py-4">
         <Deshboard>
-          <h1 className="text-[20px] pb-10 font-semibold">Course We Offer</h1>
+          <h1 className="text-[20px] pb-10 font-semibold">CEO</h1>
           <hr className="w-full" />
           <div>
             <Flex vertical gap={32}>
@@ -115,10 +115,10 @@ function HeroDesh() {
         </Deshboard>
       </div>
       <div>
-        <Toaster position="bottom-center"/>
+        <Toaster position="bottom-center" />
       </div>
     </Admin>
   );
 }
 
-export default HeroDesh;
+export default CeoDesh;

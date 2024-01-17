@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .headingTextSize {
     @apply font-Headingfont font-extrabold  xs:text-[32px] text-[19px] xs:leading-[45.8px];

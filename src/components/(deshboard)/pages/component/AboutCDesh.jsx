@@ -10,7 +10,7 @@ import axios from "axios";
 function HeroDesh() {
   const [form, setForm] = useState({
     heading: "",
-    buttonText: "",
+    button: "",
     dic: "",
     image: "",
   });
@@ -45,7 +45,7 @@ function HeroDesh() {
         toast.success("Successfully updated!");
         setForm({
           heading: "",
-          buttonText: "",
+          button: "",
           dic: "",
           image: null,
         });

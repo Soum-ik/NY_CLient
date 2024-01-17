@@ -11,7 +11,7 @@ import Knowledge from "./components/(deshboard)/pages/component/KnowledgeDesh";
 import CouresPageDesh from "./components/(deshboard)/pages/CourseDesh";
 import RecviewPageDesh from "./components/(deshboard)/pages/ReviewDesh";
 import SocialPageDesh from "./components/(deshboard)/pages/SocialDesh";
-
+import CeoPageDesh from "../src/components/(deshboard)/pages/component/CeoDesh";
 export default function App() {
   return (
     <div className=" w-full min-h-screen">
@@ -28,6 +28,7 @@ export default function App() {
         <Route path="/about-course" element={<AboutDesh />} />
         <Route path="/course-offer" element={<CourseOfferDesh />} />
         <Route path="/knowledge" element={<Knowledge />} />
+        <Route path="/ceo" element={<CeoPageDesh />} />
       </Routes>
     </div>
   );
