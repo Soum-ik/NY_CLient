@@ -13,12 +13,12 @@ import { Button, Menu } from "antd";
 
 const { SubMenu } = Menu;
 const items = [
-  {
-    name: "Overview",
-    key: "overview",
-    icon: <PieChartOutlined />,
-    href: "panel",
-  },
+  // {
+  //   name: "Overview",
+  //   key: "overview",
+  //   icon: <PieChartOutlined />,
+  //   href: "panel",
+  // },
   {
     name: "Components",
     key: "panel",

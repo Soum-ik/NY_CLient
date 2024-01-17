@@ -2,12 +2,13 @@ import Deshboard from "../../../Layout/Deshboard";
 import Admin from "../../Admin/admin";
 import { Flex, Input } from "antd";
 const { TextArea } = Input;
-import ImageUploader from "react-image-upload";
+// import ImageUploader from "react-image-upload";
 import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
 
 function HeroDesh() {
+  // console.log(Object);
   const [form, setForm] = useState({
     heading: "",
     button: "",
@@ -21,16 +22,6 @@ function HeroDesh() {
       [field]: e.target.value,
     });
   };
-
-  function getImageFileObject(imageFile) {
-    console.log(imageFile.dataUrl);
-    const image = imageFile.dataUrl;
-    setForm({ ...form, image });
-  }
-
-  function runAfterImageDelete(file) {
-    console.log({ file });
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,7 +38,7 @@ function HeroDesh() {
           heading: "",
           button: "",
           dic: "",
-          image: null,
+          image: "",
         });
         // setLoading(false);
       } catch (error) {
@@ -83,6 +74,15 @@ function HeroDesh() {
                 required={true}
               />
 
+              <Input
+                showCount
+                maxLength={100}
+                placeholder="Image Url"
+                value={form.image}
+                onChange={(e) => onChange(e, "image")}
+                required={true}
+              />
+
               <TextArea
                 showCount
                 maxLength={500}
@@ -96,14 +96,6 @@ function HeroDesh() {
                 }}
               />
 
-              <ImageUploader
-                style={{
-                  width: 400,
-                  resize: true,
-                }}
-                onFileAdded={(img) => getImageFileObject(img)}
-                onFileRemoved={(img) => runAfterImageDelete(img)}
-              />
               <button
                 onClick={handleSubmit}
                 className="bg-color max-w-[100px] px-3 py-2 rounded-md "
@@ -115,7 +107,7 @@ function HeroDesh() {
         </Deshboard>
       </div>
       <div>
-        <Toaster position="bottom-center"/>
+        <Toaster position="top-center" />
       </div>
     </Admin>
   );
