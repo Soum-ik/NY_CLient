@@ -1,6 +1,5 @@
 import { Button, Form, Input, Rate } from "antd";
-// import { useEffect } from "react";
-// import { toast } from "react-toastify";
+
 import TextArea from "antd/es/input/TextArea";
 
 const Addcourseform = () => {
@@ -13,11 +12,11 @@ const Addcourseform = () => {
   };
 
   return (
-    <div className="bg-gray-900 lg:p-6 md:p-6 p-4 rounded-xl text-white lg:min-h-screen">
+    <div className="bg-black/5 min-w-[1000px] lg:p-6 md:p-6 p-4 rounded-xl text-white shadow-xl lg:min-h-screen">
       <h1 className="text-2xl pb-4">Add Service</h1>
       <hr />
       <div className="flex justify-center">
-        <div className="lg:w-[70%] md:[80%] w-[98%] shadow-xl bg-white mt-4 rounded">
+        <div className="lg:w-[90%] md:[80%] w-[98%] shadow-xl bg-white mt-4 rounded">
           <Form
             layout="vertical"
             name="basic"

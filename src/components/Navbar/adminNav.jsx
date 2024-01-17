@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const AdminNav = () => {
   return (
-    <div>
+    <div className=" ">
       <nav className=" mt-3 sm:flex items-center justify-between hidden font-Headingfont">
         {/* left bar */}
         <div className=" flex items-center gap-3 justify-center">

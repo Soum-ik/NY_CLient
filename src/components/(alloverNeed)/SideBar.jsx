@@ -5,40 +5,41 @@ import {
   MailOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  PieChartOutlined,
   DesktopOutlined,
   ContainerOutlined,
 } from "@ant-design/icons";
 import { Button, Menu } from "antd";
 
-const { SubMenu } = Menu;
 const items = [
-  // {
-  //   name: "Overview",
-  //   key: "overview",
-  //   icon: <PieChartOutlined />,
-  //   href: "panel",
-  // },
   {
-    name: "Components",
-    key: "panel",
+    name: "Hero Component",
+    key: "hero",
     icon: <MailOutlined />,
-    // href: "/",
-    subItems: [
-      { name: "Hero Component", key: "hero", href: "hero" },
-      {
-        name: "Course We offer",
-        key: "course-offer",
-        href: "course-offer",
-      },
-      {
-        name: "About This Course",
-        key: "about-course",
-        href: "about-course",
-      },
-      { name: "knowledge", key: "knowledge", href: "knowledge" },
-      { name: "CEO", key: "CEO", href: "CEO" },
-    ],
+    href: "hero",
+  },
+  {
+    name: "Course We Offer",
+    key: "course-offer",
+    icon: <AppstoreOutlined />,
+    href: "course-offer",
+  },
+  {
+    name: "About This Course",
+    key: "about-course",
+    icon: <AppstoreOutlined />,
+    href: "about-course",
+  },
+  {
+    name: "Knowledge",
+    key: "knowledge",
+    icon: <MailOutlined />,
+    href: "knowledge",
+  },
+  {
+    name: "CEO",
+    key: "CEO",
+    icon: <MailOutlined />,
+    href: "CEO",
   },
   {
     name: "Courses",
@@ -94,25 +95,11 @@ const App = () => {
             className=" rounded-xl "
             inlineCollapsed={collapsed}
           >
-            {items.map((item) => {
-              if (item.subItems) {
-                return (
-                  <SubMenu key={item.key} icon={item.icon} title={item.name}>
-                    {item.subItems.map((subItem) => (
-                      <Menu.Item key={subItem.key}>
-                        <Link to={`/${subItem.href}`}>{subItem.name}</Link>
-                      </Menu.Item>
-                    ))}
-                  </SubMenu>
-                );
-              } else {
-                return (
-                  <Menu.Item key={item.key} icon={item.icon}>
-                    <Link to={`/${item.href}`}>{item.name}</Link>
-                  </Menu.Item>
-                );
-              }
-            })}
+            {items.map((item) => (
+              <Menu.Item key={item.key} icon={item.icon}>
+                <Link to={`/${item.href}`}>{item.name}</Link>
+              </Menu.Item>
+            ))}
           </Menu>
         </div>
       </div>
