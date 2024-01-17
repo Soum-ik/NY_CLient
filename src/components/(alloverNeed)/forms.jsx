@@ -1,83 +1,71 @@
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 
-// // const router = use
 const FormFeild = () => {
-  const navigator = useNavigate();
+  const router = useNavigate();
   const onFinish = (values) => {
-    navigator("/panel");
-    console.log("Success:", values);
-  };
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    console.log("Received values of form: ", values);
+    router("/panel");
   };
   return (
-    <div className="min-h-screen grid place-content-center">
+    <div className="  min-h-screen grid place-content-center">
       <Form
-        name="basic"
-        labelCol={{
-          span: 8,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
-        style={{
-          maxWidth: 600,
-        }}
+        name="normal_login"
+        className="login-form min-w-[400px]"
         initialValues={{
           remember: true,
         }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-        className=""
       >
         <Form.Item
-          label="email"
-          name="email"
+          name="username"
           rules={[
             {
               required: true,
-              message: "Please input your email!",
+              message: "Please input your Username!",
             },
           ]}
         >
-          <Input />
+          <Input
+            prefix={<UserOutlined className="site-form-item-icon" />}
+            placeholder="Username"
+          />
         </Form.Item>
-
         <Form.Item
-          label="Password"
           name="password"
           rules={[
             {
               required: true,
-              message: "Please input your password!",
+              message: "Please input your Password!",
             },
           ]}
         >
-          <Input.Password />
+          <Input
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            type="password"
+            placeholder="Password"
+          />
+        </Form.Item>
+        <Form.Item className="">
+          <Form.Item name="remember" valuePropName="checked" noStyle>
+            <Checkbox>Remember me</Checkbox>
+          </Form.Item>
+
+          <a className=" ml-10 login-form-forgot" href="">
+            Forgot password
+          </a>
         </Form.Item>
 
-        <Form.Item
-          name="remember"
-          valuePropName="checked"
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
-          <Button className=" bg-color  font-medium" htmlType="submit">
-            Submit
+        <Form.Item>
+          <Button
+            type="default"
+            htmlType="submit"
+            className="login-form-button mr-10"
+          >
+            Log in
           </Button>
+          Or <a href="">register now!</a>
         </Form.Item>
       </Form>
     </div>

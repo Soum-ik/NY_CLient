@@ -20,7 +20,7 @@ const AdminNav = () => {
         <div className=" flex justify-center items-center gap-5 text-[20px]">
           <div className=" space-x-10  font-medium">
             <Link to={"/"}>Home</Link>
-            <Link to={"/"}>About US</Link>
+            <Link to={"/"}>About Us</Link>
             <Link to={"/"}>Coures</Link>
           </div>
         </div>

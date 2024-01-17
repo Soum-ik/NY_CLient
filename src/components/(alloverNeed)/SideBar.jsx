@@ -85,33 +85,35 @@ const App = () => {
         >
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
-        <Menu
-          defaultSelectedKeys={["overview"]}
-          mode="inline"
-          theme="light"
-          className=" rounded-lg shadow-2xl backdrop-blur-2xl"
-          inlineCollapsed={collapsed}
-        >
-          {items.map((item) => {
-            if (item.subItems) {
-              return (
-                <SubMenu key={item.key} icon={item.icon} title={item.name}>
-                  {item.subItems.map((subItem) => (
-                    <Menu.Item key={subItem.key}>
-                      <Link to={`/${subItem.href}`}>{subItem.name}</Link>
-                    </Menu.Item>
-                  ))}
-                </SubMenu>
-              );
-            } else {
-              return (
-                <Menu.Item key={item.key} icon={item.icon}>
-                  <Link to={`/${item.href}`}>{item.name}</Link>
-                </Menu.Item>
-              );
-            }
-          })}
-        </Menu>
+        <div className=" shadow-xl rounded-xl">
+          <Menu
+            defaultSelectedKeys={["overview"]}
+            mode="inline"
+            theme="light"
+            className=" rounded-xl "
+            inlineCollapsed={collapsed}
+          >
+            {items.map((item) => {
+              if (item.subItems) {
+                return (
+                  <SubMenu key={item.key} icon={item.icon} title={item.name}>
+                    {item.subItems.map((subItem) => (
+                      <Menu.Item key={subItem.key}>
+                        <Link to={`/${subItem.href}`}>{subItem.name}</Link>
+                      </Menu.Item>
+                    ))}
+                  </SubMenu>
+                );
+              } else {
+                return (
+                  <Menu.Item key={item.key} icon={item.icon}>
+                    <Link to={`/${item.href}`}>{item.name}</Link>
+                  </Menu.Item>
+                );
+              }
+            })}
+          </Menu>
+        </div>
       </div>
     </div>
   );
