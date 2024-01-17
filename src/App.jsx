@@ -12,6 +12,7 @@ import CouresPageDesh from "./components/(deshboard)/pages/CourseDesh";
 import RecviewPageDesh from "./components/(deshboard)/pages/ReviewDesh";
 import SocialPageDesh from "./components/(deshboard)/pages/SocialDesh";
 import CeoPageDesh from "../src/components/(deshboard)/pages/component/CeoDesh";
+import EditDelete from "../src/components/(deshboard)/pages/component/CourseEditAndDelete/Course";
 export default function App() {
   return (
     <div className=" w-full min-h-screen">
@@ -21,7 +22,6 @@ export default function App() {
         <Route path="/coures/:id" element={<CouresPage />} />
         <Route path="/admin" element={<FormFeild />} />
         <Route path="/panel" element={<DeshBorad />} />
-        <Route path="/courses" element={<CouresPageDesh />} />
         <Route path="/customer-review" element={<RecviewPageDesh />} />
         <Route path="/social-media" element={<SocialPageDesh />} />
         <Route path="/hero" element={<HeroDesh />} />
@@ -29,6 +29,8 @@ export default function App() {
         <Route path="/course-offer" element={<CourseOfferDesh />} />
         <Route path="/knowledge" element={<Knowledge />} />
         <Route path="/ceo" element={<CeoPageDesh />} />
+        <Route path="/courses" element={<CouresPageDesh />} />
+        <Route path="/courses/edit/:id" element={<EditDelete />} />
       </Routes>
     </div>
   );
