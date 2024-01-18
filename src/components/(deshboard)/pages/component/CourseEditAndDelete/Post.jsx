@@ -99,7 +99,11 @@ function PostCourse() {
               <div className=" ">
                 {form.image && (
                   <div>
-                    <img src={form.image} className="h-[200px]" alt="Uploaded" />
+                    <img
+                      src={form.image}
+                      className="h-[200px]"
+                      alt="Uploaded"
+                    />
                   </div>
                 )}
                 <button
