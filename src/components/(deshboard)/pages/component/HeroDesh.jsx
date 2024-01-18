@@ -2,7 +2,7 @@ import Deshboard from "../../../Layout/Deshboard";
 import Admin from "../../Admin/admin";
 import { Flex, Input } from "antd";
 const { TextArea } = Input;
-// import ImageUploader from "react-image-upload";
+import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
@@ -15,6 +15,13 @@ function HeroDesh() {
     dic: "",
     image: "",
   });
+
+  const handleImageUpload = (imageUrl) => {
+    setForm({
+      ...form,
+      image: imageUrl,
+    });
+  };
 
   const onChange = (e, field) => {
     setForm({
@@ -52,11 +59,14 @@ function HeroDesh() {
 
   return (
     <Admin>
-      <div className="min-w-[1000px] rounded-lg shadow-2xl min-h-screen mt-11 px-5 py-4">
+      <div className="min-w-[1000px] rounded-lg shadow-2xl overflow-auto min-h-max mt-11 px-5 py-4">
         <Deshboard>
-          <h1 className="text-[20px] pb-10 font-semibold">Hero Component</h1>
+          <h1 className="text-[20px] pb-10 font-semibold">
+            <span className="border-b-4 border-b-neutral-950"></span> Hero
+            Component
+          </h1>
           <hr className="w-full" />
-          <div>
+          <div style={{ maxHeight: "400px" }}>
             <Flex vertical gap={32}>
               <Input
                 showCount
@@ -70,19 +80,9 @@ function HeroDesh() {
                 maxLength={20}
                 placeholder="Button text"
                 value={form.button}
-                onChange={(e) => onChange(e, "button")}
+                onChange={(e) => onChange(e, "buttonF")}
                 required={true}
               />
-
-              <Input
-                showCount
-                maxLength={100}
-                placeholder="Image Url"
-                value={form.image}
-                onChange={(e) => onChange(e, "image")}
-                required={true}
-              />
-
               <TextArea
                 showCount
                 maxLength={500}
@@ -95,19 +95,30 @@ function HeroDesh() {
                   resize: "none",
                 }}
               />
-
-              <button
-                onClick={handleSubmit}
-                className="bg-color max-w-[100px] px-3 py-2 rounded-md "
-              >
-                Save Now
-              </button>
+              <ImageUploader onImageUpload={handleImageUpload} />
+              <div className=" ">
+                {form.image && (
+                  <div>
+                    <img
+                      src={form.image}
+                      className="h-[200px]"
+                      alt="Uploaded"
+                    />
+                  </div>
+                )}
+                <button
+                  onClick={handleSubmit}
+                  className="bg-color max-w-[100px] px-3 py-2 my-3 rounded-md "
+                >
+                  Save Now
+                </button>
+              </div>
             </Flex>
           </div>
         </Deshboard>
       </div>
       <div>
-        <Toaster position="top-center" />
+        <Toaster position="bottom-center" />
       </div>
     </Admin>
   );
