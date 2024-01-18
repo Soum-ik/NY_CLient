@@ -29,7 +29,9 @@ const ManageServiceTable = () => {
           type="link"
           onClick={() => console.log("Navigate to add service")}
         >
-          <PlusOutlined /> Add New Service{" "}
+          <Link to={"/courses/post"}>
+            <PlusOutlined /> Add New Service{" "}
+          </Link>
         </button>
       </div>
       <hr />

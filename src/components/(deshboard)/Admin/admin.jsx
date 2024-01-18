@@ -4,10 +4,10 @@ import SideBar from "../../(alloverNeed)/SideBar";
 // eslint-disable-next-line react/prop-types
 export default function Admin({ children }) {
   return (
-    <div className=" bg-white/5 sm:min-h-[150vh]">
+    <div className=" bg-white/5 ">
       <Layout>
         <AdminNav />
-        <div className=" flex items-start justify-center gap-10 fixed">
+        <div className="min-h-[1000px] flex items-start justify-center gap-10 fixed">
           <SideBar />
           <div className=" mt-10 ">
             {children || "Welcome to our deshboard"}
