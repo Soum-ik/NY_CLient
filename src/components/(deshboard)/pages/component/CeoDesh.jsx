@@ -2,7 +2,7 @@ import Deshboard from "../../../Layout/Deshboard";
 import Admin from "../../Admin/admin";
 import { Flex, Input } from "antd";
 const { TextArea } = Input;
-import ImageUploader from "react-image-upload";
+import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
@@ -22,15 +22,12 @@ function CeoDesh() {
     });
   };
 
-  function getImageFileObject(imageFile) {
-    console.log(imageFile.dataUrl);
-    const image = imageFile.dataUrl;
-    setForm({ ...form, image });
-  }
-
-  function runAfterImageDelete(file) {
-    console.log({ file });
-  }
+  const handleImageUpload = (imageUrl) => {
+    setForm({
+      ...form,
+      image: imageUrl,
+    });
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -61,11 +58,11 @@ function CeoDesh() {
 
   return (
     <Admin>
-      <div className="min-w-[1000px] rounded-lg shadow-2xl min-h-screen mt-11 px-5 py-4">
+      <div className="min-w-[1000px] rounded-lg shadow-2xl overflow-auto min-h-max mt-11 px-5 py-4">
         <Deshboard>
           <h1 className="text-[20px] pb-10 font-semibold">CEO</h1>
           <hr className="w-full" />
-          <div>
+          <div style={{ maxHeight: "400px" }}>
             <Flex vertical gap={32}>
               <Input
                 showCount
@@ -96,20 +93,24 @@ function CeoDesh() {
                 }}
               />
 
-              <ImageUploader
-                style={{
-                  width: 400,
-                  resize: true,
-                }}
-                onFileAdded={(img) => getImageFileObject(img)}
-                onFileRemoved={(img) => runAfterImageDelete(img)}
-              />
-              <button
-                onClick={handleSubmit}
-                className="bg-color max-w-[100px] px-3 py-2 rounded-md "
-              >
-                Save Now
-              </button>
+              <ImageUploader onImageUpload={handleImageUpload} />
+              <div className=" ">
+                {form.image && (
+                  <div>
+                    <img
+                      src={form.image}
+                      className="h-[200px]"
+                      alt="Uploaded"
+                    />
+                  </div>
+                )}
+                <button
+                  onClick={handleSubmit}
+                  className="bg-color max-w-[100px] px-3 py-2 my-3 rounded-md "
+                >
+                  Save Now
+                </button>
+              </div>
             </Flex>
           </div>
         </Deshboard>
