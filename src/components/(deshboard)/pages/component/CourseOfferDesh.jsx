@@ -13,6 +13,7 @@ function HeroDesh() {
     dic: "",
     image: "",
   });
+  const isFormFilled = Object.values(form).every((value) => value !== "");
 
   const handleImageUpload = (imageUrl) => {
     setForm({
@@ -105,7 +106,10 @@ function HeroDesh() {
                 )}
                 <button
                   onClick={handleSubmit}
-                  className="bg-color max-w-[100px] px-3 py-2 my-3 rounded-md "
+                  className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md ${
+                    !isFormFilled ? "disabled opacity-80" : ""
+                  }`}
+                  disabled={!isFormFilled}
                 >
                   Save Now
                 </button>
