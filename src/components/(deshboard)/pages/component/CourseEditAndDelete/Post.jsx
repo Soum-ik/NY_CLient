@@ -19,7 +19,7 @@ function PostCourse() {
   });
 
   const isFormFilled = Object.values(form).every((value) => value !== "");
-  
+
   const handleImageUpload = (imageUrl) => {
     setForm({
       ...form,
