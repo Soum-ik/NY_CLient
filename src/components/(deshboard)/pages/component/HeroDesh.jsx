@@ -80,7 +80,7 @@ function HeroDesh() {
                 maxLength={20}
                 placeholder="Button text"
                 value={form.button}
-                onChange={(e) => onChange(e, "buttonF")}
+                onChange={(e) => onChange(e, "button")}
                 required={true}
               />
               <TextArea

@@ -33,6 +33,7 @@ export default function App() {
         <Route path="/courses" element={<CouresPageDesh />} />
         <Route path="/courses/edit/:id" element={<EditDelete />} />
         <Route path="/courses/post" element={<PostCourse />} />
+        {/* <Route path="/panel/socials" element={<PostCourse />} /> */}
       </Routes>
     </div>
   );

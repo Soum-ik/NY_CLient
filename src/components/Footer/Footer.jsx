@@ -3,13 +3,8 @@ import Logo from "../../../public/images/mainLogo.png";
 import footerItems from "./FooterDatils";
 import FollowUs from "./FollowUs";
 import FooterList from "./FooterList";
-import {
-  IoLogoFacebook,
-  IoLogoGithub,
-  IoLogoLinkedin,
-  IoLogoTwitter,
-  IoLogoYoutube,
-} from "react-icons/io5";
+import { IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
+import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
 
 export default function Footer() {
   return (
@@ -44,15 +39,16 @@ export default function Footer() {
                       link={`https://www.facebook.com/farjaxtci`}
                     />
                     <FollowUs
-                      icon={<IoLogoGithub />}
+                      icon={<BsTwitterX />}
                       link={`https://github.com/farjaxiot`}
                     />
                     <FollowUs
                       icon={<IoLogoLinkedin />}
                       link={`https://www.linkedin.com/in/saidur-md-rahman-40a7b4211/`}
                     />
-                    <FollowUs icon={<IoLogoTwitter />} liink="/" />
-                    <FollowUs icon={<IoLogoYoutube />} liink=" /" />
+                    <FollowUs icon={<IoLogoYoutube />} link=" /" />
+                    <FollowUs icon={<BsInstagram />} link="/" />
+                    <FollowUs icon={<BsTelegram />} link="/" />
                   </div>
                 </div>
               </div>
