@@ -59,6 +59,12 @@ const items = [
     icon: <ContainerOutlined />,
     href: "social-media",
   },
+  {
+    name: "Banner",
+    key: "Banner",
+    icon: <ContainerOutlined />,
+    href: "Banner",
+  },
 ];
 
 const App = () => {

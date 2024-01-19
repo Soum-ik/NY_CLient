@@ -6,7 +6,7 @@ import FooterList from "./FooterList";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
 import { useFetch } from "../../libs/fetchData";
-export default function Footer() {
+export default function Footer() {  
   const link  = useFetch("http://localhost:5000/social/links");
   console.log(link);
   return (
