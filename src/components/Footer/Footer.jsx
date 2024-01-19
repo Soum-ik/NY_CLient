@@ -5,8 +5,10 @@ import FollowUs from "./FollowUs";
 import FooterList from "./FooterList";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
-
+import { useFetch } from "../../libs/fetchData";
 export default function Footer() {
+  const link  = useFetch("http://localhost:5000/social/links");
+  console.log(link);
   return (
     <>
       <footer className="relative z-50 bg-slate-600/10 pt-16 pb-10 lg:pt-[70px] lg:pb-10 overflow-hidden">

@@ -20,7 +20,7 @@ const CustomComponent = ({ Data, img, dic, offer, imageSize, button }) => {
         )}
 
         {/* right section */}
-        <div className={`${layout.sectionReverse} `} data-aos="fade-right">
+        <div className={`${layout.sectionReverse} `}>
           {/* <div className=" candy absolute   top-0 -left-28   z-10 w-[60%] h-[60%] rounded-full"></div>
             <div className=" absolute left-0 bottom-0   z-90 w-[50%] h-[50%] rounded-full"></div> */}
           <img
