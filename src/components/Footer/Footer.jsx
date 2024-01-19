@@ -6,9 +6,9 @@ import FooterList from "./FooterList";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
 import { useFetch } from "../../libs/fetchData";
-export default function Footer() {  
-  const link  = useFetch("http://localhost:5000/social/links");
-  console.log(link);
+export default function Footer() {
+  const source = useFetch("http://localhost:5000/social/links");
+  console.log(source);
   return (
     <>
       <footer className="relative z-50 bg-slate-600/10 pt-16 pb-10 lg:pt-[70px] lg:pb-10 overflow-hidden">
@@ -38,19 +38,16 @@ export default function Footer() {
                   <div className="mb-6 flex items-center gap-3">
                     <FollowUs
                       icon={<IoLogoFacebook />}
-                      link={`https://www.facebook.com/farjaxtci`}
+                      link={source.facebook}
                     />
-                    <FollowUs
-                      icon={<BsTwitterX />}
-                      link={`https://github.com/farjaxiot`}
-                    />
+                    <FollowUs icon={<BsTwitterX />} link={source.twitter} />
                     <FollowUs
                       icon={<IoLogoLinkedin />}
-                      link={`https://www.linkedin.com/in/saidur-md-rahman-40a7b4211/`}
+                      link={source.linkedin}
                     />
-                    <FollowUs icon={<IoLogoYoutube />} link=" /" />
-                    <FollowUs icon={<BsInstagram />} link="/" />
-                    <FollowUs icon={<BsTelegram />} link="/" />
+                    <FollowUs icon={<IoLogoYoutube />} link={source.youtube} />
+                    <FollowUs icon={<BsInstagram />} link={source.instagram} />
+                    <FollowUs icon={<BsTelegram />} link={source.telegram} />
                   </div>
                 </div>
               </div>
