@@ -5,7 +5,7 @@ const Card = ({ comment, role, name, image }) => {
       <div className=" flex items-center gap-5 sm:gap-10">
         <div className=" ring-2 shadow-xl ring-red-500  rounded-full w-[100px] h-[100px] items-center justify-center text-center flex">
           <img
-            className="  w-24 h-24 mx-auto rounded-full object-cover"
+            className="  w-24 h-24 mx-auto rounded-full object-contain"
             src={image}
             alt="customer review"
           />

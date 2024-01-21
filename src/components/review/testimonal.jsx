@@ -1,7 +1,11 @@
 import Card from "./Card";
 import Layout from "../Layout/layout";
-import { personData } from "./data";
+import { useFetch } from "../../libs/choosefetchDatas";
+// import { Carousel } from "keep-react";
+
 const Testimonial = () => {
+  const datas = useFetch("http://localhost:5000/customer/review");
+  console.log("carusol");
   return (
     <Layout>
       <div className=" mt-10 sm:mt-20 sm:px-10 sm:mb-32">
@@ -9,15 +13,17 @@ const Testimonial = () => {
         <h1 className=" text-[25px] text-red-600 font-bold font-Headingfont">
           CUSTOMER <span> REVIEWS</span>
         </h1>
-        <div className=" flex flex-col sm:flex-row pt-10 gap-10 ">
-          {personData.map((data) => (
+        <div className=" grid xxxS:grid-cols-2 grid-cols-1 sm:grid-cols-3  overflow-auto scroll-m-16 sm:flex-row pt-10 gap-10 ">
+          {datas.map((data) => (
+            // <Carousel key={data._id}>
             <Card
-              key={data.id}
+              key={data._id}
               image={data.image}
               comment={data.comment}
               name={data.name}
               role={data.role}
             />
+            // </Carousel>
           ))}
         </div>
       </div>
