@@ -24,12 +24,6 @@ const items = [
     href: "course-offer",
   },
   {
-    name: "About This Course",
-    key: "about-course",
-    icon: <AppstoreOutlined />,
-    href: "about-course",
-  },
-  {
     name: "Knowledge",
     key: "knowledge",
     icon: <MailOutlined />,

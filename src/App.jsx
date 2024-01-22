@@ -5,7 +5,6 @@ import CouresPage from "./components/pages/CouresPage";
 import DeshBorad from "./components/(deshboard)/Admin/admin";
 import FormFeild from "./components/(alloverNeed)/forms";
 import HeroDesh from "./components/(deshboard)/pages/component/HeroDesh";
-import AboutDesh from "./components/(deshboard)/pages/component/AboutCDesh";
 import CourseOfferDesh from "./components/(deshboard)/pages/component/CourseOfferDesh";
 import Knowledge from "./components/(deshboard)/pages/component/KnowledgeDesh";
 import CouresPageDesh from "./components/(deshboard)/pages/CourseDesh";
@@ -15,7 +14,6 @@ import CeoPageDesh from "../src/components/(deshboard)/pages/component/CeoDesh";
 import EditDelete from "../src/components/(deshboard)/pages/component/CourseEditAndDelete/Course";
 import PostCourse from "../src/components/(deshboard)/pages/component/CourseEditAndDelete/Post";
 import Banner from "./components/(deshboard)/pages/BannerDesh";
-
 
 export default function App() {
   return (
@@ -29,7 +27,6 @@ export default function App() {
         <Route path="/customer-review" element={<RecviewPageDesh />} />
         <Route path="/social-media" element={<SocialPageDesh />} />
         <Route path="/hero" element={<HeroDesh />} />
-        <Route path="/about-course" element={<AboutDesh />} />
         <Route path="/course-offer" element={<CourseOfferDesh />} />
         <Route path="/knowledge" element={<Knowledge />} />
         <Route path="/ceo" element={<CeoPageDesh />} />
