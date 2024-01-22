@@ -3,31 +3,45 @@ import Admin from "../../../Admin/admin";
 import { Flex, Input } from "antd";
 const { TextArea } = Input;
 import { Toaster, toast } from "react-hot-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ImageUploader from "../../../../(alloverNeed)/ImageUpload";
 
 function PostCourse() {
+  // Hooks for state management
   const Navigate = useNavigate();
+  const [options, setOptions] = useState([]);
+  useEffect(() => {
+    // Fetching options data from API
+    const fetch = async () => {
+      const res = await axios.get("http://localhost:5000/catagori");
+      setOptions(res.data);
+      console.log(res.data);
+    };
+    fetch();
+  }, []);
 
+  // Form state to manage various input fields
   const [form, setForm] = useState({
     name: "",
     buttonText: "",
     shortDetails: "",
     icon: "",
     banner: "",
-    heading: "", // Updated field name
-    cbutton: "", // Updated field name
-    cdic: "", // Updated field name
+    heading: "",
+    cbutton: "",
+    cdic: "",
     learndic: "",
     timeline: "",
     timelinedic: "",
+    selectedOption: "", // Added selectedOption to the form state
   });
-  console.log(form);
 
+  // Function to check if all form fields are filled
   const isFormFilled = Object.values(form).every((value) => value !== "");
 
+  // Function to handle icon image upload
   const handleIconUpload = (imageUrl) => {
     setForm({
       ...form,
@@ -35,6 +49,7 @@ function PostCourse() {
     });
   };
 
+  // Function to handle banner image upload
   const handleBannerUpload = (imageUrl) => {
     setForm({
       ...form,
@@ -42,6 +57,7 @@ function PostCourse() {
     });
   };
 
+  // Function to handle input field changes
   const onChange = (e, field) => {
     setForm({
       ...form,
@@ -49,48 +65,71 @@ function PostCourse() {
     });
   };
 
-  function handleSubmit(e) {
+  // Function to handle form submission
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const sendingData = async () => {
       try {
+        // Sending form data to the server
         const response = await axios.post(
           `http://localhost:5000/choose/course/`,
           form
         );
         console.log(response.data);
+
+        // Resetting form fields after successful submission
         setForm({
           name: "",
           buttonText: "",
           shortDetails: "",
           icon: "",
           banner: "",
-          heading: "", // Updated field name
-          cbutton: "", // Updated field name
-          cdic: "", // Updated field name
+          heading: "",
+          cbutton: "",
+          cdic: "",
           learndic: "",
           timeline: "",
           timelinedic: "",
+          selectedOption: "", // Reset selectedOption after form submission
         });
+
+        // Displaying success message
         toast.success("Successfully updated!");
+
+        // Navigating to the courses page
         Navigate("/courses");
       } catch (error) {
         console.error("Error updating data:", error.message);
+        // Displaying error message if submission fails
         toast.error("Error updating data");
       }
     };
     sendingData();
-  }
+  };
 
   return (
     <Admin>
       <div className="min-w-[1000px] rounded-lg shadow-2xl overflow-auto min-h-max mt-11 px-5 py-4">
         <Deshboard>
-          <h1 className="text-[20px] pb-10 font-semibold">
-            <span className="border-b-4 border-b-neutral-950"></span> Add Course
-          </h1>
+          <div className=" flex items-center pb-10 justify-between">
+            <h1 className="text-[20px] font-semibold">Add Course</h1>
+
+            {/* Dropdown to select an option */}
+            <select
+              value={form.selectedOption}
+              onChange={(e) => onChange(e, "selectedOption")}
+            >
+              {options.map((option) => (
+                <option key={option._id} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+          </div>
           <hr className="w-full" />
           <div style={{ maxHeight: "400px" }}>
+            {/* Form input fields */}
             <Flex vertical gap={32}>
               <Input
                 showCount
@@ -232,6 +271,7 @@ function PostCourse() {
         </Deshboard>
       </div>
       <div>
+        {/* Toaster for displaying notifications */}
         <Toaster position="bottom-center" />
       </div>
     </Admin>

@@ -1,11 +1,30 @@
 import { Tab } from "@headlessui/react";
 import styles from "../../style/style";
-import { offers } from "../NextStep/CardDetails";
 import Card from "./Card";
-import { useFetch } from "../../libs/choosefetchDatas";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const NextStep = () => {
-  const CardDetails = useFetch("http://localhost:5000/choosepath");
+  const [options, setOptions] = useState([]);
+  const [cardDetails, SetCardDetails] = useState([]);
+  console.log(cardDetails);
+  useEffect(() => {
+    // Fetching options data from API
+    const fetch = async () => {
+      const res = await axios.get("http://localhost:5000/catagori");
+      setOptions(res.data);
+    };
+    fetch();
+  }, []);
+
+  const handleCourse = async (name) => {
+    const CardDetails = await axios.get(
+      `http://localhost:5000/choose/course/${name}`
+    );
+
+    SetCardDetails(CardDetails.data);
+  };
+
   return (
     <div
       className={`${styles.paddingX} ${styles.flexCenter} ${styles.paddingY}  relative`}
@@ -15,12 +34,13 @@ const NextStep = () => {
       >
         <Tab.Group>
           <Tab.List className="flex flex-col sm:flex-row space-y-4 sm:px-10  sm:gap-10 sm:space-y-0 sm:space-x-1 mb-10">
-            {offers.map((offer) => (
+            {options.map((option) => (
               <Tab
-                key={offer.id}
+                key={option.id}
                 className="w-full bg-black/5  hover:bg-color hover:text-white ease-in-out duration-300 hover:shadow-md outline-none rounded-lg py-2.5 text-sm font-Poppins leading-5"
+                onClick={() => handleCourse(option.name)}
               >
-                {offer.name}
+                {option.name}
               </Tab>
             ))}
           </Tab.List>
@@ -30,9 +50,9 @@ const NextStep = () => {
           Choose Your Path
         </h4>
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-          {CardDetails.map((CardDetail) => (
+          {cardDetails.map((CardDetail) => (
             <Card
-            id={CardDetail._id}
+              id={CardDetail._id}
               key={CardDetail.id}
               image={CardDetail.icon}
               name={CardDetail.name}

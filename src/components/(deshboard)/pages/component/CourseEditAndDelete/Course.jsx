@@ -4,7 +4,6 @@ import Deshboard from "../../../../Layout/Deshboard";
 import Admin from "../../../Admin/admin";
 import { Flex, Input } from "antd";
 const { TextArea } = Input;
-// import ImageUploader from "react-image-upload";
 import { Toaster, toast } from "react-hot-toast";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";

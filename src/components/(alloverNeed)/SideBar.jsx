@@ -42,6 +42,12 @@ const items = [
     href: "courses",
   },
   {
+    name: "Categories",
+    key: "Catagori",
+    icon: <ContainerOutlined />,
+    href: "categories",
+  },
+  {
     name: "Customer Review",
     key: "customer-review",
     icon: <DesktopOutlined />,

@@ -10,6 +10,7 @@ import Knowledge from "./components/(deshboard)/pages/component/KnowledgeDesh";
 import CouresPageDesh from "./components/(deshboard)/pages/CourseDesh";
 import RecviewPageDesh from "./components/(deshboard)/pages/ReviewDesh";
 import SocialPageDesh from "./components/(deshboard)/pages/SocialDesh";
+import CatagoriDesh from "./components/(deshboard)/pages/CTDesh";
 import CeoPageDesh from "../src/components/(deshboard)/pages/component/CeoDesh";
 import EditDelete from "../src/components/(deshboard)/pages/component/CourseEditAndDelete/Course";
 import PostCourse from "../src/components/(deshboard)/pages/component/CourseEditAndDelete/Post";
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/courses/edit/:id" element={<EditDelete />} />
         <Route path="/courses/post" element={<PostCourse />} />
         <Route path="/Banner" element={<Banner />} />
+        <Route path="/categories" element={<CatagoriDesh />} />
       </Routes>
     </div>
   );
