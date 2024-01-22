@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const ImageUploader = ({ onImageUpload }) => {
+const ImageUploader = ({ onImageUpload, text}) => {
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -40,6 +40,7 @@ const ImageUploader = ({ onImageUpload }) => {
 
   return (
     <div>
+      <h1 className=" mb-2 text-xs">{text}</h1>
       <input type="file" onChange={handleFileChange} />
       {loading && <p>Uploading...</p>}
     </div>

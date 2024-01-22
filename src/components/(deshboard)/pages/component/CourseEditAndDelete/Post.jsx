@@ -97,7 +97,7 @@ function PostCourse() {
                   resize: "none",
                 }}
               />
-              <ImageUploader onImageUpload={handleImageUpload} />
+              <ImageUploader text={"Course Icon"} onImageUpload={handleImageUpload} />
               <div className=" ">
                 {form.image && (
                   <div>
