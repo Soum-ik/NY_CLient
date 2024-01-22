@@ -32,8 +32,9 @@ const NextStep = () => {
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
           {CardDetails.map((CardDetail) => (
             <Card
+            id={CardDetail._id}
               key={CardDetail.id}
-              image={CardDetail.image}
+              image={CardDetail.icon}
               name={CardDetail.name}
               shortD={CardDetail.shortDetails}
               btn={CardDetail.buttonText}

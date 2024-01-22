@@ -15,15 +15,30 @@ function PostCourse() {
     name: "",
     buttonText: "",
     shortDetails: "",
-    image: "",
+    icon: "",
+    banner: "",
+    heading: "", // Updated field name
+    cbutton: "", // Updated field name
+    cdic: "", // Updated field name
+    learndic: "",
+    timeline: "",
+    timelinedic: "",
   });
+  console.log(form);
 
   const isFormFilled = Object.values(form).every((value) => value !== "");
 
-  const handleImageUpload = (imageUrl) => {
+  const handleIconUpload = (imageUrl) => {
     setForm({
       ...form,
-      image: imageUrl,
+      icon: imageUrl,
+    });
+  };
+
+  const handleBannerUpload = (imageUrl) => {
+    setForm({
+      ...form,
+      banner: imageUrl,
     });
   };
 
@@ -45,10 +60,17 @@ function PostCourse() {
         );
         console.log(response.data);
         setForm({
-          heading: "",
-          button: "",
-          dic: "",
-          image: " ",
+          name: "",
+          buttonText: "",
+          shortDetails: "",
+          icon: "",
+          banner: "",
+          heading: "", // Updated field name
+          cbutton: "", // Updated field name
+          cdic: "", // Updated field name
+          learndic: "",
+          timeline: "",
+          timelinedic: "",
         });
         toast.success("Successfully updated!");
         Navigate("/courses");
@@ -97,27 +119,114 @@ function PostCourse() {
                   resize: "none",
                 }}
               />
-              <ImageUploader text={"Course Icon"} onImageUpload={handleImageUpload} />
-              <div className=" ">
-                {form.image && (
-                  <div>
-                    <img
-                      src={form.image}
-                      className="h-[200px]"
-                      alt="Uploaded"
-                    />
-                  </div>
-                )}
-                <button
-                  onClick={handleSubmit}
-                  className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md ${
-                    !isFormFilled ? "disabled opacity-80" : ""
-                  }`}
-                  disabled={!isFormFilled}
-                >
-                  Save Now
-                </button>
-              </div>
+              {/* ImageUploader for course icon */}
+              <ImageUploader
+                text={"Course Icon"}
+                onImageUpload={handleIconUpload}
+              />
+              {form.icon && (
+                <div>
+                  <img
+                    src={form.icon}
+                    className="h-[200px]"
+                    alt="Uploaded Icon"
+                  />
+                </div>
+              )}
+              {/* ImageUploader for course banner */}
+              <ImageUploader
+                text={"Course Banner"}
+                onImageUpload={handleBannerUpload}
+              />
+              {form.banner && (
+                <div>
+                  <img
+                    src={form.banner}
+                    className="h-[200px]"
+                    alt="Uploaded Banner"
+                  />
+                </div>
+              )}
+              <hr />
+              <h6 className=" text-sm">About Your Course</h6>
+              <hr />
+              <Input
+                showCount
+                maxLength={100}
+                placeholder="Course Heading"
+                value={form.heading}
+                onChange={(e) => onChange(e, "heading")}
+              />
+
+              <Input
+                showCount
+                maxLength={20}
+                placeholder="Course Button"
+                value={form.cbutton} // Updated field name
+                onChange={(e) => onChange(e, "cbutton")} // Updated field name
+                required={true}
+              />
+
+              <TextArea
+                showCount
+                maxLength={500}
+                value={form.cdic} // Updated field name
+                onChange={(e) => onChange(e, "cdic")} // Updated field name
+                placeholder="Course description"
+                required={true}
+                style={{
+                  height: 120,
+                  resize: "none",
+                }}
+              />
+
+              <hr />
+              <h6 className=" text-sm">{"What You'll Learn"}</h6>
+              <hr />
+              <TextArea
+                showCount
+                maxLength={1000}
+                value={form.learndic}
+                onChange={(e) => onChange(e, "learndic")}
+                placeholder="What You'll Learn...."
+                required={true}
+                style={{
+                  height: 200,
+                  resize: "none",
+                }}
+              />
+              <hr />
+              <h6 className=" text-sm">{"Timeline"}</h6>
+              <hr />
+              <Input
+                showCount
+                maxLength={20}
+                placeholder="Our QA Training Progrma last 15 weeks"
+                value={form.timeline}
+                onChange={(e) => onChange(e, "timeline")}
+                required={true}
+              />
+              <TextArea
+                showCount
+                maxLength={500}
+                value={form.timelinedic}
+                onChange={(e) => onChange(e, "timelinedic")}
+                placeholder="The Job Placement Assistance Program..........."
+                required={true}
+                style={{
+                  height: 120,
+                  resize: "none",
+                }}
+              />
+              <button
+                onClick={handleSubmit}
+                className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md ${
+                  !isFormFilled ? "disabled opacity-80" : ""
+                }`}
+                disabled={!isFormFilled}
+              >
+                Save Now
+              </button>
             </Flex>
           </div>
         </Deshboard>

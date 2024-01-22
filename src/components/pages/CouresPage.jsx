@@ -1,6 +1,5 @@
 import WhatsAppLink from "../WhatsApp";
 import Work from "../WorkImag/Work";
-import Contact from "../Contact/Contact";
 import Testimonial from "../review/testimonal";
 import SayTO from "../sayToknow/Register";
 import PageLayout from "../Layout/PageLayout";
@@ -25,7 +24,6 @@ const CouresPage = () => {
         <TimeLine />
         <Support />
         <NextStep />
-        {/* <Contact /> */}
         <Work />
         <Testimonial />
         <SayTO />

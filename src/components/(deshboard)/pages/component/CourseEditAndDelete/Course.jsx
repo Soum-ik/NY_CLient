@@ -96,9 +96,9 @@ function EditCourse() {
               <Input
                 showCount
                 maxLength={50}
-                placeholder={data.image}
+                placeholder={data.icon}
                 value={form.image}
-                onChange={(e) => onChange(e, "image")}
+                onChange={(e) => onChange(e, "icon")}
                 required={true}
               />
 

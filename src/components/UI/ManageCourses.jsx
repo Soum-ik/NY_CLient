@@ -52,7 +52,7 @@ const ManageServiceTable = () => {
                 <tr key={item._id} className="hover:bg-gray-200 rounded-md">
                   <td className="p-2  text-center">
                     <img
-                      src={item.image}
+                      src={item.icon}
                       alt={item.name}
                       className="w-12 h-12 rounded-full"
                     />

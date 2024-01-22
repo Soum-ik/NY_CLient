@@ -1,15 +1,19 @@
 import Layout from "../Layout/layout";
 import CustomComponent from "../CustomComponent";
-import { useFetch } from "../../libs/fetchData";
+import { useFetch } from "../../libs/paramsData";
+import { useParams } from "react-router-dom";
 export default function About() {
-  const about = useFetch("http://localhost:5000/courses/about_c");
+  const { id } = useParams();
+  console.log(id);
+  const about = useFetch(id);
+
   return (
     <Layout>
       <CustomComponent
-        dic={about.dic}
-        button={about.button}
+        dic={about.cdic}
+        button={about.cbutton}
         Data={about.heading}
-        img={about.image}
+        img={about.banner}
         imageSize={" max-h-[500px] sm:min-w-[400px] sm:mr-[10px] object-fit"}
       />
     </Layout>

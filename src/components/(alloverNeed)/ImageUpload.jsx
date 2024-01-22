@@ -1,8 +1,9 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+// ImageUploader.js
+import  { useState } from "react";
 
-const ImageUploader = ({ onImageUpload, text}) => {
+const ImageUploader = ({ onImageUpload, text, type }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -26,7 +27,7 @@ const ImageUploader = ({ onImageUpload, text}) => {
         if (response.ok) {
           const data = await response.json();
           setImageUrl(data.data.url);
-          onImageUpload(data.data.url); // Pass the URL to the parent component
+          onImageUpload(data.data.url, type); // Pass the URL and type to the parent component
         } else {
           console.error("Failed to upload image");
         }
