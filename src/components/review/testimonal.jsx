@@ -13,7 +13,7 @@ const Testimonial = () => {
         <h1 className=" text-[25px] text-red-600 font-bold font-Headingfont">
           CUSTOMER <span> REVIEWS</span>
         </h1>
-        <div className=" grid xxxS:grid-cols-2 grid-cols-1 sm:grid-cols-3  overflow-auto scroll-m-16 sm:flex-row pt-10 gap-10 ">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 ">
           {datas.map((data) => (
             // <Carousel key={data._id}>
             <Card

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import FollowUs from "../Footer/FollowUs";
 
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
-import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
+// import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
 import { useFetch } from "../../libs/fetchData";
 
 const NavContact = () => {
