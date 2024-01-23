@@ -7,21 +7,23 @@ import axios from "axios";
 const NextStep = () => {
   const [options, setOptions] = useState([]);
   const [cardDetails, setCardDetails] = useState([]);
-  console.log(cardDetails);
-  useEffect(() => {
-    // Fetching options data from API
 
-    const fetch = async () => {
-      const res = await axios.get("http://localhost:5000/catagori");
-      setOptions(res.data);
-    };
-    fetch();
-    const Path = async () => {
-      const res = await axios.get("http://localhost:5000/choosepath");
-      setCardDetails(res.data);
-    };
-    Path();
+  const fetchOptions = useCallback(async () => {
+    const res = await axios.get("http://localhost:5000/catagori");
+    setOptions(res.data);
   }, []);
+
+  // useCallback for the card details fetching function
+  const fetchCardDetails = useCallback(async () => {
+    const res = await axios.get("http://localhost:5000/choosepath");
+    setCardDetails(res.data);
+  }, []);
+
+  useEffect(() => {
+    // Call both memoized functions when the component mounts
+    fetchOptions();
+    fetchCardDetails();
+  }, [fetchOptions, fetchCardDetails]);
 
   const handleCourse = useCallback(async (name) => {
     const CardDetails = await axios.get(
