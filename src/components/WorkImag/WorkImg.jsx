@@ -40,7 +40,7 @@ export default function Example() {
 
               <div
                 data-aos="fade-down"
-                className="p-4 h-auto max-w-2xl min-h-[350px] min-w-[280px] rounded-2xl mt-10  bg-black/5"
+                className="p-4 h-auto max-w-2xl  sm:min-h-[350px] min-w-[280px] rounded-2xl mt-10  bg-black/5"
               >
                 <img
                   className=" bg-cover rounded-2xl"
