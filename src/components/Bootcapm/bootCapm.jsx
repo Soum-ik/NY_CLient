@@ -5,9 +5,9 @@ import { useFetch } from "../../libs/paramsData";
 
 const BootCamp = () => {
   const { id } = useParams();
-  console.log(id);
+ 
   const data = useFetch(id);
-  console.log(data);
+ 
   return (
     <div className=" sm:px-10 py-8 sm:py-16 bg-gradient-to-r from-white to-slate-300/30 ">
       <Layout>

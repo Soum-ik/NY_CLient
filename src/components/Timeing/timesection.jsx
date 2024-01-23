@@ -1,32 +1,37 @@
 import Layout from "../Layout/layout";
-import { useFetch } from "../../libs/choosefetchDatas";
+import { useFetch } from "../../libs/paramsData";
+import { useParams } from "react-router-dom";
 
 function Timesection() {
-  const upcomingCourses = useFetch(
-    "http://localhost:5000/course/upcommingTime"
-  );
+  const { id } = useParams();
+  const choosepath = useFetch(id);
+
   return (
     <Layout>
-      <div className="sm:px-20 my-10 sm:py-10 sm:flex items-center justify-center gap-20  drop-shadow-lg shadow-lg rounded-lg hidden">
-        <h1 className=" font-Headingfont font-bold text-[18px] sm:text-[23px]">
-          Upcoming courses
+      <div className="sm:px-20 my-10 sm:py-10 sm:flex items-center justify-center gap-20 drop-shadow-lg shadow-lg rounded-lg hidden">
+        <h1 className="font-Headingfont min-w-max font-bold text-[18px] sm:text-[23px]">
+          Upcoming Courses
         </h1>
-        <div className=" flex items-center justify-center space-x-20 gap-10">
-          {upcomingCourses.map((course, index) => (
+        <div className="flex items-center justify-center space-x-20 gap-10">
+          {choosepath.upcomingCourses?.map((item, index) => (
             <div
               key={index}
-              className=" flex items-center justify-center flex-col"
+              className=" flex flex-col items-center justify-center "
             >
-              <h2>{course.course_name}</h2>
-              <div className=" flex items-center justify-center gap-3">
-                <p className=" text-black font-medium"> {course.start_date}</p>-
-                <p className="text-black font-medium"> {course.end_date}</p>
+              <div className="flex items-center justify-center">
+                {/* Format the start_date and end_date */}
+                <p className="text-black font-medium">
+                  {new Date(item.start_date).toLocaleDateString()}
+                </p>{" "}
+                -{" "}
+                <p className="text-black font-medium">
+                  {new Date(item.end_date).toLocaleDateString()}
+                </p>
               </div>
-              <button className=" border-b-2">{course.action}</button>
+              <button>Apply</button>
             </div>
           ))}
         </div>
-        <button className=" border-b-2 border-blue-500 ">More dates</button>
       </div>
     </Layout>
   );

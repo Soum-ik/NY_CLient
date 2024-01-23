@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 export default function Learn() {
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
   const data = useFetch(id);
   const topics = data.topics || []; // Ensure topics is an array
 

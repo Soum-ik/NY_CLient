@@ -4,40 +4,15 @@ const footerItems = [
     menu: [
       {
         name: "About",
-        link: "/about",
+        link: "/aboutus",
       },
       {
-        name: "service",
-        link: "/service",
+        name: "Service",
+        link: "#",
       },
       {
-        name: "blog",
-        link: "/blog",
-      },
-      {
-        name: "products",
-        link: "/products",
-      },
-    ],
-  },
-  {
-    name: "Help center",
-    menu: [
-      {
-        name: "Facebook",
-        link: "https://www.facebook.com/farjaxtci",
-      },
-      {
-        name: "Linkedin",
-        link: "https://www.linkedin.com/in/saidur-md-rahman-40a7b4211/",
-      },
-      {
-        name: "Twitter",
-        link: " ",
-      },
-      {
-        name: "Contact Us",
-        link: "/contact",
+        name: "Location",
+        link: "#",
       },
     ],
   },
@@ -46,19 +21,19 @@ const footerItems = [
     menu: [
       {
         name: "About Us",
-        link: "/about",
+        link: "/aboutus",
       },
       {
         name: "Privacy Policy",
-        link: "/privecy",
+        link: "#",
       },
       {
         name: "Licensing",
-        link: "/licensing",
+        link: "#",
       },
       {
         name: "Terms & Conditions",
-        link: "/terms",
+        link: "#",
       },
     ],
   },

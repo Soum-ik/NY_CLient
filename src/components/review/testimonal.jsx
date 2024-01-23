@@ -5,7 +5,7 @@ import { useFetch } from "../../libs/choosefetchDatas";
 
 const Testimonial = () => {
   const datas = useFetch("http://localhost:5000/customer/review");
-  console.log("carusol");
+ 
   return (
     <Layout>
       <div className=" mt-10 sm:mt-20 sm:px-10 sm:mb-32">

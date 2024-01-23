@@ -1,6 +1,6 @@
 import Deshboard from "../../../../Layout/Deshboard";
 import Admin from "../../../Admin/admin";
-import { Flex, Input } from "antd";
+import { Flex, Input, DatePicker } from "antd";
 const { TextArea } = Input;
 import { Toaster, toast } from "react-hot-toast";
 import { useState, useEffect } from "react";
@@ -38,9 +38,39 @@ function PostCourse() {
     timelinedic: "",
     selectedOption: "",
     topics: [], // Added selectedOption to the form state
+    upcomingCourses: [
+      {
+        _id: "1",
+        start_date: null,
+        end_date: null,
+      },
+      {
+        _id: "2",
+        start_date: null,
+        end_date: null,
+      },
+      {
+        _id: "3",
+        start_date: null,
+        end_date: null,
+      },
+      {
+        _id: "4",
+        start_date: null,
+        end_date: null,
+      },
+    ],
   });
   console.log(form);
 
+  const handleDateChange = (date, index, field) => {
+    const updatedUpcomingCourses = [...form.upcomingCourses];
+    updatedUpcomingCourses[index][field] = date;
+    setForm({
+      ...form,
+      upcomingCourses: updatedUpcomingCourses,
+    });
+  };
   const [newTopic, setNewTopic] = useState("");
   const addTopic = () => {
     if (newTopic.trim() !== "") {
@@ -261,6 +291,28 @@ function PostCourse() {
                   />
                 </div>
               )}
+              <hr />
+              <h6 className="text-sm">Upcoming Courses</h6>
+              <hr />
+              {form.upcomingCourses.map((course, index) => (
+                <div key={course._id} className=" flex  gap-5">
+                  <DatePicker
+                    placeholder="Start Date"
+                    value={course.start_date}
+                    onChange={(date) =>
+                      handleDateChange(date, index, "start_date")
+                    }
+                  />
+
+                  <DatePicker
+                    placeholder="End Date"
+                    value={course.end_date}
+                    onChange={(date) =>
+                      handleDateChange(date, index, "end_date")
+                    }
+                  />
+                </div>
+              ))}
 
               <hr />
               <h6 className=" text-sm">{"What You'll Learn"}</h6>
