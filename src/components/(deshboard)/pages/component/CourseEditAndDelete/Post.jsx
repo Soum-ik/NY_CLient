@@ -36,13 +36,34 @@ function PostCourse() {
     learndic: "",
     timeline: "",
     timelinedic: "",
-    selectedOption: "", // Added selectedOption to the form state
+    selectedOption: "",
+    topics: [], // Added selectedOption to the form state
   });
   console.log(form);
 
+  const [newTopic, setNewTopic] = useState("");
+  const addTopic = () => {
+    if (newTopic.trim() !== "") {
+      setForm({
+        ...form,
+        topics: [...form.topics, newTopic],
+      });
+      setNewTopic("");
+    }
+  };
+
+  const removeTopic = (index) => {
+    const updatedTopics = [...form.topics];
+    updatedTopics.splice(index, 1);
+    setForm({
+      ...form,
+      topics: updatedTopics,
+    });
+  };
+
   // Function to check if all form fields are filled
   const isFormFilled = Object.values(form).every((value) => value !== "");
-  console.log(isFormFilled);
+
   // Function to handle icon image upload
   const handleIconUpload = (imageUrl) => {
     setForm({
@@ -256,12 +277,35 @@ function PostCourse() {
                   resize: "none",
                 }}
               />
+              <div>
+                <Input
+                  value={newTopic}
+                  onChange={(e) => setNewTopic(e.target.value)}
+                  placeholder="Add bullet point text"
+                />
+                <button onClick={addTopic} className=" border p-1 rounded mt-3">
+                  Add text
+                </button>
+                <ul>
+                  {form.topics.map((topic, index) => (
+                    <div key={index} className=" flex items-center ">
+                      <li className=" line-clamp-1 text-black/60 ">{topic} </li>
+                      <button
+                        className=" ml-5 border p-1 rounded"
+                        onClick={() => removeTopic(index)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  ))}
+                </ul>
+              </div>
               <hr />
               <h6 className=" text-sm">{"Timeline"}</h6>
               <hr />
               <Input
                 showCount
-                maxLength={20}
+                maxLength={200}
                 placeholder="Our QA Training Progrma last 15 weeks"
                 value={form.timeline}
                 onChange={(e) => onChange(e, "timeline")}
