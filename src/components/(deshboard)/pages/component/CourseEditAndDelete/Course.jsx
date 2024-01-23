@@ -29,7 +29,16 @@ function EditCourse() {
     name: "",
     buttonText: "",
     shortDetails: "",
-    image: "",
+    icon: "",
+    banner: "",
+    heading: "",
+    cbutton: "",
+    aboutImage: "",
+    cdic: "",
+    learndic: "",
+    timeline: "",
+    timelinedic: "",
+    selectedOption: "",
   });
 
   const onChange = (e, field) => {
@@ -51,10 +60,19 @@ function EditCourse() {
         console.log(response.data);
         toast.success("Successfully updated!");
         setForm({
+          name: "",
+          buttonText: "",
+          shortDetails: "",
+          icon: "",
+          banner: "",
           heading: "",
-          button: "",
-          dic: "",
-          image: " ",
+          cbutton: "",
+          aboutImage: "",
+          cdic: "",
+          learndic: "",
+          timeline: "",
+          timelinedic: "",
+          selectedOption: "",
         });
         // setLoading(false);
       } catch (error) {
@@ -68,14 +86,14 @@ function EditCourse() {
 
   return (
     <Admin>
-      <div className="min-w-[1000px] rounded-lg shadow-2xl min-h-screen mt-11 px-5 py-4">
+      <div className="min-w-[1000px] overflow-auto rounded-lg shadow-2xl min-h-max mt-11 px-5 py-4">
         <Deshboard>
           <h1 className="text-[20px] pb-10 font-semibold">
             {" "}
-            <span className=" border-b-4 border-b-neutral-950">{id}</span> Edit
+            <span className=" border-b-4 ">{data.name}</span> Edit
           </h1>
           <hr className="w-full" />
-          <div>
+          <div style={{ maxHeight: "400px" }}>
             <Flex vertical gap={32}>
               <Input
                 showCount
@@ -95,9 +113,17 @@ function EditCourse() {
               <Input
                 showCount
                 maxLength={50}
-                placeholder={data.icon}
-                value={form.image}
+                placeholder={data.icon && "icon image"}
+                value={form.icon}
                 onChange={(e) => onChange(e, "icon")}
+                required={true}
+              />
+              <Input
+                showCount
+                maxLength={50}
+                placeholder={data.icon && "banner image"}
+                value={form.bann}
+                onChange={(e) => onChange(e, "banner")}
                 required={true}
               />
 
@@ -113,10 +139,87 @@ function EditCourse() {
                   resize: "none",
                 }}
               />
+              <hr />
+              <h6 className=" text-sm">About Your Course</h6>
+              <hr />
+              <Input
+                showCount
+                maxLength={100}
+                placeholder={data.heading}
+                value={form.heading}
+                onChange={(e) => onChange(e, "heading")}
+              />
 
+              <Input
+                showCount
+                maxLength={20}
+                placeholder={data.cbutton}
+                value={form.cbutton} // Updated field name
+                onChange={(e) => onChange(e, "cbutton")} // Updated field name
+                required={true}
+              />
+
+              <TextArea
+                showCount
+                maxLength={500}
+                value={form.cdic} // Updated field name
+                onChange={(e) => onChange(e, "cdic")} // Updated field name
+                placeholder={data.cdic}
+                required={true}
+                style={{
+                  height: 120,
+                  resize: "none",
+                }}
+              />
+              <Input
+                showCount
+                maxLength={50}
+                placeholder={data.aboutImage}
+                value={form.aboutImage}
+                onChange={(e) => onChange(e, "aboutImage")}
+                required={true}
+              />
+              <hr />
+              <h6 className=" text-sm">{"What You'll Learn"}</h6>
+              <hr />
+              <TextArea
+                showCount
+                maxLength={1000}
+                value={form.learndic}
+                onChange={(e) => onChange(e, "learndic")}
+                placeholder={data.learndic}
+                required={true}
+                style={{
+                  height: 200,
+                  resize: "none",
+                }}
+              />
+              <hr />
+              <h6 className=" text-sm">{"Timeline"}</h6>
+              <hr />
+              <Input
+                showCount
+                maxLength={200}
+                placeholder={data.timeline}
+                value={form.timeline}
+                onChange={(e) => onChange(e, "timeline")}
+                required={true}
+              />
+              <TextArea
+                showCount
+                maxLength={500}
+                value={form.timelinedic}
+                onChange={(e) => onChange(e, "timelinedic")}
+                placeholder={data.timelinedic}
+                required={true}
+                style={{
+                  height: 120,
+                  resize: "none",
+                }}
+              />
               <button
                 onClick={handleSubmit}
-                className="bg-color max-w-[100px] px-3 py-2 rounded-md "
+                className="bg-color max-w-[100px] px-3 py-2 my-5 rounded-md "
               >
                 Save Now
               </button>
