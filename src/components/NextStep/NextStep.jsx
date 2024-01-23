@@ -1,29 +1,34 @@
 import { Tab } from "@headlessui/react";
 import styles from "../../style/style";
 import Card from "./Card";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 
 const NextStep = () => {
   const [options, setOptions] = useState([]);
-  const [cardDetails, SetCardDetails] = useState([]);
+  const [cardDetails, setCardDetails] = useState([]);
   console.log(cardDetails);
   useEffect(() => {
     // Fetching options data from API
+
     const fetch = async () => {
       const res = await axios.get("http://localhost:5000/catagori");
       setOptions(res.data);
     };
     fetch();
+    const Path = async () => {
+      const res = await axios.get("http://localhost:5000/choosepath");
+      setCardDetails(res.data);
+    };
+    Path();
   }, []);
 
-  const handleCourse = async (name) => {
+  const handleCourse = useCallback(async (name) => {
     const CardDetails = await axios.get(
       `http://localhost:5000/choose/course/${name}`
     );
-
-    SetCardDetails(CardDetails.data);
-  };
+    setCardDetails(CardDetails.data);
+  }, []);
 
   return (
     <div

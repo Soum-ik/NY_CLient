@@ -13,7 +13,7 @@ export default function About() {
         dic={about.cdic}
         button={about.cbutton}
         Data={about.heading}
-        img={about.banner}
+        img={about.aboutImage}
         imageSize={" max-h-[500px] sm:min-w-[400px] sm:mr-[10px] object-fit"}
       />
     </Layout>

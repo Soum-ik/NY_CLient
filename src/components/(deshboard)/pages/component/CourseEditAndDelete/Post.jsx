@@ -31,16 +31,18 @@ function PostCourse() {
     banner: "",
     heading: "",
     cbutton: "",
+    aboutImage: "",
     cdic: "",
     learndic: "",
     timeline: "",
     timelinedic: "",
     selectedOption: "", // Added selectedOption to the form state
   });
+  console.log(form);
 
   // Function to check if all form fields are filled
   const isFormFilled = Object.values(form).every((value) => value !== "");
-
+  console.log(isFormFilled);
   // Function to handle icon image upload
   const handleIconUpload = (imageUrl) => {
     setForm({
@@ -54,6 +56,12 @@ function PostCourse() {
     setForm({
       ...form,
       banner: imageUrl,
+    });
+  };
+  const handleAboutImageUpload = (imageUrl) => {
+    setForm({
+      ...form,
+      aboutImage: imageUrl,
     });
   };
 
@@ -88,6 +96,7 @@ function PostCourse() {
           heading: "",
           cbutton: "",
           cdic: "",
+          aboutImage: "",
           learndic: "",
           timeline: "",
           timelinedic: "",
@@ -218,6 +227,19 @@ function PostCourse() {
                   resize: "none",
                 }}
               />
+              <ImageUploader
+                text={"About Course Image"}
+                onImageUpload={handleAboutImageUpload}
+              />
+              {form.aboutImage && (
+                <div>
+                  <img
+                    src={form.aboutImage}
+                    className="h-[200px]"
+                    alt="Uploaded about course image"
+                  />
+                </div>
+              )}
 
               <hr />
               <h6 className=" text-sm">{"What You'll Learn"}</h6>
