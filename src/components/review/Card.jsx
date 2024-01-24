@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const Card = ({ comment, role, name, image }) => {
   return (
-    <div className="  px-4 py-5 bg-white rounded-lg shadow-lg hover:shadow-xl hover:px-[15px]">
+    <div className=" min-w-[420px] px-4 py-5 mt-5 snap-center bg-white rounded-lg shadow-lg hover:shadow-xl hover:px-[15px]">
       <div className=" flex items-center gap-5 sm:gap-10">
         <div className=" ring-2 shadow-xl ring-red-500  rounded-full w-[100px] h-[100px] items-center justify-center text-center flex">
           <img
@@ -16,13 +16,13 @@ const Card = ({ comment, role, name, image }) => {
           <h1 className="  text-[18px] sm:text-[20px] text-black/80 font-semibold">
             {name}
           </h1>
-          <h4 className=" text-[12px] sm:text-[15px] text-black/60 font-medium">
+          <p className=" max-w-[10px] text-[12px] sm:text-[15px] text-black/60 font-medium">
             {role}
-          </h4>
+          </p>
         </div>
       </div>
 
-      <p className=" text-[10px]  sm:text-[13px] my-5 ">{comment}</p>
+      <p className=" text-[10px] max-w-[360px] sm:max-w-[400px]  sm:text-[13px] my-5 ">{comment}</p>
     </div>
   );
 };
