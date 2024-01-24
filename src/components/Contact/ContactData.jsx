@@ -14,7 +14,7 @@ const ContactData = () => {
     e.preventDefault();
     // Perform your email sending logic here
     // For now, let's just show a "Thank you" message
-    alert("Thank You, Your Data Submit SuccessFully")
+    alert("Thank You, Your Data Submit SuccessFully");
     setSubmitted(true);
   };
 
@@ -40,7 +40,7 @@ const ContactData = () => {
     >
       {submitted ? (
         <div className="text-center">
-          <p className="text-xl font-bold text-green-600">
+          <p className="text-xl font-bold bg-color rounded">
             Thank you for submitting!
           </p>
         </div>
