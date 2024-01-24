@@ -20,7 +20,7 @@ export default function Learn() {
     <Layout>
       <div className="sm:px-7">
         <h1 className="headingTextSize">{`What You'll Learn`}</h1>
-        <p className="paragrahp mt-10 tracking-wide">{data.learndic}</p>
+        <p className="paragrahp  mt-10 tracking-wide">{data.learndic}</p>
         <div className="mt-10 hidden sm:block">
           {rows.map((row, rowIndex) => (
             <div key={rowIndex} className="flex items-center justify-between px-10 mb-4">

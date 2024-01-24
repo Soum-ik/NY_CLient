@@ -10,7 +10,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
+  // eslint-disable-next-line no-unused-vars
   const [datas, setDatas] = useState([]);
+  
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get("http://localhost:5000/choosepath");
@@ -31,7 +33,7 @@ export default function Footer() {
                   <img className=" text-white" src={Logo} alt="logo" />
                 </div>
 
-                <p className="mb-7 text-base text-body-color font-textFont mt-5 text-black">
+                <p className="mb-7 text-body-color text-[15px] mt-5 text-black">
                   The Institute of Technology is a training institute that
                   provides training in various technology-related courses
                 </p>

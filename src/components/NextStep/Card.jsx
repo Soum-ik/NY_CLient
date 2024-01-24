@@ -11,7 +11,7 @@ const Card = ({ image, name, btn, shortD, id }) => {
       <h3 className=" line-clamp-1 text-[20px] sm:text-[27px] py-3 font-Headingfont  max-w-xs">
         {name}
       </h3>
-      <p className=" max-w-xs text-center tracking-wide font-textFont line-clamp-3">
+      <p className=" max-w-xs text-center tracking-wide text-[14px] line-clamp-3">
         {shortD}
       </p>
       <button className=" px-3 flex items-center gap-2 py-3 cursor-pointer botton text-center">

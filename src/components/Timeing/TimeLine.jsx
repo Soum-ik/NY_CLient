@@ -10,7 +10,7 @@ export default function TimeLine() {
     <Layout>
       <div className=" sm:px-10 py-20 sm:py-32 space-y-5 ">
         <h5 className=" headingTextSize mb-5 ">Timeline</h5>
-        <h5 className=" font-textFont font-normal  tracking-widest text-[18px]">
+        <h5 className="  font-normal  tracking-wider text-[15px]">
           {data.timeline}
         </h5>
         <p className=" paragrahp">{data.timelinedic}</p>
