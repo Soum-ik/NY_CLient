@@ -5,6 +5,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
 import ImageUploader from "../../(alloverNeed)/ImageUpload";
+import { useFetch } from "../../../libs/choosefetchDatas";
 
 function ReviewDesh() {
   const [form, setForm] = useState({
@@ -14,8 +15,16 @@ function ReviewDesh() {
     comment: "",
   });
 
-  const isFormFilled = Object.values(form).every((value) => value !== "");
-
+  // const isFormFilled = Object.values(form).every((value) => value !== "");
+  const tableData = useFetch("http://localhost:5000/customer/review");
+  const catagorisData = (id) => {
+    const fetch = async () => {
+      console.log(id);
+      await axios.delete(`http://localhost:5000/customer-review/${id}`);
+      toast.success("Successfully Delete.......");
+    };
+    fetch();
+  };
   const handleImageUpload = (imageUrl) => {
     setForm({
       ...form,
@@ -64,6 +73,42 @@ function ReviewDesh() {
           <h1 className="text-[20px] pb-10 font-semibold">Customer Review</h1>
           <hr className="w-full" />
           <div style={{ maxHeight: "400px" }}>
+            <table className="w-full bg-white shadow-lg rounded mb-20">
+              <thead className=" gap-20">
+                <tr className=" bg-color rounded ">
+                  <th className="py-2  px-5 text-left">Name</th>
+                  <th className="py-2  px-5 text-left">Text</th>
+
+                  <th className="py-2  px-5 text-left ">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableData
+                  ? tableData.map((item) => (
+                      <tr
+                        key={item._id}
+                        className="hover:bg-gray-200 rounded-md "
+                      >
+                        <td className="p-2 text-black text-[14px]  text-left">
+                          {item.name}
+                        </td>
+                        <td className="p-2 text-black text-[14px]  text-left">
+                          {item.comment}
+                        </td>
+
+                        <td className="p-2 flex  ">
+                          <button
+                            onClick={() => catagorisData(item._id)}
+                            className="bg-color  text-white px-3 py-1 rounded"
+                          >
+                            {"Delete"}
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  : "loading..."}
+              </tbody>
+            </table>
             <Flex vertical gap={32}>
               <Input
                 showCount
@@ -81,7 +126,7 @@ function ReviewDesh() {
               />
               <Input
                 showCount
-                maxLength={100}
+                maxLength={1000}
                 placeholder="Add Comment"
                 value={form.comment}
                 onChange={(e) => onChange(e, "comment")}
@@ -100,10 +145,7 @@ function ReviewDesh() {
                 )}
                 <button
                   onClick={handleSubmit}
-                  className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md ${
-                    !isFormFilled ? "disabled opacity-80" : ""
-                  }`}
-                  disabled={!isFormFilled}
+                  className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md  `}
                 >
                   Save Now
                 </button>
