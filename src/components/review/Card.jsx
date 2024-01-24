@@ -13,7 +13,7 @@ const Card = ({ comment, role, name, image }) => {
         </div>
 
         <div className=" flex flex-col">
-          <h1 className=" font-Headingfont text-[18px] sm:text-[20px] text-black/80 font-semibold">
+          <h1 className="  text-[18px] sm:text-[20px] text-black/80 font-semibold">
             {name}
           </h1>
           <h4 className=" text-[12px] sm:text-[15px] text-black/60 font-medium">
@@ -22,9 +22,7 @@ const Card = ({ comment, role, name, image }) => {
         </div>
       </div>
 
-      <p className=" text-[12px]  sm:text-[15px] my-5 font-textFont">
-        {comment}
-      </p>
+      <p className=" text-[10px]  sm:text-[13px] my-5 ">{comment}</p>
     </div>
   );
 };

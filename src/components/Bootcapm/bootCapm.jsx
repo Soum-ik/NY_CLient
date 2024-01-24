@@ -13,7 +13,7 @@ const BootCamp = () => {
       <Layout>
         <div className=" sm:pt-10 pt-5 flex sm:flex-row flex-col items-center  gap-10">
           <CustomData
-            offer={"NEW YORK CITY"}
+            offer={"Online Class"}
             heading={data.name || "Software Ingerninner BootCampe"}
             tittle={data.shortDetails}
             button={"Apply Now"}
