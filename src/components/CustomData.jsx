@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import styles, { layout } from "../style/style";
+import ContactData from "./Contact/ContactData";
 
 const CustomData = ({
   heading,
@@ -11,6 +13,11 @@ const CustomData = ({
   customStyle,
   customStyleHeading,
 }) => {
+  // change not [proper set]
+  const [click, setClick] = useState(false);
+  const handleClick = () => {
+    setClick(true);
+  };
   return (
     <div className={layout.sectionInfo}>
       {offer && (
@@ -37,10 +44,20 @@ const CustomData = ({
           </button>
         )}
         {more && (
-          <div className="     hover:bg-color px-[18px]  py-[18px] rounded-lg hover:text-white ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins">
+          <button
+            onClick={handleClick}
+            className=" border shadow
+             hover:bg-color px-[18px]  py-[18px] rounded-lg hover:text-white ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins"
+          >
             {" "}
-            {more} <IoMdArrowRoundForward size={20} />
-          </div>
+            {click ? (
+              <ContactData />
+            ) : (
+              <>
+                {more} <IoMdArrowRoundForward size={20} />
+              </>
+            )}
+          </button>
         )}
       </div>
     </div>
