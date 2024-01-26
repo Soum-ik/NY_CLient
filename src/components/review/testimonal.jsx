@@ -13,7 +13,7 @@ const Testimonial = () => {
         <h1 className=" text-[25px] text-red-600 font-bold font-Headingfont">
           CUSTOMER <span> REVIEWS</span>
         </h1>
-        <div className="flex gap-8 snap-x overflow-x-scroll">
+        <div className={`flex gap-8 ${datas.length >= 3 ? 'snap-x overflow-x-scroll': "overflow-x-hidden" } `}>
           {datas.map((data) => (
             <Card
               key={data._id}
