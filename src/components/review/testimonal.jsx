@@ -1,7 +1,6 @@
 import Card from "./Card";
 import Layout from "../Layout/layout";
 import { useFetch } from "../../libs/choosefetchDatas";
-// import { Carousel } from "keep-react";
 
 const Testimonial = () => {
   const datas = useFetch("http://localhost:5000/customer/review");
@@ -13,7 +12,13 @@ const Testimonial = () => {
         <h1 className=" text-[25px] text-red-600 font-bold font-Headingfont">
           CUSTOMER <span> REVIEWS</span>
         </h1>
-        <div className={`flex gap-8 ${datas.length > 3 ? '  snap-x overflow-x-scroll': " overflow-x-scroll sm:overflow-x-hidden " } `}>
+        <div
+          className={`flex gap-8 ${
+            datas.length > 3
+              ? "  snap-x overflow-x-scroll"
+              : " overflow-x-scroll sm:overflow-x-hidden "
+          } `}
+        >
           {datas.map((data) => (
             <Card
               key={data._id}

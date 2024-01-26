@@ -2,7 +2,9 @@ import Layout from "../Layout/layout";
 import { useFetch } from "../../libs/paramsData";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import Contact from "../Contact/contact";
+import ContactData from "../Contact/ContactData";
+import toast, { Toaster } from "react-hot-toast";
+
 function Timesection() {
   const { id } = useParams();
   const choosepath = useFetch(id);
@@ -11,14 +13,22 @@ function Timesection() {
   function clicked() {
     setClick(true);
   }
+
+  const handleContactDataSubmit = () => {
+    setClick(false);
+    toast.success("Thank You, Your application is successfully addded ");
+  };
   return (
     <Layout>
+      <Toaster position="top-center" reverseOrder={false} />
       <div className="sm:px-20 my-10 sm:py-10 sm:flex items-center justify-center gap-20 drop-shadow-lg shadow-lg rounded-lg hidden">
         <h1 className="font-Headingfont min-w-max font-bold text-[18px] sm:text-[23px]">
           Upcoming Courses
         </h1>
         {click ? (
-          <Contact />
+          <div className="max-w-sm">
+            <ContactData onSubmit={handleContactDataSubmit} />
+          </div>
         ) : (
           <div className="flex items-center justify-center space-x-20 gap-10">
             {choosepath.upcomingCourses?.map((item, index) => (
