@@ -8,7 +8,7 @@ const Card = ({ image, name, btn, shortD, id }) => {
      bg-white/70 py-10 duration-500 flex items-center justify-center flex-col space-y-4"
     >
       <img src={image} alt="" />
-      <h3 className=" line-clamp-1 text-[20px] sm:text-[27px] py-3 font-Headingfont  max-w-xs">
+      <h3 className=" text-center text-[20px] sm:text-[25px] py-3 font-Headingfont ">
         {name}
       </h3>
       <p className=" max-w-xs text-center tracking-wide text-[14px] line-clamp-3">
