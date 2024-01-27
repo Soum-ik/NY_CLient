@@ -52,7 +52,7 @@ function EditCourse() {
     e.preventDefault();
 
     const sendingData = async () => {
-      try {
+      try {  
         const response = await axios.put(
           `http://localhost:5000/choose/course/update/${id}`,
           form
