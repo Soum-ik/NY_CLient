@@ -3,9 +3,11 @@ import Layout from "../Layout/layout";
 import WhatsAppLink from "../WhatsApp";
 
 import { useEffect, useState } from "react";
+
 const Section = () => {
   const [data, setData] = useState([]);
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // console.log(data[0]._id);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,25 +22,35 @@ const Section = () => {
     fetchData();
   }, []); // Empty dependency array means this effect runs once when the component mounts
 
-  const names = data.map((item) => item.name);
-  console.log(names);
   return (
     <Layout>
-      <nav className=" font-Headingfont flex justify-between items-center text-white">
-        <ul className=" flex justify-center items-center space-x-7">
+      <nav className="font-Headingfont flex justify-between items-center text-white">
+        <ul className="flex justify-center items-center space-x-7">
           <div className="relative inline-block group">
-            <button className="text-white   px-4 py-2 rounded-md focus:outline-none   transition duration-300">
+            <button
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              className="text-white px-4 py-2 rounded-md focus:outline-none transition duration-300"
+            >
               COURSE
             </button>
-            <div className="absolute bg-white rounded-md p-2 hidden bg-transparent shadow-md mt-2 group-hover:block">
-              {/* Your dropdown content goes here */}
-              {names.map((name, index) => (
-                <li className=" text-[12px] min-w-max  text-black font-Poppins" key={index}>
-                  {name}
-                  <br />
-                </li>
-              ))}
-            </div>
+            {isDropdownOpen && (
+              <div
+                onMouseLeave={() => setIsDropdownOpen(false)}
+                className="absolute bg-white rounded-md min-w-[1000px] p-2 shadow-md mt-2"
+              >
+                {/* Your dropdown content goes here */}
+                {data.map((name, index) => (
+                  <Link
+                    to={`/coures/${name._id}`} // Assuming you have routes based on the dropdown items
+                    className="text-[12px] text-black font-bold font-Poppins"
+                    key={index}
+                  >
+                    {`>   ${name.name}`}
+                    <br />
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
 
           <Link to={"/aboutus"} className="cursor-pointer">
@@ -52,4 +64,5 @@ const Section = () => {
     </Layout>
   );
 };
+
 export default Section;

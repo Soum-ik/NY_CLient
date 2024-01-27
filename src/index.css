@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Acme&family=Jacques+Francois&family=JetBrains+Mono&family=Poppins:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Shippori+Mincho+B1:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Mallanna&family=Shippori+Mincho+B1:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   scroll-behavior: smooth;
 }
 
@@ -14,7 +13,7 @@
     @apply font-Headingfont font-extrabold  xs:text-[32px] text-[19px] xs:leading-[45.8px];
   }
   .paragrahp {
-    @apply  font-normal  xs:text-[16px] text-[14px] leading-[30.8px];
+    @apply font-normal  xs:text-[16px] text-[14px] leading-[30.8px];
   }
 }
 
@@ -58,4 +57,10 @@
   position: relative;
 
   background-image: url(../public/images/wel.jpg);
+}
+.text {
+  max-width: 600px;
+  font-family: "Mallanna", sans-serif;
+  font-size: 18px;
+  /* line-height: 25px; */
 }

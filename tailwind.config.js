@@ -8,7 +8,7 @@ export default {
         JetBrains: ["JetBrains Mono", "monospace"],
         Poppins: ["Poppins", "sans-serif"],
         Acme: ["Acme", "sans-serif"],
-        textFont: ['Instrument Serif', "serif"],
+        textFont: ['Mallanna', "sans-serif"],
         Headingfont: ['Shippori Mincho B1', "serif"]
       },
 
