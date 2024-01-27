@@ -13,7 +13,7 @@ const ContactData = ({ onSubmit }) => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-     
+
     setForm(true);
     setSubmitted(true);
     onSubmit();
@@ -42,10 +42,22 @@ const ContactData = ({ onSubmit }) => {
             className={`w-full rounded-md shadow-md border-1 border-gray-200 focus:border-transparent focus:outline-transparent focus:ring-0 p-4 text-black`}
           />
           <input
+            value={form.number}
+            onChange={(e) => handleState(e, "number")}
+            placeholder={"Enter your phone number"}
+            className={`w-full rounded-md shadow-md border-1 border-gray-200 focus:border-transparent focus:outline-transparent focus:ring-0 p-4 text-black`}
+            required
+            type="number"
+          />
+        </div>
+        <div className="w-full my-4 flex-1">
+          <input
             value={form.email}
             onChange={(e) => handleState(e, "email")}
             placeholder={"Enter your email"}
             className={`w-full rounded-md shadow-md border-1 border-gray-200 focus:border-transparent focus:outline-transparent focus:ring-0 p-4 text-black`}
+            type="email"
+            required
           />
         </div>
 
@@ -57,15 +69,6 @@ const ContactData = ({ onSubmit }) => {
             placeholder="Your Message"
             name="message"
             required
-          />
-        </div>
-
-        <div className="w-full my-4 flex-1">
-          <input
-            value={form.number}
-            onChange={(e) => handleState(e, "number")}
-            placeholder={"Enter your number (optional)"}
-            className={`w-full rounded-md shadow-md border-1 border-gray-200 focus:border-transparent focus:outline-transparent focus:ring-0 p-4 text-black`}
           />
         </div>
 

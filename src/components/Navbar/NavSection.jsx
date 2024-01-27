@@ -30,11 +30,11 @@ const Section = () => {
             <button className="text-white   px-4 py-2 rounded-md focus:outline-none   transition duration-300">
               COURSE
             </button>
-            <div className="absolute rounded-md p-2 hidden bg-transparent shadow-md mt-2 group-hover:block">
+            <div className="absolute bg-white rounded-md p-2 hidden bg-transparent shadow-md mt-2 group-hover:block">
               {/* Your dropdown content goes here */}
               {names.map((name, index) => (
-                <li className=" text-black" key={index}>
-                  {index}:{name}
+                <li className=" text-[12px] min-w-max  text-black font-Poppins" key={index}>
+                  {name}
                   <br />
                 </li>
               ))}
