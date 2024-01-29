@@ -6,7 +6,7 @@ export function useFetch(id) {
 //   console.log(id.id, "Datat");
   useEffect(() => {
     const getData = async () => {
-      const data = await axios.get(`http://localhost:5000/choosepath/${id}`);
+      const data = await axios.get(`https://node-mongodb-vvwu.onrender.com/choosepath/${id}`);
       setData(data.data[0]);
     };
     getData();

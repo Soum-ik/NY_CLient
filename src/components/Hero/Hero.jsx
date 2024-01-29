@@ -2,7 +2,7 @@ import CustomComponent from "../CustomComponent";
 import { useFetch } from "../../libs/fetchData";
 
 const Hero = () => {
-  const hero = useFetch("http://localhost:5000/hero");
+  const hero = useFetch("https://node-mongodb-vvwu.onrender.com/hero");
   return (
     <div>
       <CustomComponent
