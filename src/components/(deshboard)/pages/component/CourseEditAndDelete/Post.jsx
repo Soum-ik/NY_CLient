@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ImageUploader from "../../../../(alloverNeed)/ImageUpload";
+import config from "../../../../../../config";
 
 function PostCourse() {
   // Hooks for state management
@@ -15,7 +16,7 @@ function PostCourse() {
   useEffect(() => {
     // Fetching options data from API
     const fetch = async () => {
-      const res = await axios.get("http://localhost:5000/catagori");
+      const res = await axios.get(`${config.apiUrl}catagori`);
       setOptions(res.data);
       console.log(res.data);
     };
@@ -132,7 +133,7 @@ function PostCourse() {
       try {
         // Sending form data to the server
         const response = await axios.post(
-          `http://localhost:5000/choose/course/`,
+          `${config.apiUrl}choose/course/`,
           form
         );
         console.log(response.data);

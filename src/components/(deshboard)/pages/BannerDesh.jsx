@@ -5,6 +5,7 @@ import { useState } from "react";
 import ImageUploader from "../../(alloverNeed)/ImageUpload";
 
 import toast, { Toaster } from "react-hot-toast";
+import config from "../../../../config";
 
 function BannerDesh() {
   const [img, setImg] = useState("");
@@ -17,7 +18,7 @@ function BannerDesh() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/about/banner/65aac77f3d16a53705b79199",
+          `${config.apiUrl}about/banner/65aac77f3d16a53705b79199`,
           {
             method: "PUT",
             headers: {

@@ -4,16 +4,17 @@ import { useFetch } from "../../libs/choosefetchDatas";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import config from "../../../config";
 
 const ManageServiceTable = () => {
   const [loading, setLoading] = useState(false);
-  const data = useFetch("http://localhost:5000/choosepath");
+  const data = useFetch(`${config.apiUrl}choosepath`);
   console.log(data);
   const courseDelate = (id) => {
     const fetch = async () => {
       setLoading(true);
       console.log(id);
-      await axios.delete(`http://localhost:5000/choose/course/${id}`);
+      await axios.delete(`${config.apiUrl}choose/course/${id}`);
       toast.success("Successfully Delete.......");
       setLoading(false);
     };

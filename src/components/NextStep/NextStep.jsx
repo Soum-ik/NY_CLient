@@ -3,19 +3,20 @@ import styles from "../../style/style";
 import Card from "./Card";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import config from "../../../config";
 
 const NextStep = () => {
   const [options, setOptions] = useState([]);
   const [cardDetails, setCardDetails] = useState([]);
 
   const fetchOptions = useCallback(async () => {
-    const res = await axios.get("http://localhost:5000/catagori");
+    const res = await axios.get(`${config.apiUrl}catagori`);
     setOptions(res.data);
   }, []);
 
   // useCallback for the card details fetching function
   const fetchCardDetails = useCallback(async () => {
-    const res = await axios.get("http://localhost:5000/choosepath");
+    const res = await axios.get(`${config.apiUrl}choosepath`);
     setCardDetails(res.data);
   }, []);
 
@@ -27,7 +28,7 @@ const NextStep = () => {
 
   const handleCourse = useCallback(async (name) => {
     const CardDetails = await axios.get(
-      `http://localhost:5000/choose/course/${name}`
+      `${config.apiUrl}choose/course/${name}`
     );
     setCardDetails(CardDetails.data);
   }, []);

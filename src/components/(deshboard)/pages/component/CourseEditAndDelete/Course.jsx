@@ -8,6 +8,7 @@ import { Toaster, toast } from "react-hot-toast";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import config from "../../../../../../config";
 function EditCourse() {
   const params = useParams();
   const id = params.id;
@@ -32,7 +33,7 @@ function EditCourse() {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/choose/course/get/${id}`
+          `${config.apiUrl}choose/course/get/${id}`
         );
         setForm(response.data); // Use setForm to update the state
       } catch (error) {
@@ -53,17 +54,17 @@ function EditCourse() {
 
   function handleSubmit(e) {
     e.preventDefault();
-  
+
     const sendingData = async () => {
       try {
         // Exclude '_id' from the form object
         const { _id, ...formData } = form;
         console.log(_id);
         const response = await axios.put(
-          `http://localhost:5000/choose/course/update/${_id}`,
+          `${config.apiUrl}choose/course/update/${_id}`,
           formData
         );
-  
+
         console.log(response.data);
         toast.success("Successfully updated!");
       } catch (error) {
@@ -71,10 +72,9 @@ function EditCourse() {
         toast.error("Error updating data");
       }
     };
-  
+
     sendingData();
   }
-  
 
   return (
     <Admin>

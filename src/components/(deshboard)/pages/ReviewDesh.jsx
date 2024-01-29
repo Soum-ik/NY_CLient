@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import ImageUploader from "../../(alloverNeed)/ImageUpload";
 import { useFetch } from "../../../libs/choosefetchDatas";
+import config from "../../../../config";
 
 function ReviewDesh() {
   const [form, setForm] = useState({
@@ -16,11 +17,11 @@ function ReviewDesh() {
   });
 
   // const isFormFilled = Object.values(form).every((value) => value !== "");
-  const tableData = useFetch("http://localhost:5000/customer/review");
+  const tableData = useFetch(`${config.apiUrl}customer/review`);
   const catagorisData = (id) => {
     const fetch = async () => {
       console.log(id);
-      await axios.delete(`http://localhost:5000/customer-review/${id}`);
+      await axios.delete(`${config.apiUrl}customer-review/${id}`);
       toast.success("Successfully Delete.......");
     };
     fetch();
@@ -45,7 +46,7 @@ function ReviewDesh() {
     const sendingData = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/customer/review",
+          `${config.apiUrl}customer/review`,
           form
         );
         setForm({

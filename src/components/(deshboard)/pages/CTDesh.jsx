@@ -5,6 +5,7 @@ import { Flex, Input } from "antd";
 import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import config from "../../../../config";
 
 export default function CTDesh() {
   const [ct, setCt] = useState();
@@ -13,7 +14,7 @@ export default function CTDesh() {
   useEffect(() => {
     // Fetching options data from API
     const fetch = async () => {
-      const res = await axios.get("http://localhost:5000/catagori");
+      const res = await axios.get(`${config.apiUrl}catagori`);
       setTableData(res.data);
     };
     fetch();
@@ -21,7 +22,7 @@ export default function CTDesh() {
   const catagorisData = (id) => {
     const fetch = async () => {
       console.log(id);
-      await axios.delete(`http://localhost:5000/catagori/${id}`);
+      await axios.delete(`${config.apiUrl}catagori/${id}`);
       toast.success("Successfully Delete.......");
     };
     fetch();
@@ -31,7 +32,7 @@ export default function CTDesh() {
 
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/catagori", {
+        const response = await fetch(`${config.apiUrl}catagori`, {
           method: "Post",
           headers: {
             "Content-Type": "application/json",

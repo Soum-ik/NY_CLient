@@ -6,6 +6,7 @@ import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
+import config from "../../../../../config";
 
 function HeroDesh() {
   const [form, setForm] = useState({
@@ -37,7 +38,7 @@ function HeroDesh() {
     const sendingData = async () => {
       try {
         const response = await axios.put(
-          "http://localhost:5000/courses/about_c/65a76da2427db9fb9166ebf2",
+          `${config.apiUrl}courses/about_c/65a76da2427db9fb9166ebf2`,
           form
         );
         console.log(response.data);

@@ -8,19 +8,20 @@ import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
 import { useFetch } from "../../libs/fetchData";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import config from "../../../config";
 
 export default function Footer() {
   // eslint-disable-next-line no-unused-vars
   const [datas, setDatas] = useState([]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get("http://localhost:5000/choosepath");
+      const res = await axios.get(`${config.apiUrl}choosepath`);
       setDatas(res.data);
     };
     fetchData();
   }, []);
-  const source = useFetch("http://localhost:5000/social/links");
+  const source = useFetch(`${config.apiUrl}social/links`);
 
   return (
     <>

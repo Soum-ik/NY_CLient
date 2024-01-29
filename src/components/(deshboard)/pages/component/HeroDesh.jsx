@@ -6,6 +6,7 @@ import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
+import config from "../../../../../config";
 
 function HeroDesh() {
   // console.log(Object);
@@ -38,7 +39,7 @@ function HeroDesh() {
     const sendingData = async () => {
       try {
         const response = await axios.put(
-          "http://localhost:5000/hero/65a35ece17019b47567c980b",
+          `${config.apiUrl}/hero/65a35ece17019b47567c980b`,
           form
         );
         console.log(response.data);
@@ -108,7 +109,7 @@ function HeroDesh() {
                     />
                   </div>
                 )}
-               <button
+                <button
                   onClick={handleSubmit}
                   className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md ${
                     !isFormFilled ? "disabled opacity-80" : ""

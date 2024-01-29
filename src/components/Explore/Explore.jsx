@@ -1,8 +1,9 @@
 import CustomComponent from "../CustomComponent";
 import { useFetch } from "../../libs/fetchData";
+import config from "../../../config";
 
 const Explore = () => {
-  const explore = useFetch("http://localhost:5000/explore");
+  const explore = useFetch(`${config.apiUrl}explore`);
 
   return (
     <div>

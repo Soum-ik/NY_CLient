@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import Layout from "./Layout/layout";
 import axios from "axios";
+import config from "../../config";
 
 export default function Welcome() {
   const [image, setImage] = useState("");
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("http://localhost:5000/about/banner");
+      const res = await axios.get(`${config.apiUrl}about/banner`);
       setImage(res.data[0].img);
       // setImage(res.data[0].Image);
     };

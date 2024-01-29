@@ -1,7 +1,8 @@
 import CustomComponent from "../CustomComponent";
 import { useFetch } from "../../libs/fetchData";
+import config from "../../../config";
 const Feture = () => {
-  const motivation = useFetch("http://localhost:5000/aboutus/motivation");
+  const motivation = useFetch(`${config.apiUrl}aboutus/motivation`);
   return (
     <div>
       <CustomComponent

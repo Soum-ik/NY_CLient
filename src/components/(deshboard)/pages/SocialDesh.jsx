@@ -4,6 +4,7 @@ import { Flex, Input } from "antd";
 import { toast, Toaster } from "react-hot-toast";
 import { useState } from "react";
 import axios from "axios";
+import config from "../../../../config";
 
 function SocialDesh() {
   const [form, setForm] = useState({
@@ -28,7 +29,7 @@ function SocialDesh() {
     const sendingData = async () => {
       try {
         const response = await axios.put(
-          "http://localhost:5000/social/links/65a93b53815402d517d55bed",
+          `${config.apiUrl}social/links/65a93b53815402d517d55bed`,
           form
         );
         console.log(response.data);

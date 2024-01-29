@@ -1,9 +1,10 @@
 import { layout } from "../../style/style";
 import CustomData from "../CustomData";
-import Layout from "../Layout/layout"; 
+import Layout from "../Layout/layout";
 import { useFetch } from "../../libs/fetchData";
+import config from "../../../config";
 const CEO = () => {
-  const CEO = useFetch("http://localhost:5000/aboutus/ceo");
+  const CEO = useFetch(`${config.apiUrl}aboutus/ceo`);
   console.log(CEO);
   return (
     <div className="mt-10 py-10">

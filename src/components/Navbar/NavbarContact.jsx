@@ -4,9 +4,10 @@ import FollowUs from "../Footer/FollowUs";
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 // import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
 import { useFetch } from "../../libs/fetchData";
+import config from "../../../config";
 
 const NavContact = () => {
-  const source = useFetch("http://localhost:5000/social/links");
+  const source = useFetch(`${config.apiUrl}social/links`);
 
   return (
     <div>

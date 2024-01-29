@@ -1,9 +1,10 @@
 import Card from "./Card";
 import Layout from "../Layout/layout";
 import { useFetch } from "../../libs/choosefetchDatas";
+import config from "../../../config";
 
 const Testimonial = () => {
-  const datas = useFetch("http://localhost:5000/customer/review");
+  const datas = useFetch(`${config.apiUrl}customer/review`);
 
   return (
     <Layout>
