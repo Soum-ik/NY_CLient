@@ -1,29 +1,15 @@
 import Deshboard from "../../../Layout/Deshboard";
 import Admin from "../../Admin/admin";
 import { Flex, Input } from "antd";
-const { TextArea } = Input;
 import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import config from "../../../../../config";
+const { TextArea } = Input;
 
 function HeroDesh() {
   console.log("hello world");
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get(`${config.apiUrl}hero`);
-        setForm(response.data[0]);
-        console.log(response.data[0]);
-        // Use setForm to update the state
-      } catch (error) {
-        console.error("Error fetching data:", error.message);
-      }
-    };
-
-    getData();
-  }, []);
 
   const [form, setForm] = useState({
     heading: "",
@@ -53,23 +39,19 @@ function HeroDesh() {
 
     const sendingData = async () => {
       try {
-        const { _id, ...formData } = form;
-        
-        console.log(form); // Exclude _id from the update payload
-        const response = await axios.put(
-          `${config.apiUrl}hero/${_id}`,
-          formData
-        );
+        const response = await axios.put(`${config.apiUrl}hero/65a35ece17019b47567c980b`, form);
         console.log(response.data);
         toast.success("Successfully updated!");
         setForm({
           heading: "",
           button: "",
           dic: "",
-          image: "",
+          image: null,
         });
+        // setLoading(false);
       } catch (error) {
         console.error("Error updating data:", error.message);
+
         toast.error("Error updating data");
       }
     };
