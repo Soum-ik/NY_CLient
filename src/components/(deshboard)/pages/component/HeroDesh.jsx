@@ -52,9 +52,12 @@ function HeroDesh() {
 
     const sendingData = async () => {
       try {
+        const { _id, ...formData } = form;
+        
+        console.log(form); // Exclude _id from the update payload
         const response = await axios.put(
-          `${config.apiUrl}/hero/65a35ece17019b47567c980b`,
-          form
+          `${config.apiUrl}hero/${_id}`,
+          formData
         );
         console.log(response.data);
         toast.success("Successfully updated!");
@@ -64,10 +67,8 @@ function HeroDesh() {
           dic: "",
           image: "",
         });
-        // setLoading(false);
       } catch (error) {
         console.error("Error updating data:", error.message);
-
         toast.error("Error updating data");
       }
     };
