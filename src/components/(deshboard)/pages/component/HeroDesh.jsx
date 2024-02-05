@@ -9,6 +9,7 @@ import axios from "axios";
 import config from "../../../../../config";
 
 function HeroDesh() {
+  console.log("hello world");
   useEffect(() => {
     const getData = async () => {
       try {
