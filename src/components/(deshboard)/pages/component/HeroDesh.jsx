@@ -39,7 +39,10 @@ function HeroDesh() {
 
     const sendingData = async () => {
       try {
-        const response = await axios.put(`${config.apiUrl}hero/65a35ece17019b47567c980b`, form);
+        const response = await axios.put(
+          `${config.apiUrl}hero/65a35ece17019b47567c980b`,
+          form
+        );
         console.log(response.data);
         toast.success("Successfully updated!");
         setForm({
