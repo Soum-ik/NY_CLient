@@ -4,12 +4,26 @@ import { Flex, Input } from "antd";
 const { TextArea } = Input;
 import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../../../../config";
 
 function HeroDesh() {
-  // console.log(Object);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(`${config.apiUrl}hero`);
+        setForm(response.data[0]);
+        console.log(response.data[0]);
+        // Use setForm to update the state
+      } catch (error) {
+        console.error("Error fetching data:", error.message);
+      }
+    };
+
+    getData();
+  }, []);
+
   const [form, setForm] = useState({
     heading: "",
     button: "",
