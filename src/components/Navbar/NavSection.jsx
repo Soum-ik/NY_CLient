@@ -2,27 +2,27 @@ import { Link } from "react-router-dom";
 import Layout from "../Layout/layout";
 import WhatsAppLink from "../WhatsApp";
 
-import { useEffect, useState } from "react";
-import config from "../../../config";
+import { useState } from "react";
+// import config from "../../../config";
 
 const Section = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   // console.log(data[0]._id);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${config.apiUrl}choosepath`);
-        const jsonData = await response.json();
-        setData(jsonData);
-        
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(`${config.apiUrl}choosepath`);
+  //       const jsonData = await response.json();
+  //       setData(jsonData);
 
-    fetchData();
-  }, []); // Empty dependency array means this effect runs once when the component mounts
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []); // Empty dependency array means this effect runs once when the component mounts
 
   return (
     <Layout>
@@ -41,7 +41,7 @@ const Section = () => {
                 className="absolute bg-white rounded-md min-w-[1000px] p-2 shadow-md mt-2"
               >
                 {/* Your dropdown content goes here */}
-                {data.map((name, index) => (
+                {/* {data.map((name, index) => (
                   <Link
                     to={`/coures/${name._id}`} // Assuming you have routes based on the dropdown items
                     className="text-[12px] text-black font-bold font-Poppins"
@@ -50,7 +50,7 @@ const Section = () => {
                     {`>   ${name.name}`}
                     <br />
                   </Link>
-                ))}
+                ))} */}
               </div>
             )}
           </div>
