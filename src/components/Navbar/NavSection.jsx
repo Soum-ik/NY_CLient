@@ -3,6 +3,7 @@ import Layout from "../Layout/layout";
 import WhatsAppLink from "../WhatsApp";
 
 import { useEffect, useState } from "react";
+import config from "../../../config";
 
 const Section = () => {
   const [data, setData] = useState([]);
@@ -11,7 +12,7 @@ const Section = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/choosepath");
+        const response = await fetch(`${config.apiUrl}choosepath`);
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {
