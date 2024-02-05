@@ -8,7 +8,7 @@ import config from "../../../config";
 const Section = () => {
   const [data, setData] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  // console.log(data[0]._id);
+  console.log(data);
   useEffect(() => {
     const fetchData = async () => {
       try {

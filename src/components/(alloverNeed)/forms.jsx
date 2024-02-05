@@ -1,12 +1,17 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const FormFeild = () => {
   const router = useNavigate();
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
-    router("/panel");
+    const { username, password } = values;
+    if (username === "farjax@gmail.com" || password === "farjax120") {
+      router("/panel");
+    } else {
+      alert("Sorry you're not Authenticate");
+      router("/admin");
+    }
   };
   return (
     <div className="  min-h-screen grid place-content-center">
@@ -47,15 +52,11 @@ const FormFeild = () => {
             placeholder="Password"
           />
         </Form.Item>
-        <Form.Item className="">
+        {/* <Form.Item className="">
           <Form.Item name="remember" valuePropName="checked" noStyle>
             <Checkbox>Remember me</Checkbox>
           </Form.Item>
-
-          <a className=" ml-10 login-form-forgot" href="">
-            Forgot password
-          </a>
-        </Form.Item>
+        </Form.Item> */}
 
         <Form.Item>
           <Button
@@ -65,7 +66,6 @@ const FormFeild = () => {
           >
             Log in
           </Button>
-          Or <a href="">register now!</a>
         </Form.Item>
       </Form>
     </div>
