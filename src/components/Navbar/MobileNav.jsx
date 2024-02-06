@@ -3,6 +3,7 @@ import image from "../../../public/images/mainLogo.png";
 import { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import WhatsAppLink from "../WhatsApp";
+import { Link } from "react-router-dom";
 
 const MobileNav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -28,12 +29,22 @@ const MobileNav = () => {
       {isNavOpen ? (
         <div className=" overscroll-none min-h-screen mt-10 bg-amber-200/5 p-10  rounded-lg">
           <ul className=" flex flex-col justify-center items-center space-y-7 text-[22px]">
-            <li className="cursor-pointer">COURSE</li>
-            <li className="cursor-pointer">ABOUT US</li>
-            <li className="cursor-pointer">APPLICATION</li>
-            <li className="cursor-pointer">CONTACT US</li>
+            <a
+              href="#course"
+              onClick={() => setIsNavOpen(false)}
+              className="cursor-pointer"
+            >
+              COURSES
+            </a>
+            <Link
+              to={"/aboutus"}
+              onClick={() => setIsNavOpen(false)}
+              className="cursor-pointer"
+            >
+              ABOUT US
+            </Link>
           </ul>
-          <WhatsAppLink marginTop={'mt-[20px]'}  textSize={'text-[25px]'}/>
+          <WhatsAppLink marginTop={"mt-[20px]"} textSize={"text-[25px]"} />
         </div>
       ) : (
         <></>

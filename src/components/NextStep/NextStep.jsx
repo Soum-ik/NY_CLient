@@ -36,6 +36,7 @@ const NextStep = () => {
   return (
     <div
       className={`${styles.paddingX} ${styles.flexCenter} ${styles.paddingY}  relative`}
+      id="course"
     >
       <div
         className={`${styles.boxWidth} ${styles.paddingX} ${styles.marginY}  `}

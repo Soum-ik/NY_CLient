@@ -33,7 +33,7 @@ const CustomData = ({
         {heading}
       </h2>
       <p
-        className={` text-justify text mt-5 text-black`}
+        className={` text-justify xs:text-[18px] text-[13px] text mt-5 text-black`}
       >
         {tittle}
       </p>
