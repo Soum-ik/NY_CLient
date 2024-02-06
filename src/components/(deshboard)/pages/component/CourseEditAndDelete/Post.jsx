@@ -209,7 +209,7 @@ function PostCourse() {
               />
               <TextArea
                 showCount
-                maxLength={500}
+                maxLength={2000}
                 value={form.shortDetails}
                 onChange={(e) => onChange(e, "shortDetails")}
                 placeholder="Add Course Short Details"
@@ -269,7 +269,7 @@ function PostCourse() {
 
               <TextArea
                 showCount
-                maxLength={500}
+                maxLength={2000}
                 value={form.cdic} // Updated field name
                 onChange={(e) => onChange(e, "cdic")} // Updated field name
                 placeholder="Course description"
@@ -366,7 +366,7 @@ function PostCourse() {
               />
               <TextArea
                 showCount
-                maxLength={500}
+                maxLength={2000}
                 value={form.timelinedic}
                 onChange={(e) => onChange(e, "timelinedic")}
                 placeholder="The Job Placement Assistance Program..........."
