@@ -21,7 +21,7 @@ function Timesection() {
   return (
     <Layout>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="sm:px-20 my-10 sm:py-10 sm:flex items-center justify-center gap-16 drop-shadow-lg shadow-lg rounded-lg ">
+      <div className="sm:px-20 my-10 sm:py-10 sm:flex items-center justify-center gap-16 drop-shadow-lg sm:shadow-lg sm:rounded-lg ">
         <h1 className="font-Headingfont min-w-max font-bold text-[18px] sm:text-[23px]">
           Upcoming Course
         </h1>
