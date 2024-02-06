@@ -55,7 +55,7 @@ const NextStep = () => {
           </Tab.List>
         </Tab.Group>
 
-        <h4 className="    text-[35px] font-Headingfont font-bold  text-center  z-50">
+        <h4 className="    text-[30px] font-Headingfont font-bold  text-center  z-50">
           Choose Your Path
         </h4>
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
