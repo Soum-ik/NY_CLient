@@ -13,7 +13,7 @@
     @apply font-Headingfont font-extrabold  xs:text-[32px] text-[19px] xs:leading-[45.8px];
   }
   .paragrahp {
-    @apply font-normal  xs:text-[16px] text-[14px] leading-[30.8px];
+    @apply xs:text-[18px] text-[13px] leading-[20px] sm:leading-[30.8px];
   }
 }
 

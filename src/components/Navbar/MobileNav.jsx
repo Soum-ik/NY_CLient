@@ -15,11 +15,13 @@ const MobileNav = () => {
     <>
       <div className={`${styles.paddingX} ${styles.flexCenter} my-10`}>
         <div className=" flex items-center justify-between w-full">
+          <Link to={"/"}>
           <img
             src={image}
             className="  max-w-[200px]"
             alt="Farjax Institute of Technology"
           />
+          </Link>
           <p className=" text-black/75" onClick={onClick}>
             {isNavOpen ? <IoMdClose size={40} /> : <IoMdMenu size={40} />}
           </p>
