@@ -1,40 +1,58 @@
 import Deshboard from "../../../components/Layout/Deshboard";
 import Admin from "../Admin/admin";
 import { Flex } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ImageUploader from "../../(alloverNeed)/ImageUpload";
 
 import toast, { Toaster } from "react-hot-toast";
 import config from "../../../../config";
+import axios from "axios";
 
 function BannerDesh() {
-  const [img, setImg] = useState("");
-  const isFormFilled = img !== "";
+  const [Image, setImage] = useState("");
+  const isFormFilled = Image !== "";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios(`${config.apiUrl}about/banner`);
+        console.log(res.data[0].Image);
+        setImage(res.data[0].Image);
+      } catch (error) {
+        console.error("Error:", error);
+        toast.error("Error fetching image");
+      }
+    };
+    fetchData();
+  }, []);
+  // Function to handle image upload
+  const handleImageUpload = (imageUrl) => {
+    console.log(imageUrl);
+    setImage(imageUrl);
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Submitting with Image:", img);
-
-    const fetchData = async () => {
+    console.log(Image);
+    const updateImage = async () => {
       try {
         const response = await fetch(
-          `${config.apiUrl}about/banner/65aac77f3d16a53705b79199`,
+          `${config.apiUrl}about/banner/65c30914e5485a2a8effc763`,
           {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              img: img,
+              Image: Image,
             }),
           }
         );
 
         if (response.ok) {
-          const responseData = await response.json();
-          console.log(responseData);
-          setImg("");
-          toast.success("Image Upload Successfully");
+          setImage(""); // Clearing the image state after successful upload
+          console.log(Image);
+          toast.success("Image Uploaded Successfully");
         } else {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -44,12 +62,8 @@ function BannerDesh() {
       }
     };
 
-    fetchData();
+    updateImage();
   }
-
-  const handleImageUpload = (imageUrl) => {
-    setImg(imageUrl);
-  };
 
   return (
     <Admin>
@@ -60,9 +74,9 @@ function BannerDesh() {
             <Flex vertical gap={32}>
               <ImageUploader onImageUpload={handleImageUpload} />
               <div className=" ">
-                {img && (
+                {Image && (
                   <div>
-                    <img src={img} className="h-[200px]" alt="Uploaded" />
+                    <img src={Image} className="h-[200px]" alt="Uploaded" />
                   </div>
                 )}
                 <button
