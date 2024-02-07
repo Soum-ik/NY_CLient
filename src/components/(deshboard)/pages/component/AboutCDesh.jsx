@@ -8,7 +8,8 @@ import { useState } from "react";
 import axios from "axios";
 import config from "../../../../../config";
 
-function HeroDesh() {
+// this is not working 
+function About() {
   const [form, setForm] = useState({
     heading: "",
     button: "",
@@ -38,7 +39,7 @@ function HeroDesh() {
     const sendingData = async () => {
       try {
         const response = await axios.put(
-          `${config.apiUrl}courses/about_c/65a76da2427db9fb9166ebf2`,
+          `${config.apiUrl}p/65a76da2427db9fb9166ebf2`,
           form
         );
         console.log(response.data);
@@ -128,4 +129,4 @@ function HeroDesh() {
   );
 }
 
-export default HeroDesh;
+export default About;

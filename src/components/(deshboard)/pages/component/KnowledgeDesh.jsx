@@ -4,7 +4,7 @@ import { Flex, Input } from "antd";
 const { TextArea } = Input;
 import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../../../../config";
 
@@ -15,6 +15,14 @@ function HeroDesh() {
     dic: "",
     image: "",
   });
+  useEffect(() => {
+    const data = async () => {
+      const res = await axios(`${config.apiUrl}aboutus/motivation`);
+      console.log(res.data[0]);
+      setForm(res.data[0]);
+    };
+    data();
+  }, []);
   const handleImageUpload = (imageUrl) => {
     setForm({
       ...form,
@@ -36,9 +44,11 @@ function HeroDesh() {
 
     const sendingData = async () => {
       try {
+        const { _id, ...formData } = form;
+
         const response = await axios.put(
-          `${config.apiUrl}motivation/65a3e225e6b4cdcc39e9e094`,
-          form
+          `${config.apiUrl}motivation/${_id}`,
+          formData
         );
         console.log(response.data);
         toast.success("Successfully updated!");
