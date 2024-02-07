@@ -2,7 +2,7 @@ import Deshboard from "../../../components/Layout/Deshboard";
 import Admin from "../Admin/admin";
 import { Flex, Input } from "antd";
 import { toast, Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../../../config";
 
@@ -15,6 +15,15 @@ function SocialDesh() {
     linkedin: "",
     telegram: "",
   });
+  useEffect(() => {
+    const data = async () => {
+      const res = await axios(`${config.apiUrl}social/links`);
+      console.log(res.data[0]);
+      setForm(res.data[0]);
+    };
+    data();
+  }, []);
+
   const isFormFilled = Object.values(form).every((value) => value !== "");
   const onChange = (e, field) => {
     setForm({
@@ -28,9 +37,11 @@ function SocialDesh() {
 
     const sendingData = async () => {
       try {
+        const { _id, ...formData } = form;
+
         const response = await axios.put(
-          `${config.apiUrl}social/links/65a93b53815402d517d55bed`,
-          form
+          `${config.apiUrl}social/links/${_id}`,
+          formData
         );
         console.log(response.data);
         toast.success("Successfully updated!");
