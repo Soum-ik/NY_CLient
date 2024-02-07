@@ -16,16 +16,38 @@ function ReviewDesh() {
     comment: "",
   });
 
-  // const isFormFilled = Object.values(form).every((value) => value !== "");
+  const [selectedItemId, setSelectedItemId] = useState(null);
+  const [showResetButton, setShowResetButton] = useState(false); //okey
   const tableData = useFetch(`${config.apiUrl}customer/review`);
-  const catagorisData = (id) => {
-    const fetch = async () => {
-      console.log(id);
-      await axios.delete(`${config.apiUrl}customer-review/${id}`);
-      toast.success("Successfully Delete.......");
-    };
-    fetch();
+
+  const handleRowSelect = (itemId) => {
+    const selectedItem = tableData.find((item) => item._id === itemId);
+    setForm(selectedItem);
+    setSelectedItemId(itemId);
+    setShowResetButton(true);
   };
+
+  const resetForm = () => {
+    setForm({
+      name: "",
+      image: "",
+      role: "",
+      comment: "",
+    });
+    setSelectedItemId(null);
+    setShowResetButton(false);
+  };
+
+  const catagorisData = async (id) => {
+    try {
+      await axios.delete(`${config.apiUrl}customer-review/${id}`);
+      toast.success("Successfully Deleted.......");
+    } catch (error) {
+      console.error("Error deleting data:", error.message);
+      toast.error("Error deleting data");
+    }
+  };
+
   const handleImageUpload = (imageUrl) => {
     setForm({
       ...form,
@@ -40,32 +62,37 @@ function ReviewDesh() {
     });
   };
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const sendingData = async () => {
-      try {
-        const response = await axios.post(
-          `${config.apiUrl}customer/review`,
-          form
+    try {
+      const { ...formData } = form; // Destructure form object, excluding _id
+      if (selectedItemId) {
+        await axios.put(
+          `${config.apiUrl}customer/review/${selectedItemId}`,
+          formData
         );
-        setForm({
-          name: "",
-          image: "",
-          role: "",
-          comment: "",
-        });
-        console.log(response.data);
-        toast.success("Successfully updated!");
-        // setLoading(false);
-      } catch (error) {
-        console.error("Error updating data:", error.message);
-
-        toast.error("Error updating data");
+        setSelectedItemId(null);
+        setShowResetButton(false);
+      } else {
+        await axios.post(`${config.apiUrl}customer/review`, formData);
       }
-    };
-    sendingData();
-  }
+      setForm({
+        name: "",
+        image: "",
+        role: "",
+        comment: "",
+      });
+      toast.success(
+        selectedItemId ? "Successfully updated!" : "Successfully added!"
+      );
+      console.log(selectedItemId);
+    } catch (error) {
+      console.log(selectedItemId);
+      console.error("Error updating/adding data:", error.message);
+      toast.error("Error updating/adding data");
+    }
+  };
 
   return (
     <Admin>
@@ -79,7 +106,6 @@ function ReviewDesh() {
                 <tr className=" bg-color rounded ">
                   <th className="py-2  px-5 text-left">Name</th>
                   <th className="py-2  px-5 text-left">Text</th>
-
                   <th className="py-2  px-5 text-left ">Actions</th>
                 </tr>
               </thead>
@@ -89,6 +115,7 @@ function ReviewDesh() {
                       <tr
                         key={item._id}
                         className="hover:bg-gray-200 rounded-md "
+                        onClick={() => handleRowSelect(item._id)}
                       >
                         <td className="p-2 text-black text-[14px]  text-left">
                           {item.name}
@@ -96,13 +123,24 @@ function ReviewDesh() {
                         <td className="p-2 text-black text-[14px]  text-left">
                           {item.comment}
                         </td>
-
                         <td className="p-2 flex  ">
                           <button
-                            onClick={() => catagorisData(item._id)}
-                            className="bg-color  text-white px-3 py-1 rounded"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleRowSelect(item._id);
+                            }}
+                            className="bg-color text-white px-3 py-1 rounded mr-2"
                           >
-                            {"Delete"}
+                            Edit
+                          </button>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              catagorisData(item._id);
+                            }}
+                            className="bg-color text-white px-3 py-1 rounded"
+                          >
+                            Delete
                           </button>
                         </td>
                       </tr>
@@ -132,7 +170,6 @@ function ReviewDesh() {
                 value={form.comment}
                 onChange={(e) => onChange(e, "comment")}
               />
-
               <ImageUploader onImageUpload={handleImageUpload} />
               <div className=" ">
                 {form.image && (
@@ -144,12 +181,22 @@ function ReviewDesh() {
                     />
                   </div>
                 )}
-                <button
-                  onClick={handleSubmit}
-                  className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md  `}
-                >
-                  Save Now
-                </button>
+                <Flex gap={8} className="flex-grow">
+                  <button
+                    onClick={resetForm}
+                    className={`flex-grow bg-color max-w-[100px] px-3 py-2 my-3 rounded-md ${
+                      showResetButton ? "" : "hidden"
+                    }`}
+                  >
+                    Reset
+                  </button>
+                  <button
+                    onClick={handleSubmit}
+                    className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md`}
+                  >
+                    {selectedItemId ? "Update" : "Save Now"}
+                  </button>
+                </Flex>
               </div>
             </Flex>
           </div>
