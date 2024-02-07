@@ -46,9 +46,7 @@ export default function Footer() {
 
               <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
                 <div className=" w-full">
-                  <h4 className="mb-5 text-lg font-semibold font-Headingfont text-dark">
-                    Follow Us On
-                  </h4>
+                  <h4 className="mb-9 text-lg text-dark">Follow Us On</h4>
                   <div className=" flex items-center gap-3">
                     <FollowUs
                       icon={<IoLogoFacebook />}
