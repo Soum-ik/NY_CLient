@@ -18,16 +18,6 @@ const CustomData = ({
   const handleClick = () => {
     setClick(true);
   };
-
-  // const [hidden, sethidden] = useState(false);
-
- 
-
-  // const handleContactDataSubmit = () => {
-  //   setClick(false);
-  //   toast.success("Thank You, Your application is successfully addded ");
-  // };
-
   return (
     <div className={layout.sectionInfo}>
       {offer && (
@@ -58,7 +48,7 @@ const CustomData = ({
           <button
             onClick={handleClick}
             className="  border shadow
-             px-[18px]  py-[18px] rounded-lg hover:text-white ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins"
+             px-[18px]  py-[18px] rounded-lg ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins"
           >
             {" "}
             {click ? (
