@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Layout from "../Layout/layout";
- 
 
 const Section = () => {
   return (
@@ -11,8 +10,8 @@ const Section = () => {
       data-aos-easing="ease-in-sine"
     >
       <Layout>
-        <nav className=" font-Headingfont flex justify-between items-center text-white">
-          <a href="">Live Chat</a>
+        <nav className=" flex justify-between items-center text-white">
+          <a href=""></a>
           <ul className=" flex justify-center items-center space-x-7">
             <Link to={"/coures"} className="cursor-pointer">
               COURSE
@@ -22,7 +21,7 @@ const Section = () => {
             </Link>
             <li className="cursor-pointer">APPLICATION</li>
             <li className="cursor-pointer">CONTACT US</li>
-          </ul> 
+          </ul>
         </nav>
       </Layout>
     </div>

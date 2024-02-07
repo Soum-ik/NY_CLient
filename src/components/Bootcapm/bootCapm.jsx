@@ -19,7 +19,7 @@ const BootCamp = () => {
             button={"Apply Now"}
             more={"Request"}
             customStyle={"bg-yellow-500 p-2 rounded-sm font-bold"}
-            customStyleHeading={"bg-white shadow-sm sm:text-[35px] py-1"}
+            customStyleHeading={" sm:text-[35px] py-1"}
           />
           <img
             className=" w-[550px] h-[400px] object-cover rounded-md"
