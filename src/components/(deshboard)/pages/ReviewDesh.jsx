@@ -66,12 +66,11 @@ function ReviewDesh() {
     e.preventDefault();
 
     try {
-      const { ...formData } = form; // Destructure form object, excluding _id
+      const { _id, ...formData } = form;
+      console.log(_id);
+      // Destructure form object, excluding _id
       if (selectedItemId) {
-        await axios.put(
-          `${config.apiUrl}customer/review/${selectedItemId}`,
-          formData
-        );
+        await axios.put(`${config.apiUrl}customer/review/${_id}`, formData);
         setSelectedItemId(null);
         setShowResetButton(false);
       } else {
