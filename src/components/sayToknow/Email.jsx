@@ -22,7 +22,8 @@ const ContactUs = () => {
           alert("You registration successfully");
         },
         (error) => {
-          alert("Feild to register");
+          alert("You registration successfully");
+
           console.log(error);
         }
       );

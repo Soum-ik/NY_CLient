@@ -11,6 +11,7 @@ import About from "../About/About";
 import Learn from "../Learn/learn";
 import TimeLine from "../Timeing/TimeLine";
 import Support from "../support/Support";
+import Contact from "../Contact/Contact";
 
 const CouresPage = () => {
   return (
@@ -24,6 +25,7 @@ const CouresPage = () => {
         <TimeLine />
         <Support />
         <NextStep />
+        <Contact />
         <Work />
         <Testimonial />
         <SayTO />
