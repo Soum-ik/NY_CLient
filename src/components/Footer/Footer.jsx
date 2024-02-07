@@ -25,7 +25,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="relative z-50 bg-slate-600/10 pt-16 pb-10 lg:pt-[70px] lg:pb-10 overflow-hidden">
+      <footer className="relative z-50 bg-slate-600/10 pt-16 pb-10 lg:pt-[70px] overflow-hidden">
         <div className="px-5 lg:px-24 xl:px-32">
           <div className="container mx-auto ">
             <div className="-mx-4 flex flex-wrap">
