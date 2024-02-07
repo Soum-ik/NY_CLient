@@ -3,6 +3,7 @@ import { useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import styles, { layout } from "../style/style";
 import ContactData from "./Contact/ContactData";
+import { toast, Toaster } from "react-hot-toast";
 
 const CustomData = ({
   heading,
@@ -15,9 +16,17 @@ const CustomData = ({
 }) => {
   // change not [proper set]
   const [click, setClick] = useState(false);
+  const [btnColorChnager, setBtnColorChnager] = useState(false);
   const handleClick = () => {
     setClick(true);
   };
+
+  const colorHandler = () => {
+    setBtnColorChnager(true);
+    setClick(false);
+    toast.success(`Thank You, For Your Submitting`);
+  };
+
   return (
     <div className={layout.sectionInfo}>
       {offer && (
@@ -44,15 +53,16 @@ const CustomData = ({
           </button>
         )}
         {more && (
-          // working
           <button
             onClick={handleClick}
-            className="  border shadow
-             px-[18px]  py-[18px] rounded-lg ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins"
+            className={` ${
+              btnColorChnager ? `text-green-600` : ``
+            }  border shadow
+             px-[18px]  py-[18px] rounded-lg ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins`}
           >
             {" "}
             {click ? (
-              <ContactData />
+              <ContactData onSubmit={colorHandler} />
             ) : (
               <>
                 {more} <IoMdArrowRoundForward size={20} />
@@ -61,6 +71,7 @@ const CustomData = ({
           </button>
         )}
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };

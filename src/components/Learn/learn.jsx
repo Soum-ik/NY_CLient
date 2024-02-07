@@ -23,18 +23,27 @@ export default function Learn() {
         <p className="paragrahp  mt-10 tracking-wide">{data.learndic}</p>
         <div className="mt-10 hidden sm:block">
           {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex items-center justify-between px-10 mb-4">
+            <div
+              key={rowIndex}
+              className="flex items-center justify-between px-10  mb-4"
+            >
               {row.map((topic, topicIndex) => (
-                <div key={topicIndex} className="w-1/3 line-clamp-2" style={{ margin: "0 20px" }}>
+                <div
+                  key={topicIndex}
+                  className="w-1/4 min-w-[370px] text-justify "
+                >
                   <li className="">{topic}</li>
                 </div>
               ))}
             </div>
           ))}
         </div>
-        <div className="flex gap-5 sm:gap-10 mt-10">
-          <button className="px-3 py-2 botton"> Download Full Sylabus</button>
-          <button className="px-3 py-2 botton">
+        <div className="flex gap-3 sm:gap-10 mt-10">
+          <button className="sm:px-3 px-2 text-[14px] sm:py-2  py-2 botton">
+            {" "}
+            Download Full Sylabus
+          </button>
+          <button className="sm:px-3 px-2 text-[14px] sm:py-2  py-2 botton">
             {" "}
             Consult with our specialist
           </button>
