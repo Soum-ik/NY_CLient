@@ -3,7 +3,7 @@ import Admin from "../../Admin/admin";
 import { Flex, Input } from "antd";
 const { TextArea } = Input;
 import { toast, Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import config from "../../../../../config";
@@ -14,6 +14,14 @@ function HeroDesh() {
     dic: "",
     image: "",
   });
+  useEffect(() => {
+    const data = async () => {
+      const res = await axios(`${config.apiUrl}explore`);
+      console.log(res.data[0]);
+      setForm(res.data[0]);
+    };
+    data();
+  }, []);
   const isFormFilled = Object.values(form).every((value) => value !== "");
 
   const handleImageUpload = (imageUrl) => {
@@ -35,9 +43,11 @@ function HeroDesh() {
 
     const sendingData = async () => {
       try {
+        const { _id, ...formData } = form;
+
         const response = await axios.put(
-          `${config.apiUrl}course-offer/65a35edf17019b47567c980d`,
-          form
+          `${config.apiUrl}course-offer/${_id}`,
+          formData
         );
         console.log(response.data);
         toast.success("Successfully updated!");

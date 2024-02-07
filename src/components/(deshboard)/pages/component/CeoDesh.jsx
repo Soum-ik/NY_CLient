@@ -4,7 +4,7 @@ import { Flex, Input } from "antd";
 const { TextArea } = Input;
 import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../../../../config";
 
@@ -15,6 +15,14 @@ function CeoDesh() {
     dic: "",
     image: "",
   });
+  useEffect(() => {
+    const data = async () => {
+      const res = await axios(`${config.apiUrl}aboutus/ceo`);
+      console.log(res.data[0]);
+      setForm(res.data[0]);
+    };
+    data();
+  }, []);
   const isFormFilled = Object.values(form).every((value) => value !== "");
 
   const onChange = (e, field) => {
@@ -36,9 +44,11 @@ function CeoDesh() {
 
     const sendingData = async () => {
       try {
+        const { _id, ...formData } = form;
+
         const response = await axios.put(
-          `${config.apiUrl}CeoDesh/65a3e5afe6b4cdcc39e9e098`,
-          form
+          `${config.apiUrl}CeoDesh/${_id}`,
+          formData
         );
         console.log(response.data);
         toast.success("Successfully updated!");

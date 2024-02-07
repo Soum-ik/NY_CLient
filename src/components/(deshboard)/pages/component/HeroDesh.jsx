@@ -3,14 +3,12 @@ import Admin from "../../Admin/admin";
 import { Flex, Input } from "antd";
 import ImageUploader from "../../../(alloverNeed)/ImageUpload";
 import { toast, Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "../../../../../config";
 const { TextArea } = Input;
 
 function HeroDesh() {
-  console.log("hello world");
-
   const [form, setForm] = useState({
     heading: "",
     button: "",
@@ -18,6 +16,14 @@ function HeroDesh() {
     image: "",
   });
 
+  useEffect(() => {
+    const data = async () => {
+      const res = await axios(`${config.apiUrl}hero`);
+      console.log(res.data[0]);
+      setForm(res.data[0]);
+    };
+    data();
+  }, []);
   const isFormFilled = Object.values(form).every((value) => value !== "");
 
   const handleImageUpload = (imageUrl) => {
@@ -39,9 +45,10 @@ function HeroDesh() {
 
     const sendingData = async () => {
       try {
+        const { _id, ...formData } = form;
         const response = await axios.put(
-          `${config.apiUrl}hero/65a35ece17019b47567c980b`,
-          form
+          `${config.apiUrl}hero/${_id}`,
+          formData
         );
         console.log(response.data);
         toast.success("Successfully updated!");

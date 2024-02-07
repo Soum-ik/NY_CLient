@@ -7,7 +7,7 @@ const Card = ({ image, name, btn, shortD, id }) => {
       className=" rounded-2xl  px-8  z-30
      bg-white/70 py-10 duration-500 flex items-center justify-center flex-col space-y-4"
     >
-      <img src={image} alt="" />
+      <img className="w-[200px] h-[200px]" src={image} alt="" />
       <h3 className=" text-center text-[22px] sm:text-[26px] py-3 font-Headingfont ">
         {name}
       </h3>
