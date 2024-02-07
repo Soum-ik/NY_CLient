@@ -11,6 +11,7 @@ const Feture = () => {
         Data={motivation.heading}
         img={motivation.image}
         button={motivation.button}
+        what={`what`}
       />
     </div>
   );

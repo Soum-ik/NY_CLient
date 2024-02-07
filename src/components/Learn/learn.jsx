@@ -15,7 +15,15 @@ export default function Learn() {
     const rowItems = topics.slice(i, i + itemsPerRow);
     rows.push(rowItems);
   }
+  // const [btnClick, setBtnClick] = useState(false);
+  // const colorHandler = () => {
+  //   btnClick(true);
 
+  //   alert("safasfdsaf");
+  // };
+  // const visiabaleForm = () => {
+  //   setBtnClick(ture)
+  // }
   return (
     <Layout>
       <div className="sm:px-7">
@@ -43,6 +51,7 @@ export default function Learn() {
             {" "}
             Download Full Sylabus
           </button>
+
           <button className="sm:px-3 px-2 sm:text-[16px] text-[14px] sm:py-3  py-2 botton">
             {" "}
             Consult with our specialist
