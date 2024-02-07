@@ -46,7 +46,7 @@ export default function Footer() {
 
               <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
                 <div className=" w-full">
-                  <h4 className="mb-10 text-lg font-semibold font-Headingfont text-dark">
+                  <h4 className="mb-5 text-lg font-semibold font-Headingfont text-dark">
                     Follow Us On
                   </h4>
                   <div className=" flex items-center gap-3">
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <span className="block text-sm text-gray-500 text-center dark:text-gray-400">
+        <span className="block mt-10 text-sm text-gray-500 text-center dark:text-gray-400">
           © 2024{" "}
           <Link to={"/"} className="hover:text-black">
             Soumik
