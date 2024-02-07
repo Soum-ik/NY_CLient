@@ -9,9 +9,7 @@ export default function FooterList({ items }) {
     <>
       <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
         <div className="mb-5 w-full">
-          <h4 className="mb-2 text-[15px] font-semibold text-dark font-Headingfont">
-            {name}
-          </h4>
+          <h4 className="mb-2 text-[20px] font-normal text-dark ">{name}</h4>
           <ul>
             {menu &&
               menu.map((menu, id) => {
