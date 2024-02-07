@@ -25,7 +25,7 @@ const Section = () => {
 
   return (
     <Layout>
-      <nav className="font-Headingfont flex justify-between items-center text-white">
+      <nav className=" flex justify-between items-center text-white">
         <ul className="flex justify-center items-center space-x-7">
           <div className="relative inline-block group">
             <button
