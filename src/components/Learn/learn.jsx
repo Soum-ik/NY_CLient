@@ -39,11 +39,11 @@ export default function Learn() {
           ))}
         </div>
         <div className="flex gap-3 sm:gap-10 mt-10">
-          <button className="sm:px-3 px-2 text-[14px] sm:py-2  py-2 botton">
+          <button className="sm:px-3 px-2 sm:text-[16px] text-[14px] sm:py-3  py-2 botton">
             {" "}
             Download Full Sylabus
           </button>
-          <button className="sm:px-3 px-2 text-[14px] sm:py-2  py-2 botton">
+          <button className="sm:px-3 px-2 sm:text-[16px] text-[14px] sm:py-3  py-2 botton">
             {" "}
             Consult with our specialist
           </button>
