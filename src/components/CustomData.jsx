@@ -49,12 +49,20 @@ const CustomData = ({
         {tittle}
       </p>
       <div className=" flex  sm:gap-10 items-center justify-center">
-        {button && (
+        {what ? (
           <button className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont">
-            {/* {button} */}
             <WhatsAppLink />
           </button>
+        ) : (
+          <span>
+            {button && (
+              <button className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont">
+                {button}
+              </button>
+            )}
+          </span>
         )}
+
         {more && (
           <button
             onClick={handleClick}
