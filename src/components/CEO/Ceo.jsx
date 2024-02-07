@@ -5,7 +5,7 @@ import { useFetch } from "../../libs/fetchData";
 import config from "../../../config";
 const CEO = () => {
   const CEO = useFetch(`${config.apiUrl}aboutus/ceo`);
-  console.log(CEO);
+
   return (
     <div className="mt-10 py-10">
       <Layout>
@@ -32,6 +32,7 @@ const CEO = () => {
             heading={CEO.heading}
             tittle={CEO.dic}
             more={CEO.button}
+            customStyle={`-ml-10`}
           />
         </section>
       </Layout>

@@ -18,10 +18,10 @@ const BootCamp = () => {
             tittle={data.shortDetails}
             button={"Apply Now"}
             more={"Request"}
-            customStyle={"bg-yellow-500 p-2 rounded-sm font-bold"}
+            forYellow={"bg-yellow-500 p-2 rounded-sm font-bold"}
             customStyleHeading={" sm:text-[35px] py-1"}
           />
-          {!data ? (
+          {!data.banner ? (
             <Skeleton className="w-[550px] flex items-center justify-center h-[400px]" />
           ) : (
             <img

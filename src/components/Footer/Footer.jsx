@@ -44,18 +44,12 @@ export default function Footer() {
                 <FooterList key={id} items={item} />
               ))}
 
-              {/* {datas.map((data) => (
-                <ul className= " space-x-2" key={data._id}>
-                  <li className=" space-x-2">{data.name}</li>
-                </ul>
-              ))} */}
-
               <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
-                <div className="mb-10 w-full">
-                  <h4 className="mb-9 text-lg font-semibold font-Headingfont text-dark">
+                <div className=" w-full">
+                  <h4 className="mb-10 text-lg font-semibold font-Headingfont text-dark">
                     Follow Us On
                   </h4>
-                  <div className="mb-6 flex items-center gap-3">
+                  <div className=" flex items-center gap-3">
                     <FollowUs
                       icon={<IoLogoFacebook />}
                       link={source.facebook}
@@ -76,7 +70,7 @@ export default function Footer() {
         </div>
 
         <span className="block text-sm text-gray-500 text-center dark:text-gray-400">
-          © 2023{" "}
+          © 2024{" "}
           <Link to={"/"} className="hover:text-black">
             Soumik
           </Link>

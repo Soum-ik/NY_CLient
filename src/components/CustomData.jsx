@@ -15,6 +15,7 @@ const CustomData = ({
   customStyle,
   customStyleHeading,
   what,
+  forYellow
 }) => {
   // change not [proper set]
   const [click, setClick] = useState(false);
@@ -33,7 +34,7 @@ const CustomData = ({
     <div className={layout.sectionInfo}>
       {offer && (
         <h6
-          className={`mb-4 font-Headingfont font-bold text-[15px] text-black/70  p-1 ${customStyle}`}
+          className={`mb-4 font-Headingfont font-bold text-[15px] text-black/70  p-1 ${forYellow}`}
         >
           {offer}
         </h6>
@@ -56,7 +57,7 @@ const CustomData = ({
         ) : (
           <span>
             {button && (
-              <button className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont">
+              <button className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont hidden">
                 {button}
               </button>
             )}
@@ -69,7 +70,7 @@ const CustomData = ({
             className={` ${
               btnColorChnager ? `text-green-600` : ``
             }  border shadow
-             px-[18px]  py-[18px] rounded-lg ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins`}
+             px-[18px]  py-[18px] rounded-lg ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins ${customStyle}`}
           >
             {" "}
             {click ? (

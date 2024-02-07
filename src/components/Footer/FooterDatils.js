@@ -10,10 +10,6 @@ const footerItems = [
         name: "Service",
         link: "#",
       },
-      {
-        name: "Location",
-        link: "#",
-      },
     ],
   },
   {
