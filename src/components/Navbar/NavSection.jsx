@@ -46,7 +46,7 @@ const Section = () => {
                     className="text-[12px] text-black font-bold font-Poppins"
                     key={index}
                   >
-                    {`>   ${item.name}`}
+                    {`  ${item.name}`}
                     <br />
                   </Link>
                 ))}
