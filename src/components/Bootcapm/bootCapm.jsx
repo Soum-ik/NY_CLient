@@ -22,7 +22,10 @@ const BootCamp = () => {
             customStyleHeading={" sm:text-[35px] py-1"}
           />
           {!data.banner ? (
-            <Skeleton className="w-[550px] flex items-center justify-center h-[400px]" />
+            <Skeleton
+              active
+              className="w-[550px] flex items-center justify-center h-[400px]"
+            />
           ) : (
             <img
               className="w-[550px]  h-[400px]  rounded-2xl "

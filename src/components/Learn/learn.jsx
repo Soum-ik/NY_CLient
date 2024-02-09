@@ -1,6 +1,7 @@
 import Layout from "../Layout/layout";
 import { useFetch } from "../../libs/paramsData";
 import { useParams } from "react-router-dom";
+import { Skeleton } from "antd";
 
 export default function Learn() {
   const { id } = useParams();
@@ -28,7 +29,9 @@ export default function Learn() {
     <Layout>
       <div className="sm:px-7">
         <h1 className="headingTextSize">{`What You'll Learn`}</h1>
-        <p className="paragrahp  mt-10 tracking-wide">{data.learndic}</p>
+        <p className="paragrahp  mt-10 tracking-wide">
+          {!data.learndic ? <Skeleton /> : data.learndic}
+        </p>
         <div className="mt-10 hidden sm:block">
           {rows.map((row, rowIndex) => (
             <div
