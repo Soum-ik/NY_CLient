@@ -4,7 +4,6 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import styles, { layout } from "../style/style";
 import ContactData from "./Contact/ContactData";
 import { toast, Toaster } from "react-hot-toast";
-import WhatsAppLink from "./WhatsApp";
 
 const CustomData = ({
   heading,
@@ -15,9 +14,8 @@ const CustomData = ({
   customStyle,
   customStyleHeading,
   what,
-  forYellow
+  forYellow,
 }) => {
-  // change not [proper set]
   const [click, setClick] = useState(false);
   const [btnColorChnager, setBtnColorChnager] = useState(false);
   const handleClick = () => {
@@ -51,15 +49,23 @@ const CustomData = ({
       </p>
       <div className=" flex  sm:gap-10 items-center justify-center">
         {what ? (
-          <button className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont">
-            <WhatsAppLink />
-          </button>
+          // eslint-disable-next-line react/jsx-no-target-blank
+          <a
+            href={what}
+            target="_blank"
+            className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont"
+          >
+            {button}
+          </a>
         ) : (
           <span>
             {button && (
-              <button className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont hidden">
+              <a
+                href="#form"
+                className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont hidden"
+              >
                 {button}
-              </button>
+              </a>
             )}
           </span>
         )}

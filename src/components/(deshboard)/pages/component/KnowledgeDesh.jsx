@@ -14,6 +14,7 @@ function HeroDesh() {
     button: "",
     dic: "",
     image: "",
+    booking: "",
   });
   useEffect(() => {
     const data = async () => {
@@ -57,6 +58,7 @@ function HeroDesh() {
           button: "",
           dic: "",
           image: null,
+          booking: "",
         });
         // setLoading(false);
       } catch (error) {
@@ -91,6 +93,14 @@ function HeroDesh() {
                 placeholder="Button text"
                 value={form.button}
                 onChange={(e) => onChange(e, "button")}
+                required={true}
+              />
+              <Input
+                showCount
+                maxLength={500}
+                placeholder="Set Schedule link"
+                value={form.booking}
+                onChange={(e) => onChange(e, "booking")}
                 required={true}
               />
 

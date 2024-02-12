@@ -24,7 +24,7 @@ const CustomComponent = ({ Data, img, dic, offer, imageSize, button, what }) => 
         <div className={`${layout.sectionReverse} `}>
            
           <img
-            className={` object-cover max-w-xl rounded-md shadow-xl shadow-neutral-700/25 ${imageSize}`}
+            className={` object-cover max-w-xl rounded-md   ${imageSize}`}
             src={img}
             alt=""
           />

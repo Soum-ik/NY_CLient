@@ -8,6 +8,7 @@ import Testimonial from "../review/testimonal";
 import SayTO from "../sayToknow/Register";
 import PageLayout from "../Layout/PageLayout";
 import NextStep from "../NextStep/NextStep";
+import Contact from "../Contact/Contact";
 
 const HomePage = () => {
   return (
@@ -16,7 +17,7 @@ const HomePage = () => {
         <Hero />
         <Explore />
         <NextStep />
-        {/* <Contact /> */}
+        <Contact />
         <Work />
         <Testimonial />
         <SayTO />

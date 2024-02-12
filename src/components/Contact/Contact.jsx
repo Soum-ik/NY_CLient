@@ -31,7 +31,7 @@ const Contact = () => {
   return (
     <div id="form" className=" sm:py-10 py-5  bg-slate-100">
       <h1 className=" text-[25px] font-Poppins text-center font-semibold my-2">
-        Request For Services
+      Request for course information
       </h1>
       <div className="text-center mb-10 sm:px-7 text-[15px]">
         <p>

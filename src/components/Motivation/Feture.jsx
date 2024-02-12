@@ -3,6 +3,7 @@ import { useFetch } from "../../libs/fetchData";
 import config from "../../../config";
 const Feture = () => {
   const motivation = useFetch(`${config.apiUrl}aboutus/motivation`);
+  console.log(motivation);
   return (
     <div>
       <CustomComponent
@@ -11,7 +12,7 @@ const Feture = () => {
         Data={motivation.heading}
         img={motivation.image}
         button={motivation.button}
-        what={`what`}
+        what={motivation.booking}
       />
     </div>
   );
