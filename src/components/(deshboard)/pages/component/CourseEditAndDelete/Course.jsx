@@ -6,13 +6,14 @@ import { Flex, Input } from "antd";
 const { TextArea } = Input;
 import { Toaster, toast } from "react-hot-toast";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import config from "../../../../../../config";
+import ImageUploader from "../../../../(alloverNeed)/ImageUpload";
 function EditCourse() {
   const params = useParams();
   const id = params.id;
-
+  const navigator = useNavigate()
   const [form, setForm] = useState({
     name: "",
     buttonText: "",
@@ -49,7 +50,27 @@ function EditCourse() {
       ...form,
       [field]: e.target.value,
     });
-    console.log(form);
+  };
+  const handleIconUpload = (imageUrl) => {
+    setForm({
+      ...form,
+      icon: imageUrl,
+    });
+  };
+
+  // Function to handle banner image upload
+  const handleBannerUpload = (imageUrl) => {
+    setForm({
+      ...form,
+      banner: imageUrl,
+    });
+  };
+
+  const handleAboutImageUpload = (imageUrl) => {
+    setForm({
+      ...form,
+      aboutImage: imageUrl,
+    });
   };
 
   function handleSubmit(e) {
@@ -59,14 +80,13 @@ function EditCourse() {
       try {
         // Exclude '_id' from the form object
         const { _id, ...formData } = form;
-        console.log(_id);
         const response = await axios.put(
           `${config.apiUrl}choose/course/update/${_id}`,
           formData
         );
 
-        console.log(response.data);
-        toast.success("Successfully updated!");
+        toast.success("Successfully updated!", response);
+          navigator("/courses")
       } catch (error) {
         console.error("Error updating data:", error.message);
         toast.error("Error updating data");
@@ -99,22 +119,33 @@ function EditCourse() {
                 onChange={(e) => onChange(e, "buttonText")}
                 required={true}
               />
-              <Input
-                showCount
-                maxLength={50}
-                // placeholder={data.icon && "icon image"}
-                value={form.icon}
-                onChange={(e) => onChange(e, "icon")}
-                required={true}
+              {/* Image uploader for Icon */}
+              <ImageUploader
+                text={"Upload Icon"}
+                onImageUpload={(imageUrl) => handleIconUpload(imageUrl)}
               />
-              <Input
-                showCount
-                maxLength={50}
-                // placeholder={data.icon && "banner image"}
-                value={form.banner}
-                onChange={(e) => onChange(e, "banner")}
-                required={true}
+              <div>
+                <img
+                  src={form.icon}
+                  className="h-[100px] w-[200px]"
+                  alt="Uploaded icon"
+                />
+              </div>
+
+              {/* Image uploader for banner */}
+              <ImageUploader
+                text={"Course Banner"}
+                onImageUpload={(imageUrl) => handleBannerUpload(imageUrl)}
               />
+              {form.banner && (
+                <div>
+                  <img
+                    src={form.banner}
+                    className="h-[200px]"
+                    alt="Uploaded Banner"
+                  />
+                </div>
+              )}
 
               <TextArea
                 showCount
@@ -160,14 +191,19 @@ function EditCourse() {
                   resize: "none",
                 }}
               />
-              <Input
-                showCount
-                maxLength={50}
-                // placeholder={data.aboutImage}
-                value={form.aboutImage}
-                onChange={(e) => onChange(e, "aboutImage")}
-                required={true}
+              <ImageUploader
+                text={"About Course Image"}
+                onImageUpload={(imageUrl) => handleAboutImageUpload(imageUrl)}
               />
+              {form.aboutImage && (
+                <div>
+                  <img
+                    src={form.aboutImage}
+                    className="h-[200px]"
+                    alt="Uploaded about course image"
+                  />
+                </div>
+              )}
               <hr />
               <h6 className=" text-sm">{"What You'll Learn"}</h6>
               <hr />
