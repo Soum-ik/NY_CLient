@@ -13,9 +13,9 @@ const Section = () => {
         <nav className=" flex justify-between items-center text-white">
           <a href=""></a>
           <ul className=" flex justify-center items-center space-x-7">
-            <Link to={"/coures"} className="cursor-pointer">
+            <a href={"#course"} className="cursor-pointer">
               COURSE
-            </Link>
+            </a>
             <Link to={"/aboutus"} className="cursor-pointer">
               ABOUT US
             </Link>
