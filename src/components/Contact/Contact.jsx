@@ -29,9 +29,9 @@ const Contact = () => {
     });
   };
   return (
-    <div id="form" className=" sm:py-10 py-5  bg-slate-100">
-      <h1 className=" text-[25px] font-Poppins text-center font-semibold my-2">
-      Request for course information
+    <div id="form" className=" sm:py-10 py-5 px-5 md:px-0  bg-slate-100">
+      <h1 className="text-[23px] md:text-[25px] text-center headingTextSize font-semibold my-2">
+        Request for course information
       </h1>
       <div className="text-center mb-10 sm:px-7 text-[15px]">
         <p>
@@ -77,7 +77,7 @@ const Contact = () => {
               <textarea
                 value={form.message}
                 onChange={(e) => handleState(e, "message")}
-                className="w-full rounded-md shadow-md p-3 border-1 border-gray-200 text-black focus:border-transparent focus:outline-transparent focus:ring-0 min-h-[200px] md:min-h-full lg:min-h-full"
+                className="w-full rounded-md shadow-md p-3 border-1 border-gray-200 text-black focus:border-transparent focus:outline-transparent focus:ring-0 min-h-[20vh] md:min-h-[30vh] "
                 placeholder="Your Message"
                 name="message"
                 required
