@@ -15,6 +15,7 @@ const CustomData = ({
   customStyleHeading,
   what,
   forYellow,
+  sub,
 }) => {
   const [click, setClick] = useState(false);
   const [btnColorChnager, setBtnColorChnager] = useState(false);
@@ -42,6 +43,11 @@ const CustomData = ({
       >
         {heading}
       </h2>
+      {sub && (
+        <h4 className=" text-[13px] md:text-[15px] mt-2 text-black/70">
+          {sub}
+        </h4>
+      )}
       <p
         className={` text-justify xs:text-[18px] text-[13px] text mt-5 text-black`}
       >

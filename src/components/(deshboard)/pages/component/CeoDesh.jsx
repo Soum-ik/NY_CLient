@@ -14,6 +14,7 @@ function CeoDesh() {
     button: "",
     dic: "",
     image: "",
+    sub: "",
   });
   useEffect(() => {
     const data = async () => {
@@ -57,6 +58,7 @@ function CeoDesh() {
           button: "",
           dic: "",
           image: " ",
+          sub: "",
         });
         // setLoading(false);
       } catch (error) {
@@ -89,6 +91,14 @@ function CeoDesh() {
                 placeholder="Button text"
                 value={form.button}
                 onChange={(e) => onChange(e, "button")}
+                required={true}
+              />
+              <Input
+                showCount
+                maxLength={200}
+                placeholder="add sub tittle"
+                value={form.sub}
+                onChange={(e) => onChange(e, "sub")}
                 required={true}
               />
 

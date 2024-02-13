@@ -32,7 +32,8 @@ const CEO = () => {
             heading={CEO.heading}
             tittle={CEO.dic}
             more={CEO.button}
-            customStyle={`-ml-10`}
+            sub={CEO.sub}
+            customStyle={`md:-ml-10`}
           />
         </section>
       </Layout>
