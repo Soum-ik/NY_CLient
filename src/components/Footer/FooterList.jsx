@@ -18,7 +18,7 @@ export default function FooterList({ items }) {
                   <li key={id}>
                     <Link
                       to={link}
-                      className=" inline-block text-base leading-loose text-black/70 hover:text-black"
+                      className=" block text-base leading-loose text-black/70 hover:text-black"
                     >
                       {name}
                     </Link>
