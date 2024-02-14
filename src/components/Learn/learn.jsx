@@ -41,7 +41,7 @@ export default function Learn() {
               {row.map((topic, topicIndex) => (
                 <div
                   key={topicIndex}
-                  className="w-1/4 min-w-[370px] text-justify "
+                  className="w-1/4 line-clamp-5  ease-in-out delay-200 min-w-[370px] text-justify "
                 >
                   <li className="">{topic}</li>
                 </div>

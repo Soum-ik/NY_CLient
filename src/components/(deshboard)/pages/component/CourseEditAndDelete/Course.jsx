@@ -29,6 +29,7 @@ function EditCourse() {
     timeline: "",
     timelinedic: "",
     selectedOption: "",
+    topics: [],
     upcomingCourses: [
       {
         _id: "1",
@@ -74,6 +75,28 @@ function EditCourse() {
       [field]: e.target.value,
     });
   };
+
+  const [newTopic, setNewTopic] = useState("");
+  const addTopic = () => {
+    if (newTopic.trim() !== "") {
+      setForm({
+        ...form,
+        topics: [...form.topics, newTopic],
+      });
+      setNewTopic("");
+    }
+  };
+
+  const removeTopic = (index) => {
+    const updatedTopics = [...form.topics];
+    updatedTopics.splice(index, 1);
+    setForm({
+      ...form,
+      topics: updatedTopics,
+    });
+  };
+
+
   const handleIconUpload = (imageUrl) => {
     setForm({
       ...form,
@@ -272,6 +295,29 @@ function EditCourse() {
                   resize: "none",
                 }}
               />
+              <div>
+                <Input
+                  value={newTopic}
+                  onChange={(e) => setNewTopic(e.target.value)}
+                  placeholder="Add bullet point text"
+                />
+                <button onClick={addTopic} className=" border p-1 rounded mt-3">
+                  Add text
+                </button>
+                <ul>
+                  {form.topics.map((topic, index) => (
+                    <div key={index} className=" flex items-center ">
+                      <li className=" line-clamp-1 text-black/60 ">{topic} </li>
+                      <button
+                        className=" ml-5 border p-1 rounded"
+                        onClick={() => removeTopic(index)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  ))}
+                </ul>
+              </div>
               <hr />
               <h6 className=" text-sm">{"Timeline"}</h6>
               <hr />
