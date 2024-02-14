@@ -142,14 +142,14 @@ function EditCourse() {
             <Flex vertical gap={32}>
               <Input
                 showCount
-                maxLength={100}
+                maxLength={200}
                 // placeholder={data.name}
                 value={form.name}
                 onChange={(e) => onChange(e, "name")}
               />
               <Input
                 showCount
-                maxLength={20}
+                maxLength={50}
                 // placeholder={data.buttonText}
                 value={form.buttonText}
                 onChange={(e) => onChange(e, "buttonText")}
@@ -185,7 +185,7 @@ function EditCourse() {
 
               <TextArea
                 showCount
-                maxLength={500}
+                maxLength={2000}
                 value={form.shortDetails}
                 onChange={(e) => onChange(e, "shortDetails")}
                 // placeholder={data.shortDetails}
@@ -200,7 +200,7 @@ function EditCourse() {
               <hr />
               <Input
                 showCount
-                maxLength={100}
+                maxLength={200}
                 // placeholder={data.heading}
                 value={form.heading}
                 onChange={(e) => onChange(e, "heading")}
@@ -208,7 +208,7 @@ function EditCourse() {
 
               <Input
                 showCount
-                maxLength={20}
+                maxLength={50}
                 // placeholder={data.cbutton}
                 value={form.cbutton} // Updated field name
                 onChange={(e) => onChange(e, "cbutton")} // Updated field name
@@ -217,7 +217,7 @@ function EditCourse() {
 
               <TextArea
                 showCount
-                maxLength={500}
+                maxLength={2000}
                 value={form.cdic} // Updated field name
                 onChange={(e) => onChange(e, "cdic")} // Updated field name
                 // placeholder={data.cdic}
@@ -262,7 +262,7 @@ function EditCourse() {
               <hr />
               <TextArea
                 showCount
-                maxLength={1000}
+                maxLength={2000}
                 value={form.learndic}
                 onChange={(e) => onChange(e, "learndic")}
                 // placeholder={data.learndic}
@@ -277,7 +277,7 @@ function EditCourse() {
               <hr />
               <Input
                 showCount
-                maxLength={200}
+                maxLength={500}
                 // placeholder={data.timeline}
                 value={form.timeline}
                 onChange={(e) => onChange(e, "timeline")}
@@ -285,7 +285,7 @@ function EditCourse() {
               />
               <TextArea
                 showCount
-                maxLength={500}
+                maxLength={2000}
                 value={form.timelinedic}
                 onChange={(e) => onChange(e, "timelinedic")}
                 // placeholder={data.timelinedic}

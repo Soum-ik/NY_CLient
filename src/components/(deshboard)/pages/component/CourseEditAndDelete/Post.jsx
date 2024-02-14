@@ -1,6 +1,6 @@
 import Deshboard from "../../../../Layout/Deshboard";
 import Admin from "../../../Admin/admin";
-import { Flex, Input, DatePicker } from "antd";
+import { Flex, Input} from "antd";
 const { TextArea } = Input;
 import { Toaster, toast } from "react-hot-toast";
 import { useState, useEffect } from "react";
@@ -64,13 +64,18 @@ function PostCourse() {
   });
   console.log(form);
 
-  const handleDateChange = (date, index, field) => {
-    const updatedUpcomingCourses = [...form.upcomingCourses];
-    updatedUpcomingCourses[index][field] = date;
-    setForm({
-      ...form,
-      upcomingCourses: updatedUpcomingCourses,
-    });
+  // Function to handle changes in start date
+  const handleStartDateChange = (index, event) => {
+    const updatedForm = { ...form };
+    updatedForm.upcomingCourses[index].start_date = event.target.value;
+    setForm(updatedForm);
+  };
+
+  // Function to handle changes in end date
+  const handleEndDateChange = (index, event) => {
+    const updatedForm = { ...form };
+    updatedForm.upcomingCourses[index].end_date = event.target.value;
+    setForm(updatedForm);
   };
   const [newTopic, setNewTopic] = useState("");
   const addTopic = () => {
@@ -194,14 +199,14 @@ function PostCourse() {
             <Flex vertical gap={32}>
               <Input
                 showCount
-                maxLength={100}
+                maxLength={200}
                 placeholder="Add Course Name"
                 value={form.name}
                 onChange={(e) => onChange(e, "name")}
               />
               <Input
                 showCount
-                maxLength={20}
+                maxLength={50}
                 placeholder="Add Button Name"
                 value={form.buttonText}
                 onChange={(e) => onChange(e, "buttonText")}
@@ -252,7 +257,7 @@ function PostCourse() {
               <hr />
               <Input
                 showCount
-                maxLength={100}
+                maxLength={200}
                 placeholder="Course Heading"
                 value={form.heading}
                 onChange={(e) => onChange(e, "heading")}
@@ -295,22 +300,17 @@ function PostCourse() {
               <hr />
               <h6 className="text-sm">Upcoming Courses</h6>
               <hr />
-              {form.upcomingCourses.map((course, index) => (
-                <div key={course._id} className=" flex  gap-5">
-                  <DatePicker
-                    placeholder="Start Date"
+              {form.upcomingCourses?.map((course, index) => (
+                <div key={course._id} className="flex gap-5">
+                  <input
+                    type="date"
                     value={course.start_date}
-                    onChange={(date) =>
-                      handleDateChange(date, index, "start_date")
-                    }
+                    onChange={(event) => handleStartDateChange(index, event)}
                   />
-
-                  <DatePicker
-                    placeholder="End Date"
+                  <input
+                    type="date"
                     value={course.end_date}
-                    onChange={(date) =>
-                      handleDateChange(date, index, "end_date")
-                    }
+                    onChange={(event) => handleEndDateChange(index, event)}
                   />
                 </div>
               ))}
@@ -320,7 +320,7 @@ function PostCourse() {
               <hr />
               <TextArea
                 showCount
-                maxLength={1000}
+                maxLength={2000}
                 value={form.learndic}
                 onChange={(e) => onChange(e, "learndic")}
                 placeholder="What You'll Learn...."
@@ -358,7 +358,7 @@ function PostCourse() {
               <hr />
               <Input
                 showCount
-                maxLength={200}
+                maxLength={2000}
                 placeholder="Our QA Training Progrma last 15 weeks"
                 value={form.timeline}
                 onChange={(e) => onChange(e, "timeline")}
