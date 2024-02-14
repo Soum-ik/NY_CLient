@@ -1,6 +1,6 @@
 import Deshboard from "../../../../Layout/Deshboard";
 import Admin from "../../../Admin/admin";
-import { Flex, Input} from "antd";
+import { Flex, Input } from "antd";
 const { TextArea } = Input;
 import { Toaster, toast } from "react-hot-toast";
 import { useState, useEffect } from "react";
@@ -37,6 +37,7 @@ function PostCourse() {
     learndic: "",
     timeline: "",
     timelinedic: "",
+    link:"",
     selectedOption: "",
     topics: [], // Added selectedOption to the form state
     upcomingCourses: [
@@ -156,6 +157,7 @@ function PostCourse() {
           aboutImage: "",
           learndic: "",
           timeline: "",
+          link: "",
           timelinedic: "",
           selectedOption: "", // Reset selectedOption after form submission
         });
@@ -353,6 +355,14 @@ function PostCourse() {
                   ))}
                 </ul>
               </div>
+              <Input
+                showCount
+                maxLength={200}
+                placeholder=" Set Schedule a Call link"
+                value={form.link}
+                onChange={(e) => onChange(e, "link")}
+                required={true}
+              />
               <hr />
               <h6 className=" text-sm">{"Timeline"}</h6>
               <hr />

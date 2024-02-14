@@ -28,6 +28,7 @@ function EditCourse() {
     learndic: "",
     timeline: "",
     timelinedic: "",
+    link:"",
     selectedOption: "",
     topics: [],
     upcomingCourses: [
@@ -319,6 +320,14 @@ function EditCourse() {
                 </ul>
               </div>
               <hr />
+              <Input
+                showCount
+                maxLength={200}
+                placeholder=" Set Schedule a Call link"
+                value={form.link}
+                onChange={(e) => onChange(e, "link")}
+                required={true}
+              />
               <h6 className=" text-sm">{"Timeline"}</h6>
               <hr />
               <Input
