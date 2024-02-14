@@ -13,7 +13,8 @@ import ImageUploader from "../../../../(alloverNeed)/ImageUpload";
 function EditCourse() {
   const params = useParams();
   const id = params.id;
-  const navigator = useNavigate()
+  const navigator = useNavigate();
+
   const [form, setForm] = useState({
     name: "",
     buttonText: "",
@@ -28,8 +29,30 @@ function EditCourse() {
     timeline: "",
     timelinedic: "",
     selectedOption: "",
+    upcomingCourses: [
+      {
+        _id: "1",
+        start_date: null,
+        end_date: null,
+      },
+      {
+        _id: "2",
+        start_date: null,
+        end_date: null,
+      },
+      {
+        _id: "3",
+        start_date: null,
+        end_date: null,
+      },
+      {
+        _id: "4",
+        start_date: null,
+        end_date: null,
+      },
+    ],
   });
-
+  // console.log(form.upcomingCourses[0].start_date);??
   useEffect(() => {
     const getData = async () => {
       try {
@@ -73,6 +96,19 @@ function EditCourse() {
     });
   };
 
+  // Function to handle changes in start date
+  const handleStartDateChange = (index, event) => {
+    const updatedForm = { ...form };
+    updatedForm.upcomingCourses[index].start_date = event.target.value;
+    setForm(updatedForm);
+  };
+
+  // Function to handle changes in end date
+  const handleEndDateChange = (index, event) => {
+    const updatedForm = { ...form };
+    updatedForm.upcomingCourses[index].end_date = event.target.value;
+    setForm(updatedForm);
+  };
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -86,7 +122,7 @@ function EditCourse() {
         );
 
         toast.success("Successfully updated!", response);
-          navigator("/courses")
+        navigator("/courses");
       } catch (error) {
         console.error("Error updating data:", error.message);
         toast.error("Error updating data");
@@ -204,6 +240,23 @@ function EditCourse() {
                   />
                 </div>
               )}
+              <hr />
+              <h6 className="text-sm">Upcoming Courses</h6>
+              <hr />
+              {form.upcomingCourses?.map((course, index) => (
+                <div key={course._id} className="flex gap-5">
+                  <input
+                    type="date"
+                    value={course.start_date}
+                    onChange={(event) => handleStartDateChange(index, event)}
+                  />
+                  <input
+                    type="date"
+                    value={course.end_date}
+                    onChange={(event) => handleEndDateChange(index, event)}
+                  />
+                </div>
+              ))}
               <hr />
               <h6 className=" text-sm">{"What You'll Learn"}</h6>
               <hr />
