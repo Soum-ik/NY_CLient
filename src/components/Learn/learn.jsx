@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import Layout from "../Layout/layout";
 import { useFetch } from "../../libs/paramsData";
 import { useParams } from "react-router-dom";
@@ -51,6 +52,7 @@ export default function Learn() {
 
           <a
             href={data.link}
+            target="_blank"
             className="sm:px-3 px-2 sm:text-[16px] text-[14px] sm:py-3  py-2 botton"
           >
             Schedule a Call
