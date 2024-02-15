@@ -10,6 +10,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import config from "../../../../../../config";
 import ImageUploader from "../../../../(alloverNeed)/ImageUpload";
+import TopicsManager from "../../../../(alloverNeed)/toPicManger";
 function EditCourse() {
   const params = useParams();
   const id = params.id;
@@ -28,7 +29,7 @@ function EditCourse() {
     learndic: "",
     timeline: "",
     timelinedic: "",
-    link:"",
+    link: "",
     selectedOption: "",
     topics: [],
     upcomingCourses: [
@@ -77,26 +78,41 @@ function EditCourse() {
     });
   };
 
-  const [newTopic, setNewTopic] = useState("");
-  const addTopic = () => {
-    if (newTopic.trim() !== "") {
-      setForm({
-        ...form,
-        topics: [...form.topics, newTopic],
-      });
-      setNewTopic("");
-    }
-  };
+  
+  // const [newTopic, setNewTopic] = useState("");
+  // const [editIndex, setEditIndex] = useState(null);
 
-  const removeTopic = (index) => {
-    const updatedTopics = [...form.topics];
-    updatedTopics.splice(index, 1);
-    setForm({
-      ...form,
-      topics: updatedTopics,
-    });
-  };
+  // const addTopic = () => {
+  //   if (newTopic.trim() !== "") {
+  //     setForm({
+  //       ...form,
+  //       topics: [...form.topics, newTopic],
+  //     });
+  //     setNewTopic("");
+  //   }
+  // };
 
+  // const editTopic = (index) => {
+  //   setNewTopic(topics[index]);
+  //   setEditIndex(index);
+  // };
+
+  // const updateTopic = () => {
+  //   const updatedTopics = [...topics];
+  //   updatedTopics[editIndex] = newTopic;
+  //   setForm(updatedTopics);
+  //   setNewTopic("");
+  //   setEditIndex(null);
+  // };
+
+  // const removeTopic = (index) => {
+  //   const updatedTopics = [...form.topics];
+  //   updatedTopics.splice(index, 1);
+  //   setForm({
+  //     ...form,
+  //     topics: updatedTopics,
+  //   });
+  // };
 
   const handleIconUpload = (imageUrl) => {
     setForm({
@@ -296,29 +312,7 @@ function EditCourse() {
                   resize: "none",
                 }}
               />
-              <div>
-                <Input
-                  value={newTopic}
-                  onChange={(e) => setNewTopic(e.target.value)}
-                  placeholder="Add bullet point text"
-                />
-                <button onClick={addTopic} className=" border p-1 rounded mt-3">
-                  Add text
-                </button>
-                <ul>
-                  {form.topics.map((topic, index) => (
-                    <div key={index} className=" flex items-center ">
-                      <li className=" line-clamp-1 text-black/60 ">{topic} </li>
-                      <button
-                        className=" ml-5 border p-1 rounded"
-                        onClick={() => removeTopic(index)}
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  ))}
-                </ul>
-              </div>
+               <TopicsManager topics={form.topics} setTopics={(updatedTopics) => setForm({ ...form, topics: updatedTopics })} />
               <hr />
               <Input
                 showCount
