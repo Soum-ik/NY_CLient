@@ -16,13 +16,12 @@ export default function Welcome() {
   const [image, setImage] = useState("");
   console.log(image);
   return (
-    <div className=" mt-2 sm:mt-5 min-h-[40vh] xs:min-h[60vh] sm:min-h-[80vh] object-fill bg-cover bg-black relative">
+    <div className=" mt-2  min-h-[40vh] xs:min-h[60vh] sm:min-h-[75vh] object-fill bg-cover bg-black relative">
       <img
         src={image}
-        className=" w-[1550px] sm:max-h-[597px]  object-cover items-center flex justify-center z-10"
-        // alt=""
+        className=" w-full  sm:max-h-[650px]  h-full object-center items-center flex justify-center z-10"
       />
-      <span className=" min-h-[40vh] xs:min-h[60vh] sm:min-h-[80vh] backdrop-blur-sm bg-black/50 w-full absolute   top-0 left-0">
+      <span className=" min-h-[40vh] xs:min-h[60vh] sm:min-h-[75vh] backdrop-blur-sm bg-black/50 w-full absolute   top-0 left-0">
         {" "}
       </span>
       <Layout>
