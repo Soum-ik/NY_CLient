@@ -29,10 +29,7 @@ const BootCamp = () => {
             />
           )}
           {!data.banner ? (
-            <Skeleton
-              active
-              className="w-[550px] flex items-center justify-center h-[400px]"
-            />
+            <Skeleton.Image active className=" min-w-[550px] min-h-[400px]" />
           ) : (
             <img
               className="w-[550px]  h-[400px]  rounded-2xl "
