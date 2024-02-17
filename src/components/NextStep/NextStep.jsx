@@ -45,7 +45,7 @@ const NextStep = () => {
           <Tab.List className="flex flex-col sm:flex-row space-y-4 sm:px-10  sm:gap-10 sm:space-y-0 sm:space-x-1 mb-10">
             {options.map((option) => (
               <Tab
-                key={option.id}
+                key={option._id}
                 className="w-full bg-black/5  hover:bg-color hover:text-white ease-in-out duration-300 hover:shadow-md outline-none rounded-lg py-2.5 text-sm font-Poppins leading-5"
                 onClick={() => handleCourse(option.name)}
               >
@@ -62,7 +62,7 @@ const NextStep = () => {
           {cardDetails.map((CardDetail) => (
             <Card
               id={CardDetail._id}
-              key={CardDetail.id}
+              key={CardDetail._id}
               image={CardDetail.icon}
               name={CardDetail.name}
               shortD={CardDetail.shortDetails}

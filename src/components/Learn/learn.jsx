@@ -21,9 +21,9 @@ export default function Learn() {
     <Layout>
       <div className="sm:px-7">
         <h1 className="headingTextSize">{`What You'll Learn`}</h1>
-        <p className="paragrahp  mt-10 tracking-wide">
+        <div className="paragrahp  mt-10 tracking-wide">
           {!data.learndic ? <Skeleton /> : data.learndic}
-        </p>
+        </div>
         <div className="mt-10 hidden sm:block">
           {rows.map((row, rowIndex) => (
             <div
@@ -46,7 +46,6 @@ export default function Learn() {
             href="#form"
             className="sm:px-3 px-2 sm:text-[16px] text-[14px] sm:py-3  py-2 botton"
           >
-             
             Download Full Sylabus
           </a>
 
