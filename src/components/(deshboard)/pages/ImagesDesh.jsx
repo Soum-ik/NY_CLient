@@ -7,54 +7,45 @@ import axios from "axios";
 import ImageUploader from "../../(alloverNeed)/ImageUpload";
 import config from "../../../../config";
 
-export default function ImagesDesh() {
+export default function CTDesh() {
   const [images, setImages] = useState([]);
-  console.log(images);
 
   useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const res = await axios.get(`${config.apiUrl}images`);
-        setImages(res.data);
-      } catch (error) {
-        console.error("Error fetching images:", error.message);
-        toast.error("Error fetching images");
-      }
+    const fetch = async () => {
+      const res = await axios.get(`${config.apiUrl}images`);
+      setImages(res.data);
     };
-    fetchImages();
+    fetch();
   }, []);
 
   const handleImageUpload = (imageUrl, imageIndex) => {
-    // Clone the images array
     const updatedImages = [...images];
-    // Clone the object at the specific index
     const updatedImageObj = { ...updatedImages[imageIndex] };
-    // Update the cloned object with the new image URL
     updatedImageObj.image = imageUrl;
-    // Update the cloned images array with the modified object
     updatedImages[imageIndex] = updatedImageObj;
-    // Set the state with the updated array
     setImages(updatedImages);
   };
 
-  const handleSubmit = async (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-  
-    try {
-      // Assuming you have an _id field in each image object
-      // Loop through the images array and send an individual PUT request for each image
-      for (const image of images) {
-        const { _id, ...rest } = image;
-        await axios.put(`${config.apiUrl}/images/${_id}`, rest);
+
+    const sendingData = async () => {
+      try {
+        const response = await axios.put(
+          `${config.apiUrl}images`,
+          { images: images } // Pass the updated images array to the server
+        );
+
+        toast.success("Successfully updated!", response);
+        // You might want to redirect or do something else upon successful update
+      } catch (error) {
+        console.error("Error updating data:", error);
+        toast.error("Error updating data");
       }
-      toast.success("Successfully updated!");
-      navigator("/courses");
-    } catch (error) {
-      console.error("Error updating data:", error.message);
-      toast.error("Error updating data");
-    }
-  };
-  
+    };
+
+    sendingData();
+  }
 
   return (
     <Admin>
@@ -62,9 +53,8 @@ export default function ImagesDesh() {
         <Deshboard>
           <h1 className="text-[20px] pb-10 font-semibold">Images</h1>
           <hr className="w-full" />
-
           <div
-            className="grid grid-cols-3 gap-10 mb-10"
+            className=" grid grid-cols-3 gap-10"
             style={{ maxHeight: "400px" }}
           >
             {images.map((imageObj, index) => (
@@ -83,13 +73,11 @@ export default function ImagesDesh() {
               </div>
             ))}
           </div>
-
           <button
             onClick={handleSubmit}
-            type="submit"
-            className=" bg-color px-3 py-2 rounded-md"
+            className="bg-color max-w-[100px] px-3 py-2 my-5 rounded-md "
           >
-            Submit
+            Save Now
           </button>
         </Deshboard>
       </div>
