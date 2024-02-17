@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import config from "../../../config";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const ContactData = ({ onSubmit }) => {
   const [form, setForm] = useState({
@@ -13,11 +16,45 @@ const ContactData = ({ onSubmit }) => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (!validateEmail(form.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    if (form.message.length < 30) {
+      alert("Make sure to your message more then 30 word");
+      return;
+    }
+    if (form.name.length > 20) {
+      alert("Make Sure to Your Name shorter");
+      return;
+    }
+    if (form.number.length < 10) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
+    const sendToBackend = async () => {
+      try {
+        const res = await axios.post(`${config.apiUrl}application/post`, form);
+        console.log(res.data);
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+          number: "",
+        });
+        toast.success("Your Request Accept succesfully");
+        setForm(true);
+        setSubmitted(true);
+        onSubmit();
+      } catch (error) {
+        toast.error(error);
+      }
+    };
 
-    setForm(true);
-    setSubmitted(true);
-    onSubmit();
+    sendToBackend();
   };
+
+  sendEmail();
 
   const handleState = (e, field) => {
     setForm({
@@ -26,6 +63,11 @@ const ContactData = ({ onSubmit }) => {
     });
   };
 
+  const validateEmail = (email) => {
+    // Regular expression pattern for validating email addresses
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+  };
   return (
     <form
       onSubmit={sendEmail}
@@ -77,9 +119,7 @@ const ContactData = ({ onSubmit }) => {
             type="submit"
             className="bg-gradient-to-r from-red-800 to-red-700 outline-none hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all disabled:opacity-75 disabled:cursor-progress"
             name="message"
-            // disabled={!isFormValid()}
           >
-            {/* {loading ? "Loading.." : "Send  Massage"} */}
             Send Massage
           </button>
         </div>

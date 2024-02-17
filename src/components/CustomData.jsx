@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+// import { useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import styles, { layout } from "../style/style";
-import ContactData from "./Contact/ContactData";
-import { toast, Toaster } from "react-hot-toast";
+// import ContactData from "./Contact/ContactData";
+import { Toaster } from "react-hot-toast";
 
 const CustomData = ({
   heading,
@@ -17,17 +17,16 @@ const CustomData = ({
   forYellow,
   sub,
 }) => {
-  const [click, setClick] = useState(false);
-  const [btnColorChnager, setBtnColorChnager] = useState(false);
-  const handleClick = () => {
-    setClick(true);
-  };
+  // const [click, setClick] = useState(false);
+  // const [btnColorChnager, setBtnColorChnager] = useState(false);
+  // const handleClick = () => {
+  //   setClick(true);
+  // };
 
-  const colorHandler = () => {
-    setBtnColorChnager(true);
-    setClick(false);
-    toast.success(`Thank You, For Your Submitting`);
-  };
+  // const colorHandler = () => {
+  //   setBtnColorChnager(true);
+  //   setClick(false);
+  // };
 
   return (
     <div className={layout.sectionInfo}>
@@ -78,20 +77,21 @@ const CustomData = ({
 
         {more && (
           <button
-            onClick={handleClick}
-            className={` ${
-              btnColorChnager ? `text-green-600` : ``
-            }  border shadow
+            // onClick={handleClick}
+            className={` 
+            
+             border shadow
              px-[18px]  py-[18px] rounded-lg ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins ${customStyle}`}
           >
-            {" "}
-            {click ? (
+            {/* {click ? (
               <ContactData onSubmit={colorHandler} />
             ) : (
-              <>
-                {more} <IoMdArrowRoundForward size={20} />
-              </>
-            )}
+              <> */}
+            <a className=" flex gap-2" href="#form">
+              {more} <IoMdArrowRoundForward size={20} />
+            </a>
+            {/* </>
+            )} */}
           </button>
         )}
       </div>
