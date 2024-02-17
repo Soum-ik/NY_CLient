@@ -24,17 +24,11 @@ export default function Example() {
           {Categories.map((Categorie) => (
             <Tab.Panel
               key={Categorie.id}
-              className={classNames(
-                "rounded-xl bg-white p-3 text-black/80"
-                // "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
-              )}
+              className={classNames("rounded-xl bg-white p-3 text-black/80")}
             >
               <h1 className=" text-[18px] font-Poppins text-center">
                 {Categorie.title}
               </h1>
-              <h5 className="mt-4 text-center flex items-center justify-center gap-4 font-JetBrains text-black/80 ">
-                {Categorie.secondTitle}
-              </h5>
 
               <div
                 data-aos="fade-down"
@@ -46,7 +40,6 @@ export default function Example() {
                   alt=""
                 />
               </div>
-              {/* <div className="  z-20 absolute w-[70%] right-0 bottom-0 rounded-full h-[70%]   white__gradient blur-3xl "></div> */}
             </Tab.Panel>
           ))}
         </Tab.Panels>

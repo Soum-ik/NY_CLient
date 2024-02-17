@@ -71,6 +71,12 @@ const items = [
     icon: <ContainerOutlined />,
     href: "Apply-now-data",
   },
+  {
+    name: "Images",
+    key: "Images",
+    icon: <ContainerOutlined />,
+    href: "Images",
+  },
 ];
 
 const App = () => {
