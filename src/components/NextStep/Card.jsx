@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
 
 const Card = ({ image, name, btn, shortD, id }) => {
   return (
@@ -15,7 +14,7 @@ const Card = ({ image, name, btn, shortD, id }) => {
         {shortD}
       </p>
       <button className=" px-3 flex items-center gap-2 py-3 cursor-pointer botton text-center">
-        <Link to={`/coures/${id}`}>{btn}</Link>
+        <a href={`/coures/${id}`}>{btn}</a>
       </button>
     </div>
   );

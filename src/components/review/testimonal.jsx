@@ -10,8 +10,8 @@ const Testimonial = () => {
     <Layout>
       <div className=" mt-10 sm:mt-20 sm:px-10 sm:mb-32">
         <h4 className=" text-red-500/80 font-medium">Testimonials</h4>
-        <h1 className=" text-[25px] text-red-600 font-Headingfont font-bold">
-          CUSTOMER <span> REVIEWS</span>
+        <h1 className=" text-[25px] text-red-600 uppercase font-Headingfont font-bold">
+          Student<span className=" md:ml-3">Feedback </span>
         </h1>
         <div
           className={`flex gap-8 ${

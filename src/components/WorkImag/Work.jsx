@@ -1,4 +1,3 @@
- 
 import WorkImg from "../../components/WorkImag/WorkImg";
 import Layout from "../Layout/layout";
 
@@ -10,12 +9,12 @@ const Work = () => {
           RESOURCES BY ROLE
         </h6>
         <h1 className="  text-[33px] font-Headingfont font-bold  text-center text-red-500  z-50">
-          Transform the way you work
+          The way we work
         </h1>
 
         <WorkImg />
       </Layout>
-    </div> 
+    </div>
   );
 };
 export default Work;

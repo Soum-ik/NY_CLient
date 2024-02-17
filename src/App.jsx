@@ -15,6 +15,7 @@ import CeoPageDesh from "../src/components/(deshboard)/pages/component/CeoDesh";
 import EditDelete from "../src/components/(deshboard)/pages/component/CourseEditAndDelete/Course";
 import PostCourse from "../src/components/(deshboard)/pages/component/CourseEditAndDelete/Post";
 import Banner from "./components/(deshboard)/pages/BannerDesh";
+import ApplyNow from "./components/(deshboard)/pages/component/applyNow";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/aboutus" element={<AboutPage />} />
         <Route path="/coures/:id" element={<CouresPage />} />
         <Route path="/admin" element={<FormFeild />} />
+        <Route path="/Apply-now-data" element={<ApplyNow />} />
         <Route path="/panel" element={<DeshBorad />} />
         <Route path="/customer-review" element={<RecviewPageDesh />} />
         <Route path="/social-media" element={<SocialPageDesh />} />

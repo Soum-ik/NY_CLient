@@ -1,6 +1,5 @@
 import { Tab } from "@headlessui/react";
 import Categories from "./WorkData";
-import { FaArrowRight } from "react-icons/fa6";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -34,7 +33,6 @@ export default function Example() {
                 {Categorie.title}
               </h1>
               <h5 className="mt-4 text-center flex items-center justify-center gap-4 font-JetBrains text-black/80 ">
-                <FaArrowRight enableBackground={"red"} />
                 {Categorie.secondTitle}
               </h5>
 

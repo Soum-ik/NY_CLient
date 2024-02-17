@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Layout from "../Layout/layout";
-// import { toast, Toaster } from "react-hot-toast";
-
+import axios from "axios";
+import config from "../../../config";
+import toast from "react-hot-toast";
 const Contact = () => {
   const [form, setForm] = useState({
     name: "",
@@ -13,13 +14,39 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    setForm({
-      name: "",
-      email: "",
-      message: "",
-      number: "",
-    });
-    alert("Thank You.");
+    if (!validateEmail(form.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    if (form.message.length < 30) {
+      alert("Make sure to your message more then 30 word");
+      return;
+    }
+    if (form.name.length > 20) {
+      alert("Make Sure to Your Name shorter");
+      return;
+    }
+    if (form.number.length < 10) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
+    const sendToBackend = async () => {
+      try {
+        const res = await axios.post(`${config.apiUrl}application/post`, form);
+        console.log(res.data);
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+          number: "",
+        });
+        toast.success("Your Request Accept succesfully");
+      } catch (error) {
+        toast.error(error);
+      }
+    };
+
+    sendToBackend();
   };
 
   const handleState = (e, field) => {
@@ -28,6 +55,14 @@ const Contact = () => {
       [field]: e.target.value,
     });
   };
+
+  // Function to validate email
+  const validateEmail = (email) => {
+    // Regular expression pattern for validating email addresses
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+  };
+
   return (
     <div id="form" className=" sm:py-10 py-5 px-5 md:px-0  bg-slate-100">
       <h1 className="text-[23px] md:text-[25px] text-center headingTextSize font-semibold my-2">
@@ -59,7 +94,7 @@ const Contact = () => {
                 placeholder={"Enter your phone number"}
                 className={`w-full rounded-md shadow-md border-1 border-gray-200 focus:border-transparent focus:outline-transparent focus:ring-0 p-4 text-black`}
                 required
-                type="number"
+                type="tel"
               />
             </div>
             <div className="w-full my-4 flex-1">
@@ -85,14 +120,13 @@ const Contact = () => {
             </div>
 
             <div className="text-center mt-1">
-              <a
+              <button
                 type="submit"
                 className="bg-gradient-to-r from-red-800 to-red-700 outline-none hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all disabled:opacity-75 disabled:cursor-progress"
                 name="message"
-                onClick={sendEmail}
               >
-                Send Massage
-              </a>
+                Send Message
+              </button>
             </div>
           </>
         </form>
@@ -100,4 +134,5 @@ const Contact = () => {
     </div>
   );
 };
+
 export default Contact;

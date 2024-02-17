@@ -19,11 +19,8 @@ export default function Welcome() {
     <div className=" mt-2  min-h-[40vh] xs:min-h[60vh] sm:min-h-[75vh] object-fill bg-cover bg-black relative">
       <img
         src={image}
-        className=" w-full  sm:max-h-[650px]  h-full object-center items-center flex justify-center z-10"
+        className=" opacity-60 w-full  object-cover  z-50 max-h-[40vh] xs:max-h[60vh] sm:max-h-[75vh]"
       />
-      <span className=" min-h-[40vh] xs:min-h[60vh] sm:min-h-[75vh] backdrop-blur-sm bg-black/50 w-full absolute   top-0 left-0">
-        {" "}
-      </span>
       <Layout>
         <div className=" px-10 sm:px-20 sm:min-w-[1400px] bg-fixed absolute top-0 py-8 sm:py-16 z-50">
           <div>

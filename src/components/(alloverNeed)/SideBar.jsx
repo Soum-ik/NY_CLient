@@ -65,6 +65,12 @@ const items = [
     icon: <ContainerOutlined />,
     href: "Banner",
   },
+  {
+    name: "Apply Student Data",
+    key: "Apply Student Data",
+    icon: <ContainerOutlined />,
+    href: "Apply-now-data",
+  },
 ];
 
 const App = () => {
