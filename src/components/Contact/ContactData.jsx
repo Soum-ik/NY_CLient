@@ -14,6 +14,13 @@ const ContactData = ({ onSubmit }) => {
 
   const [submitted, setSubmitted] = useState(false);
 
+  const currentDate = new Date();
+
+  const formDataWithDateTime = {
+    ...form,
+    datetime: currentDate.toISOString(),
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
     if (!validateEmail(form.email)) {
@@ -34,7 +41,10 @@ const ContactData = ({ onSubmit }) => {
     }
     const sendToBackend = async () => {
       try {
-        const res = await axios.post(`${config.apiUrl}application/post`, form);
+        const res = await axios.post(
+          `${config.apiUrl}application/post`,
+          formDataWithDateTime
+        );
         console.log(res.data);
         setForm({
           name: "",

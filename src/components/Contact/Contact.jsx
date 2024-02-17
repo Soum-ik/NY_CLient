@@ -11,6 +11,25 @@ const Contact = () => {
     number: "",
   });
 
+  const currentDate = new Date();
+  const formattedDate = `${currentDate.getFullYear()}-${(
+    currentDate.getMonth() + 1
+  )
+    .toString()
+    .padStart(2, "0")}-${currentDate.getDate().toString().padStart(2, "0")}`;
+
+  // Format the time manually
+  const formattedTime = `${currentDate
+    .getHours()
+    .toString()
+    .padStart(2, "0")}:${currentDate.getMinutes().toString().padStart(2, "0")}`;
+
+  const formDataWithDateTime = {
+    ...form,
+    date: formattedDate,
+    time: formattedTime,
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -32,7 +51,10 @@ const Contact = () => {
     }
     const sendToBackend = async () => {
       try {
-        const res = await axios.post(`${config.apiUrl}application/post`, form);
+        const res = await axios.post(
+          `${config.apiUrl}application/post`,
+          formDataWithDateTime
+        );
         console.log(res.data);
         setForm({
           name: "",

@@ -38,6 +38,8 @@ const ApplyNow = () => {
     }
   };
 
+  const information = data.reverse();
+
   return (
     <Admin>
       <div className="min-w-[1000px] rounded-lg shadow-2xl overflow-auto min-h-max ">
@@ -47,7 +49,7 @@ const ApplyNow = () => {
             className=" mb-20 grid grid-cols-3 gap-3 mt-10"
             style={{ maxHeight: "400px" }}
           >
-            {data?.map((item, index) => (
+            {information.map((item, index) => (
               <div
                 className="relative border max-w-[
                   300px] rounded-md p-2"
@@ -56,7 +58,10 @@ const ApplyNow = () => {
                 <div className=" max-w-sm">
                   <h1 className=" text-xl  uppercase">{item.name}</h1>
                   <h5 className="     my-1 text-black/90">{item.email}</h5>
+
                   <p className="">{item.number}</p>
+                  <p className="text-sm">{item.date}--{item.time}</p>
+
                   <p
                     key={index}
                     className={`mt-2 text-sm text-black/80  ${
