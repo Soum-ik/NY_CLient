@@ -1,30 +1,39 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import config from "../../../config";
 
 const Security = () => {
-  const [reset, setReset] = useState("");
-  const router = useNavigate();
-  const email = "farjax@gmail.com";
-  const pass = "farjax120";
-  
-  const forgotPasswordHandler = () => {
-    setReset(pass);
+  const navigate = useNavigate();
+
+  const generateToken = () => {
+    const token = "Hello World";
+    sessionStorage.setItem("token", token);
   };
 
-  console.log(reset);
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     const { username, password } = values;
-    if (username === email || password === pass) {
-      router("/panel");
-    } else {
-      alert("Sorry you're not Authenticate");
-      router("/admin");
+    try {
+      const res = await axios.get(`${config.apiUrl}admin`);
+
+      if (res.status === 200) {
+        const adminData = res.data;
+        if (adminData.email === username && adminData.password === password) {
+          navigate("/panel");
+          generateToken();
+        } else {
+          navigate("/admin");
+          alert("Your credential is not valid");
+        }
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
+
   return (
-    <div className="  min-h-screen grid place-content-center">
+    <div className="min-h-screen grid place-content-center">
       <Form
         name="normal_login"
         className="login-form min-w-[400px]"
@@ -59,27 +68,25 @@ const Security = () => {
           <Input
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
-            placeholder={reset || "password"}
-            value={reset || ""}
-            onChange={(e) => setReset(e.target.value)}
+            placeholder="Password"
           />
         </Form.Item>
 
-        <Form.Item className=" flex">
+        <Form.Item className="flex">
           <Button
             type="default"
             htmlType="submit"
             className="login-form-button mr-10"
-            disabled={reset}
           >
             Log in
           </Button>
-          <Button onClick={forgotPasswordHandler} className=" text-blue-600">
-            forgot-password
-          </Button>
+          <Link to={"/forgot-password"} className="text-blue-600">
+            Forgot Password
+          </Link>
         </Form.Item>
       </Form>
     </div>
   );
 };
+
 export default Security;

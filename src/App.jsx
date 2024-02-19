@@ -17,6 +17,8 @@ import PostCourse from "../src/components/(deshboard)/pages/component/CourseEdit
 import Banner from "./components/(deshboard)/pages/BannerDesh";
 import ApplyNow from "./components/(deshboard)/pages/component/applyNow";
 import ImagesDesh from "./components/(deshboard)/pages/ImagesDesh";
+import ForgotPassword from "./components/(alloverNeed)/forgot-password";
+import ResetPassword from "./components/(alloverNeed)/reset-password";
 export default function App() {
   return (
     <div className=" w-full min-h-screen">
@@ -25,6 +27,8 @@ export default function App() {
         <Route path="/aboutus" element={<AboutPage />} />
         <Route path="/coures/:id" element={<CouresPage />} />
         <Route path="/admin" element={<FormFeild />} />
+        <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+        <Route path="/reset_password/:id" element={<ResetPassword />}></Route>
         <Route path="/Apply-now-data" element={<ApplyNow />} />
         <Route path="/Images" element={<ImagesDesh />} />
         <Route path="/panel" element={<DeshBorad />} />
