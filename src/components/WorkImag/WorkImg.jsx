@@ -1,7 +1,7 @@
 import { Tab } from "@headlessui/react";
 import axios from "axios";
 import config from "../../../config";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -9,11 +9,14 @@ function classNames(...classes) {
 
 export default function Example() {
   const [categories, setCategories] = useState([]);
-  const res = async () => {
-    const data = await axios.get(`${config.apiUrl}images`);
-    setCategories(data.data);
-  };
-  res();
+  useEffect(() => {
+    const res = async () => {
+      const data = await axios.get(`${config.apiUrl}images`);
+      setCategories(data.data);
+    };
+    res();
+  }, []);
+
   return (
     <div className="w-full py-10 px-10 ">
       <Tab.Group>

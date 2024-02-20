@@ -1,11 +1,9 @@
 import Layout from "../Layout/layout";
-import { useFetch } from "../../libs/paramsData";
-import { useParams } from "react-router-dom";
 import { Skeleton } from "antd";
+import { useData } from "../../Context/Context-api";
 
 export default function TimeLine() {
-  const { id } = useParams();
-  const data = useFetch(id);
+  const { data } = useData();
 
   return (
     <Layout>

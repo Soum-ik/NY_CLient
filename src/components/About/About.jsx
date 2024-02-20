@@ -1,19 +1,16 @@
 import Layout from "../Layout/layout";
 import CustomComponent from "../CustomComponent";
-import { useFetch } from "../../libs/paramsData";
-import { useParams } from "react-router-dom";
+import { useData } from "../../Context/Context-api";
 export default function About() {
-  const { id } = useParams();
-  // console.log(id);
-  const about = useFetch(id);
+  const { data } = useData();
 
   return (
     <Layout>
       <CustomComponent
-        dic={about.cdic}
-        button={about.cbutton}
-        Data={about.heading}
-        img={about.aboutImage}
+        dic={data.cdic}
+        button={data.cbutton}
+        Data={data.heading}
+        img={data.aboutImage}
         imageSize={" max-h-[500px] sm:min-w-[400px] sm:mr-[10px] object-fit"}
       />
     </Layout>

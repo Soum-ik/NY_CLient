@@ -1,15 +1,14 @@
 import Layout from "../Layout/layout";
-import { useFetch } from "../../libs/paramsData";
-import { useParams } from "react-router-dom";
 import { useState } from "react";
 import ContactData from "../Contact/ContactData";
 import toast, { Toaster } from "react-hot-toast";
+import { useData } from "../../Context/Context-api";
 
 function Timesection() {
-  const { id } = useParams();
-  const choosepath = useFetch(id);
-  const [click, setClick] = useState(false);
+  const { data } = useData();
+  const choosepath = data["upcomingCourses"];
 
+  const [click, setClick] = useState(false);
   function clicked() {
     setClick(true);
   }
@@ -32,7 +31,7 @@ function Timesection() {
           </div>
         ) : (
           <div className="flex items-center mt-2  overflow-x-scroll sm:overflow-hidden justify-center space-x-20 ">
-            {choosepath.upcomingCourses?.map((item, index) => (
+            {choosepath?.map((item, index) => (
               <div
                 key={index}
                 className=" flex flex-col sm:first:pl-0 first:pl-20 items-center justify-center "

@@ -12,32 +12,38 @@ import Learn from "../Learn/learn";
 import TimeLine from "../Timeing/TimeLine";
 import Support from "../support/Support";
 import Contact from "../Contact/Contact";
+import { DataProvider } from "../../Context/Context-api";
+import { useParams } from "react-router-dom";
 
 const CouresPage = () => {
+  const { id } = useParams();
+
   return (
-    <div className=" relative">
-      <PageLayout>
-        <Section />
-        <BootCamp />
-        <Timesection />
-        <About />
-        <Learn />
-        <TimeLine />
-        <Support />
-        <NextStep />
-        <Contact />
-        <Work />
-        <Testimonial />
-        <SayTO />
-      </PageLayout>
-      <div className="  z-50 cursor-pointer h-16 rounded-full w-40  text-center bg-gradient-to-r from-red-800 to-red-700  border-red-500  backdrop-blur-3xl  bottom-20  hover:right-0 ease-in-out duration-300 sm:-right-5 fixed lg:flex shadow-sm shadow-red-500 items-center justify-center hidden">
-        {" "}
-        <WhatsAppLink
-          textSize={" text-[18px] font-bold text-white"}
-          marginTop={""}
-        />
+    <DataProvider id={id}>
+      <div className=" relative">
+        <PageLayout>
+          <Section />
+          <BootCamp />
+          <Timesection />
+          <About />
+          <Learn />
+          <TimeLine />
+          <Support />
+          <NextStep />
+          <Contact />
+          <Work />
+          <Testimonial />
+          <SayTO />
+        </PageLayout>
+        <div className="  z-50 cursor-pointer h-16 rounded-full w-40  text-center bg-gradient-to-r from-red-800 to-red-700  border-red-500  backdrop-blur-3xl  bottom-20  hover:right-0 ease-in-out duration-300 sm:-right-5 fixed lg:flex shadow-sm shadow-red-500 items-center justify-center hidden">
+          {" "}
+          <WhatsAppLink
+            textSize={" text-[18px] font-bold text-white"}
+            marginTop={""}
+          />
+        </div>
       </div>
-    </div>
+    </DataProvider>
   );
 };
 export default CouresPage;

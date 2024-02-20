@@ -53,7 +53,7 @@ const Security = () => {
         >
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
-            placeholder="Username"
+            placeholder="Enter Your Email"
           />
         </Form.Item>
         <Form.Item

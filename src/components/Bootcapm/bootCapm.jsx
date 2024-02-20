@@ -1,12 +1,10 @@
 import Layout from "../Layout/layout";
-import { useParams } from "react-router-dom";
 import CustomData from "../CustomData";
-import { useFetch } from "../../libs/paramsData";
 import { Skeleton } from "antd";
+import { useData } from "../../Context/Context-api";
 
 const BootCamp = () => {
-  const { id } = useParams();
-  const data = useFetch(id);
+  const { data } = useData();
 
   return (
     <div className=" sm:px-10 py-8 sm:py-16 bg-gradient-to-r from-white to-slate-300/30 ">

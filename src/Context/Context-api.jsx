@@ -3,13 +3,13 @@ import { createContext, useState, useEffect, useContext } from "react";
 import config from "../../config";
 const DataContext = createContext();
 
-export const DataProvider = ({ children }) => {
-  const [data, setData] = useState([]);
+export const DataProvider = ({ children, id }) => {
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${config.apiUrl}choosepath`);
+        const response = await fetch(`${config.apiUrl}choosepath/${id}`);
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {
@@ -18,16 +18,11 @@ export const DataProvider = ({ children }) => {
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Function to find data by ID
-  const findDataById = (id) => {
-    return data.find((item) => item.id === id);
-  };
   return (
-    <DataContext.Provider value={{ findDataById, data }}>
-      {children}
-    </DataContext.Provider>
+    <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>
   );
 };
 

@@ -1,13 +1,11 @@
 /* eslint-disable react/jsx-no-target-blank */
 import Layout from "../Layout/layout";
-import { useFetch } from "../../libs/paramsData";
-import { useParams } from "react-router-dom";
 import { Skeleton } from "antd";
+import { useData } from "../../Context/Context-api";
 
 export default function Learn() {
-  const { id } = useParams();
-  // console.log(id);
-  const data = useFetch(id);
+  const { data } = useData();
+
   const topics = data.topics || []; // Ensure topics is an array
 
   const itemsPerRow = 3;
