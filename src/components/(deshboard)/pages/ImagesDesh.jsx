@@ -8,8 +8,6 @@ import ImageUploader from "../../(alloverNeed)/ImageUpload";
 import config from "../../../../config";
 
 export default function CTDesh() {
-  const [images, setImages] = useState([]);
-
   useEffect(() => {
     const fetch = async () => {
       const res = await axios.get(`${config.apiUrl}images`);
@@ -18,7 +16,12 @@ export default function CTDesh() {
     fetch();
   }, []);
 
+  const [images, setImages] = useState([]);
+  const [post, setPost] = useState("sdfs");
+  console.log(post);
+  console.log(images);
   const handleImageUpload = (imageUrl, imageIndex) => {
+    setPost(imageUrl);
     const updatedImages = [...images];
     const updatedImageObj = { ...updatedImages[imageIndex] };
     updatedImageObj.image = imageUrl;
@@ -26,18 +29,18 @@ export default function CTDesh() {
     setImages(updatedImages);
   };
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(data) {
+    // e.preventDefault();
 
     const sendingData = async () => {
       try {
         const response = await axios.put(
-          `${config.apiUrl}images`,
-          { images: images } // Pass the updated images array to the server
+          `${config.apiUrl}images/${data}`,
+          { post } // Pass the updated images array to the server
         );
-
-        toast.success("Successfully updated!", response);
-        // You might want to redirect or do something else upon successful update
+        console.log(response.data);
+        toast.success("Successfully updated!", response.data);
+        window.location.reload();
       } catch (error) {
         console.error("Error updating data:", error);
         toast.error("Error updating data");
@@ -51,7 +54,14 @@ export default function CTDesh() {
     <Admin>
       <div className="min-w-[1000px] rounded-lg shadow-2xl overflow-auto min-h-max mt-11 px-5 py-4">
         <Deshboard>
-          <h1 className="text-[20px] pb-10 font-semibold">Images</h1>
+          <h1 className="text-[20px] pb-10 font-semibold">
+            Images <br />
+            <span className=" text-xs">
+              {" "}
+              If try to change image please change all at a time{" "}
+            </span>
+          </h1>
+          {/* <h2>If try to change image please change all at a time </h2> */}
           <hr className="w-full" />
           <div
             className=" grid grid-cols-3 gap-10"
@@ -70,15 +80,15 @@ export default function CTDesh() {
                   className="h-[100px]"
                   alt="Uploaded Banner"
                 />
+                <button
+                  onClick={() => handleSubmit(imageObj._id)}
+                  className="bg-color max-w-[100px] px-3 py-2 my-5 rounded-md "
+                >
+                  Save Now
+                </button>
               </div>
             ))}
           </div>
-          <button
-            onClick={handleSubmit}
-            className="bg-color max-w-[100px] px-3 py-2 my-5 rounded-md "
-          >
-            Save Now
-          </button>
         </Deshboard>
       </div>
       <div>
