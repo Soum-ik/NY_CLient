@@ -15,56 +15,68 @@ const ContactData = ({ onSubmit }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const currentDate = new Date();
+  const formattedDate = `${currentDate.getFullYear()}-${(
+    currentDate.getMonth() + 1
+  )
+    .toString()
+    .padStart(2, "0")}-${currentDate.getDate().toString().padStart(2, "0")}`;
+
+  // Format the time manually
+  const formattedTime = `${currentDate
+    .getHours()
+    .toString()
+    .padStart(2, "0")}:${currentDate.getMinutes().toString().padStart(2, "0")}`;
 
   const formDataWithDateTime = {
     ...form,
-    datetime: currentDate.toISOString(),
+    date: formattedDate,
+    time: formattedTime,
   };
+  const sendEmail = async (event) => {
+    event.preventDefault(); // Prevent form submission
+    // Validate form data
+    const validateEmail = (email) => {
+      const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return pattern.test(email);
+    };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
     if (!validateEmail(form.email)) {
-      alert("Please enter a valid email address.");
+      toast.error("Please enter a valid email address.");
       return;
     }
     if (form.message.length < 30) {
-      alert("Make sure to your message more then 30 word");
+      toast.error("Make sure your message is at least 30 characters long.");
       return;
     }
     if (form.name.length > 20) {
-      alert("Make Sure to Your Name shorter");
+      toast.error("Make sure your name is shorter.");
       return;
     }
     if (form.number.length < 10) {
-      alert("Please enter a valid phone number.");
+      toast.error("Please enter a valid phone number.");
       return;
     }
-    const sendToBackend = async () => {
-      try {
-        const res = await axios.post(
-          `${config.apiUrl}application/post`,
-          formDataWithDateTime
-        );
-        console.log(res.data);
-        setForm({
-          name: "",
-          email: "",
-          message: "",
-          number: "",
-        });
-        toast.success("Your Request Accept succesfully");
-        setForm(true);
-        setSubmitted(true);
-        onSubmit();
-      } catch (error) {
-        toast.error(error);
-      }
-    };
 
-    sendToBackend();
+    try {
+      const res = await axios.post(
+        `${config.apiUrl}application/post`,
+        formDataWithDateTime
+      );
+      console.log(res.data);
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+        number: "",
+      });
+      toast.success("Your request was submitted successfully.");
+      setSubmitted(true);
+      onSubmit();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("An error occurred while submitting your request.");
+    }
   };
-
-  sendEmail();
 
   const handleState = (e, field) => {
     setForm({
@@ -73,11 +85,6 @@ const ContactData = ({ onSubmit }) => {
     });
   };
 
-  const validateEmail = (email) => {
-    // Regular expression pattern for validating email addresses
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return pattern.test(email);
-  };
   return (
     <form
       onSubmit={sendEmail}
@@ -130,7 +137,7 @@ const ContactData = ({ onSubmit }) => {
             className="bg-gradient-to-r from-red-800 to-red-700 outline-none hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all disabled:opacity-75 disabled:cursor-progress"
             name="message"
           >
-            Send Massage
+            Send Message
           </button>
         </div>
       </>

@@ -24,7 +24,7 @@ function Timesection() {
         <h1 className="font-Headingfont min-w-max font-bold text-[18px] sm:text-[23px]">
           Upcoming Course
         </h1>
-        <div></div>
+
         {click ? (
           <div className="max-w-sm px-1 mt-1">
             <ContactData onSubmit={handleContactDataSubmit} />
