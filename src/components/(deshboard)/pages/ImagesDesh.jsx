@@ -56,10 +56,6 @@ export default function CTDesh() {
         <Deshboard>
           <h1 className="text-[20px] pb-10 font-semibold">
             Images <br />
-            <span className=" text-xs">
-              {" "}
-              If try to change image please change all at a time{" "}
-            </span>
           </h1>
           {/* <h2>If try to change image please change all at a time </h2> */}
           <hr className="w-full" />
