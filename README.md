@@ -1,2 +1,1 @@
- 
-PHP backend 
+Tech: React, Node, Express, Tailwind 
