@@ -96,7 +96,7 @@ function HeroDesh() {
               />
               <TextArea
                 showCount
-                maxLength={500}
+                maxLength={2000}
                 value={form.dic}
                 onChange={(e) => onChange(e, "dic")}
                 placeholder="Short description"
