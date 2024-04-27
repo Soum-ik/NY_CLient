@@ -78,7 +78,6 @@ function EditCourse() {
     });
   };
 
-  
   // const [newTopic, setNewTopic] = useState("");
   // const [editIndex, setEditIndex] = useState(null);
 
@@ -171,12 +170,36 @@ function EditCourse() {
 
     sendingData();
   }
+  const [options, setOptions] = useState([]);
+  useEffect(() => {
+    // Fetching options data from API
+    const fetch = async () => {
+      const res = await axios.get(`${config.apiUrl}catagori`);
+      setOptions(res.data);
+      console.log(res.data);
+    };
+    fetch();
+  }, []);
 
   return (
     <Admin>
       <div className="min-w-[1000px] overflow-auto rounded-lg shadow-2xl min-h-max mt-11 px-5 py-4">
         <Deshboard>
-          <h1 className="text-[20px] pb-10 font-semibold"> Edit</h1>
+          <div className=" flex items-center pb-10 justify-between">
+            <h1 className="text-[20px] font-semibold">Edit Course</h1>
+
+            {/* Dropdown to select an option */}
+            <select
+              value={form.selectedOption}
+              onChange={(e) => onChange(e, "selectedOption")}
+            >
+              {options.map((option) => (
+                <option key={option._id} value={option.name}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+          </div>
           <hr className="w-full" />
           <div style={{ maxHeight: "400px" }}>
             <Flex vertical gap={32}>
@@ -312,7 +335,12 @@ function EditCourse() {
                   resize: "none",
                 }}
               />
-               <TopicsManager topics={form.topics} setTopics={(updatedTopics) => setForm({ ...form, topics: updatedTopics })} />
+              <TopicsManager
+                topics={form.topics}
+                setTopics={(updatedTopics) =>
+                  setForm({ ...form, topics: updatedTopics })
+                }
+              />
               <hr />
               <Input
                 showCount

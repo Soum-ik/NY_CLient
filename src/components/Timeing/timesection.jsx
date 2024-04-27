@@ -1,8 +1,8 @@
-import Layout from "../Layout/layout";
 import { useState } from "react";
-import ContactData from "../Contact/ContactData";
 import toast, { Toaster } from "react-hot-toast";
 import { useData } from "../../Context/Context-api";
+import ContactData from "../Contact/ContactData";
+import Layout from "../Layout/layout";
 
 function Timesection() {
   const { data } = useData();
@@ -20,8 +20,9 @@ function Timesection() {
   return (
     <Layout>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="sm:px-20 my-10 sm:py-10 sm:flex items-center justify-center gap-16 drop-shadow-lg sm:shadow-lg sm:rounded-lg ">
-        <h1 className="font-Headingfont min-w-max font-bold text-[18px] sm:text-[23px]">
+      <div className=" w-full my-10 sm:py-10 sm:flex items-center justify-center lg:gap-16 drop-shadow-lg sm:shadow-lg sm:rounded-lg ">
+        {/* <div className=" "> */}
+        <h1 className="font-Headingfont min-w-max font-bold text-xs sm:text-sm lg:text-lg">
           Upcoming Course
         </h1>
 
@@ -30,19 +31,19 @@ function Timesection() {
             <ContactData onSubmit={handleContactDataSubmit} />
           </div>
         ) : (
-          <div className="flex items-center mt-2  overflow-x-scroll sm:overflow-hidden justify-center space-x-20 ">
+          <div className="flex items-center mt-2  overflow-x-scroll sm:overflow-hidden justify-center space-x-3 lg:space-x-10  xl:space-x-20 ">
             {choosepath?.map((item, index) => (
               <div
                 key={index}
-                className=" flex flex-col sm:first:pl-0 first:pl-20 items-center justify-center "
+                className=" ml-10 sm:ml-0 flex flex-col sm:first:pl-0 first:pl-20 items-center justify-center "
               >
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center ">
                   {/* Format the start_date and end_date */}
-                  <p className="text-black font-medium">
+                  <p className="text-black text-xs sm:text-sm lg:text-lg   font-medium">
                     {new Date(item.start_date).toLocaleDateString()}
                   </p>{" "}
                   -{" "}
-                  <p className="text-black font-medium">
+                  <p className="text-black text-xs sm:text-sm lg:text-lg   font-medium">
                     {new Date(item.end_date).toLocaleDateString()}
                   </p>
                 </div>
@@ -52,6 +53,7 @@ function Timesection() {
           </div>
         )}
       </div>
+      {/* </div> */}
     </Layout>
   );
 }
