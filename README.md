@@ -1,1 +1,1 @@
-this is my first new york client here, i think that is the best repo of my whole github this is the one project i learn lot's stuf. This is a full stack project (MERN)
+That's great to hear! It sounds like this project holds a special place in your heart and that you've gained a lot of valuable experience from it. Having a project that you're proud of and that you've learned a lot from is definitely something to be cherished. Keep up the great work!
