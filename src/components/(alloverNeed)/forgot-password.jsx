@@ -14,6 +14,7 @@ function ForgotPassword() {
       const res = await axios.post(`${config.apiUrl}forgot-password`, {
         email,
       });
+      console.log(res, "res data");
       if (res.data.Status === "Success") {
         navigate("/admin");
         alert("Check Your Email Please");

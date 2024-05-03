@@ -4,37 +4,38 @@ export const support = [
   {
     icon: LiaReadme,
     name: "LEARNING PATH",
-    nameMain: "Learn your own schedule",
+    nameMain: "Learning your own schedule",
     text: `
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, laboriosam?
+    All live classes will be recorded, allowing students to study at their own convenience.
     `,
   },
-   
+
   {
     icon: LiaReadme,
     name: "LEARNING PATH",
-    nameMain: "Learn your own schedule",
+    nameMain: "Lifetime Access to Study Materials",
     text: `
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, laboriosam?
+         
+All students will receive lifetime access to study materials. We have a dedicated lab for all students to practice with real-time scenarios.
     `,
   },
-   
+
   {
     icon: LiaReadme,
     name: "LEARNING PATH",
-    nameMain: "Learn your own schedule",
+    nameMain: "Retake Classes Until You Get Hired",
     text: `
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, laboriosam?
+    We offer an excellent opportunity for all students to retake classes as often as needed until you secure a job.
     `,
   },
-   
+
   {
     icon: LiaReadme,
     name: "LEARNING PATH",
-    nameMain: "Learn your own schedule",
+    nameMain: " Resume Preparation and Placement Assistance",
     text: `
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, laboriosam?
+    
+Our commitment to you doesn't end when you finish your course. We will also help you prepare your resume and provide job placement assistance
     `,
   },
-   
 ];

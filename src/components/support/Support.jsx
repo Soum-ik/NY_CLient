@@ -10,7 +10,7 @@ export default function Support() {
         <div className=" grid sm:grid-cols-2 grid-cols-1 my-10 gap-5 sm:gap-10">
           {support.map((item, index) => (
             <div
-              className=" bg-color text-white   px-5 py-6 rounded-md shadow-xl hover:px-[15px] duration-300 ease-in-out flex items-center justify-center gap-5 sm:gap-10"
+              className=" bg-color text-white   px-5 py-6 rounded-md shadow-xl hover:px-[15px] duration-300 ease-in-out flex items-center  gap-5 sm:gap-10"
               key={index}
             >
               <div>{<item.icon className="" size={50} />}</div>

@@ -22,16 +22,16 @@ export default function Learn() {
         <div className="paragrahp  mt-10 tracking-wide">
           {!data.learndic ? <Skeleton /> : data.learndic}
         </div>
-        <div className="mt-10 hidden sm:block">
+        <div className="mt-10">
           {rows.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className="flex items-center justify-between px-10  mb-4"
+              className=" grid grid-cols-1  lg:grid-cols-3 md:grid-cols-2 md:px-10 "
             >
               {row.map((topic, topicIndex) => (
                 <div
                   key={topicIndex}
-                  className="w-1/4 line-clamp-5  ease-in-out delay-200 min-w-[370px] text-justify "
+                  className="w-1/4 line-clamp-5 mb-2  ease-in-out delay-200 min-w-[370px] text-justify"
                 >
                   <li className="">{topic}</li>
                 </div>
