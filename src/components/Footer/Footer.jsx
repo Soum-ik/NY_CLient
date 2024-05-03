@@ -35,8 +35,8 @@ export default function Footer() {
                 </div>
 
                 <p className="mb-7 text-body-color text-[15px] mt-5 text-black">
-                  The Farjax Institute of Technology is a training institute that
-                  provides training in various technology-related courses
+                  The Farjax Institute of Technology is a training institute
+                  that provides training in various technology-related courses
                 </p>
               </div>
 
@@ -61,6 +61,10 @@ export default function Footer() {
                     <FollowUs icon={<BsInstagram />} link={source.instagram} />
                     <FollowUs icon={<BsTelegram />} link={source.telegram} />
                   </div>
+                  <h1 className=" mt-2  min-w-max">
+                    {" "}
+                    Developed & manage by Farjax Tech & Consulting Inc.
+                  </h1>
                 </div>
               </div>
             </div>
@@ -70,10 +74,14 @@ export default function Footer() {
         <span className="block mt-10 text-sm text-gray-500 text-center dark:text-gray-400">
           © 2024{" "}
           <Link to={"/"} className="hover:text-black">
-          Farjax Institute
+            Farjax Institute of Technology
           </Link>
           . All Rights Reserved.
         </span>
+        {/* <h1 className=" text-center">
+          {" "}
+          Developed & manage by Farjax Tech & Consulting Inc.
+        </h1> */}
       </footer>
     </>
   );
