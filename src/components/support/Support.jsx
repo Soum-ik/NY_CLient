@@ -17,7 +17,7 @@ export default function Support() {
               <div className=" flex   flex-col">
                 <h1 className=" font-extralight text-[12px] tracking-widest">{item.name}</h1>
                 <h1 className=" text-[20px]  font-semibold">{item.nameMain}</h1>
-                <p className=" font-light  text-[10px] tracking-widest">{item.text}</p>
+                <p className=" font-light  text-[12px] tracking-widest">{item.text}</p>
               </div>
             </div>
           ))}

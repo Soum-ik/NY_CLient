@@ -1,4 +1,4 @@
-import contact from "../../../public/images/contact.jpg";
+import contact from "../../../public/images/contactus.jpg";
 import RegistrationComponent from "./Email";
 
 function Register() {

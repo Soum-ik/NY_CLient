@@ -36,9 +36,7 @@ const ContactUs = () => {
           Stay in the know
         </h1>
         <h4 className="  font-light   sm:min-w-[500px] text-[14px] text-white/70">
-          Register for our email newsletter to get the freshest takes, to your
-          inbox, Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Voluptas!
+          Stay Up-to-Date with Our Latest News, Insights, and Updates
         </h4>
         <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
           <div className=" flex gap-5 sm:gap-10 mt-5 sm:mt-10">
@@ -66,13 +64,7 @@ const ContactUs = () => {
               I accepted all of terms and conditions
             </p>
           </div>
-          <div>
-            <p className=" mt-1 text-[14px] font-light text-white/70">
-              {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-              nam?
-            </p>
-          </div>
+           
         </form>
       </div>
     </div>
