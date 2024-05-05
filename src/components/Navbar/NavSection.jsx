@@ -42,7 +42,7 @@ const Section = () => {
                 {/* Your dropdown content goes here */}
                 {data.map((item, index) => (
                   <a
-                    href={`/coures/${item._id}`} // Assuming you have routes based on the dropdown items
+                    href={`/coures/${item.name}`} // Assuming you have routes based on the dropdown items
                     className="text-[12px] text-black font-bold font-Poppins"
                     key={index}
                   >
