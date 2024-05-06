@@ -17,13 +17,13 @@ const Card = ({ comment, role, name, image }) => {
           <h1 className="  text-[18px] sm:text-[20px] text-black/80 font-semibold">
             {name}
           </h1>
-          <p className=" max-w-[10px] text-[12px] sm:text-[15px] text-black/60 font-medium">
+          <p className="  text-[12px] sm:text-[15px] text-black/60 font-medium">
             {role}
           </p>
         </div>
       </div>
 
-      <p className=" text-[10px] line-clamp-6 hover:line-clamp-[7] ease-out max-w-[360px] sm:max-w-[400px] duration-1000  sm:text-[13px] my-5 ">
+      <p className=" text-[10px] line-clamp-6 hover:line-clamp-[7] max-w-[360px]  sm:max-w-[400px]   sm:text-[13px] my-5 transition-all duration-700">
         {comment}
       </p>
     </div>

@@ -5,7 +5,7 @@ import config from "../../../config";
 
 const Testimonial = () => {
   const datas = useFetch(`${config.apiUrl}customer/review`);
-
+  console.log(datas);
   return (
     <Layout>
       <div className=" mt-10 sm:mt-20 sm:px-10 sm:mb-32">
