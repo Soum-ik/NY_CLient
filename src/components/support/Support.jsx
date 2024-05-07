@@ -10,14 +10,20 @@ export default function Support() {
         <div className=" grid sm:grid-cols-2 grid-cols-1 my-10 gap-5 sm:gap-10">
           {support.map((item, index) => (
             <div
+              data-aos="zoom-out-up"
+              data-aos-duration="3000"
               className=" bg-color text-white   px-5 py-6 rounded-md shadow-xl hover:px-[15px] duration-300 ease-in-out flex items-center  gap-5 sm:gap-10"
               key={index}
             >
               <div>{<item.icon className="" size={50} />}</div>
               <div className=" flex   flex-col">
-                <h1 className=" font-extralight text-[12px] tracking-widest">{item.name}</h1>
+                <h1 className=" font-extralight text-[12px] tracking-widest">
+                  {item.name}
+                </h1>
                 <h1 className=" text-[20px]  font-semibold">{item.nameMain}</h1>
-                <p className=" font-light  text-[12px] tracking-widest">{item.text}</p>
+                <p className=" font-light  text-[12px] tracking-widest">
+                  {item.text}
+                </p>
               </div>
             </div>
           ))}

@@ -17,7 +17,12 @@ export default function Learn() {
   }
   return (
     <Layout>
-      <div className="sm:px-7">
+      <div
+        data-aos-duration="1000"
+        data-aos="fade-up"
+        data-aos-anchor-placement="center-center"
+        className="sm:px-7"
+      >
         <h1 className="headingTextSize">{`What You'll Learn`}</h1>
         <div className="paragrahp  mt-10 tracking-wide">
           {!data.learndic ? <Skeleton /> : data.learndic}

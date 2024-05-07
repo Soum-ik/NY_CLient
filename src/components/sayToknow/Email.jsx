@@ -58,13 +58,12 @@ const ContactUs = () => {
               Register
             </button>
           </div>
-          <div className=" mt-10 mb-2 flex space-x-2 text-[14px] font-light sm:gap-3">
+          {/* <div className=" mt-10 mb-2 flex space-x-2 text-[14px] font-light sm:gap-3">
             <input type="checkbox" name="" id="" />
             <p className=" text-white/70">
               I accepted all of terms and conditions
             </p>
-          </div>
-           
+          </div> */}
         </form>
       </div>
     </div>

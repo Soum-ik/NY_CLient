@@ -8,12 +8,15 @@ const Testimonial = () => {
   console.log(datas);
   return (
     <Layout>
-      <div className=" mt-10 sm:mt-20 sm:px-10 sm:mb-32">
+      <div className=" mt-10 sm:mt-16 sm:px-10 sm:mb-16">
         <h4 className=" text-red-500/80 font-medium">Testimonials</h4>
         <h1 className=" text-[25px] text-red-600 uppercase font-Headingfont font-bold">
           Student<span className=" md:ml-3">Feedback </span>
         </h1>
         <div
+          data-aos-duration="1000"
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-center"
           className={`flex gap-8 ${
             datas.length > 3
               ? "  snap-x overflow-x-scroll"
