@@ -22,7 +22,6 @@ const NavContact = () => {
               alt="Farjax Institute of Technology"
             />
           </Link>
-          <p className=" ">PROFESSIONAL EDUCATION</p>
         </div>
 
         {/* right bar */}
