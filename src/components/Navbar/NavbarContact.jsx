@@ -3,21 +3,22 @@ import FollowUs from "../Footer/FollowUs";
 
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 // import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
-import { useFetch } from "../../libs/fetchData";
 import config from "../../../config";
+import { useFetch } from "../../libs/fetchData";
 
 const NavContact = () => {
   const source = useFetch(`${config.apiUrl}social/links`);
+  const { image } = useFetch(`${config.apiUrl}logo`);
 
   return (
     <div>
       <nav className=" mt-3 sm:flex items-center justify-between hidden ">
         {/* left bar */}
-        <div className=" flex items-center gap-3 justify-center">
-          <Link to={"/"} className="">
+        <div className=" flex items-center gap-3 justify-center ">
+          <Link to={"/"} className="mix-blend-multiply">
             <img
-              className=" w-[230px]"
-              src="/images/mainLogo.png"
+              className=" w-[230px] h-20 object-cover"
+              src={image}
               alt="Farjax Institute of Technology"
             />
           </Link>

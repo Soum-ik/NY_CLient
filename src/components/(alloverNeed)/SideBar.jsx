@@ -77,6 +77,12 @@ const items = [
     icon: <ContainerOutlined />,
     href: "Images",
   },
+  {
+    name: "Logo",
+    key: "Images",
+    icon: <ContainerOutlined />,
+    href: "Logo",
+  },
 ];
 
 const App = () => {

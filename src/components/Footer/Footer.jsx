@@ -23,6 +23,8 @@ export default function Footer() {
   }, []);
   const source = useFetch(`${config.apiUrl}social/links`);
 
+  const { image } = useFetch(`${config.apiUrl}logo`);
+
   return (
     <>
       <footer className="relative z-50 bg-slate-600/10 pt-16 pb-10 lg:pt-[70px] overflow-hidden">
@@ -31,7 +33,11 @@ export default function Footer() {
             <div className="-mx-4 flex flex-wrap">
               <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
                 <div className="flex items-center">
-                  <img className=" text-white" src={Logo} alt="logo" />
+                <img
+              className=" w-[230px] h-20 object-cover"
+              src={image}
+              alt="Farjax Institute of Technology"
+            />
                 </div>
 
                 <p className="mb-7 text-body-color text-[15px] mt-5 text-black">
