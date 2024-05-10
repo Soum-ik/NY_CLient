@@ -20,7 +20,11 @@ function Timesection() {
   return (
     <Layout>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className=" w-full my-10 sm:py-10 sm:flex items-center justify-center lg:gap-16 drop-shadow-lg sm:shadow-lg sm:rounded-lg ">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        className=" w-full my-10 sm:py-10 sm:flex items-center justify-center lg:gap-16 drop-shadow-lg sm:shadow-lg sm:rounded-lg "
+      >
         {/* <div className=" "> */}
         <h1 className="font-Headingfont min-w-max font-bold text-xs sm:text-sm lg:text-lg">
           Upcoming Course

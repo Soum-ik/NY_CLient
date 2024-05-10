@@ -14,11 +14,13 @@ const Security = () => {
 
   const onFinish = async (values) => {
     const { username, password } = values;
+  
     try {
-      const res = await axios.get(`${config.apiUrl}admin`);
+      const res = await axios.post(`${config.apiUrl}admin`, values);
 
       if (res.status === 200) {
         const adminData = res.data;
+
         if (adminData.email === username && adminData.password === password) {
           navigate("/panel");
           generateToken();

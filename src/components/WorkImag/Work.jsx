@@ -3,7 +3,7 @@ import Layout from "../Layout/layout";
 
 const Work = () => {
   return (
-    <div className=" bg-gradient-to-t from-red-500/30 py-10 to-red-50">
+    <div className=" bg-gradient-to-t from-red-500/30 py-10 sm:py-20 to-red-50">
       <Layout>
         <h6 className=" text-center text-[12px] font-Poppins">
           RESOURCES BY ROLE

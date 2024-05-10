@@ -18,7 +18,11 @@ export default function Example() {
   }, []);
 
   return (
-    <div className="w-full py-10 px-10 ">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="3000"
+      className="w-full py-10 lg:px-10 "
+    >
       <Tab.Group>
         <Tab.List className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-10">
           {categories.map((item, index) => (

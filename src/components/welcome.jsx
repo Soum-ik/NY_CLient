@@ -14,7 +14,7 @@ export default function Welcome() {
     fetch();
   }, []);
   const [image, setImage] = useState("");
-  console.log(image);
+ 
   return (
     <div className=" mt-2  min-h-[40vh] xs:min-h[60vh] sm:min-h-[75vh] object-fill bg-cover bg-black relative">
       <img

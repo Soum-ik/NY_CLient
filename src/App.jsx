@@ -19,6 +19,7 @@ import ApplyNow from "./components/(deshboard)/pages/component/applyNow";
 import ImagesDesh from "./components/(deshboard)/pages/ImagesDesh";
 import ForgotPassword from "./components/(alloverNeed)/forgot-password";
 import ResetPassword from "./components/(alloverNeed)/reset-password";
+import LogoDesh from "./components/(deshboard)/pages/logosDesh";
 export default function App() {
   return (
     <div className=" w-full min-h-screen">
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/courses" element={<CouresPageDesh />} />
         <Route path="/courses/edit/:id" element={<EditDelete />} />
         <Route path="/courses/post" element={<PostCourse />} />
+        <Route path="/logo" element={<LogoDesh />} />
         <Route path="/Banner" element={<Banner />} />
         <Route path="/categories" element={<CatagoriDesh />} />
       </Routes>

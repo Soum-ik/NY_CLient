@@ -48,7 +48,7 @@ const CustomData = ({
         </h4>
       )}
       <p
-        className={` text-justify xs:text-[18px] text-[13px] text mt-5 text-black`}
+        className={`whitespace-pre-line  text-justify xs:text-[18px] text-[13px] text mt-5 text-black`}
       >
         {tittle}
       </p>

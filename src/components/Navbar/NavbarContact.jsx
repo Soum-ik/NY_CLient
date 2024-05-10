@@ -3,31 +3,31 @@ import FollowUs from "../Footer/FollowUs";
 
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoYoutube } from "react-icons/io5";
 // import { BsInstagram, BsTelegram, BsTwitterX } from "react-icons/bs";
-import { useFetch } from "../../libs/fetchData";
 import config from "../../../config";
+import { useFetch } from "../../libs/fetchData";
 
 const NavContact = () => {
   const source = useFetch(`${config.apiUrl}social/links`);
+  const { image } = useFetch(`${config.apiUrl}logo`);
 
   return (
     <div>
       <nav className=" mt-3 sm:flex items-center justify-between hidden ">
         {/* left bar */}
-        <div className=" flex items-center gap-3 justify-center">
-          <Link to={"/"} className="">
+        <div className=" flex items-center gap-3 justify-center ">
+          <Link to={"/"} className="mix-blend-multiply">
             <img
-              className=" w-[230px]"
-              src="/images/mainLogo.png"
+              className=" w-[230px] h-20 object-cover"
+              src={image}
               alt="Farjax Institute of Technology"
             />
           </Link>
-          <p className=" ">PROFESSIONAL EDUCATION</p>
         </div>
 
         {/* right bar */}
         <div className=" flex justify-center items-center gap-5">
           <div className=" space-x-2  ">
-            <Link to={"https://farjaxiot.vercel.app/admin"}>Login</Link>
+            <Link to={"/admin"}>Login</Link>
             <span>|</span>
             <Link>Singup Now</Link>
           </div>

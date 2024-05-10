@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 const Card = ({ image, name, btn, shortD, id }) => {
+  console.log(name,  "name");
   return (
     <div
       className=" rounded-2xl  px-8  z-30
@@ -14,7 +15,7 @@ const Card = ({ image, name, btn, shortD, id }) => {
         {shortD}
       </p>
       <button className=" px-3 flex items-center gap-2 py-3 cursor-pointer botton text-center">
-        <a href={`/coures/${id}`}>{btn}</a>
+        <a href={`/coures/${name}`}>{btn}</a>
       </button>
     </div>
   );

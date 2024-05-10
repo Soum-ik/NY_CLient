@@ -14,12 +14,14 @@ const CEO = () => {
           <span>Leadership</span>
         </h1>
         <section
+          data-aos="fade-up"
+          data-aos-duration="3000"
           className={`${layout.section} w-full justify-between gap-16 relative`}
         >
           {/* left section */}
           <div className={`${layout.sectionImgReverse} `}>
             <img
-              className={` object-cover sm:max-w-xl rounded-md shadow-xl shadow-neutral-700/25 items-center max-w-[285px]`}
+              className={` object-cover  sm:max-w-xl rounded-md shadow-xl shadow-neutral-700/25 items-center max-w-[285px]`}
               src={CEO.image}
               alt="CEO"
             />

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import Layout from "../Layout/layout";
-import WhatsAppLink from "../WhatsApp";
 import { useEffect, useState } from "react";
 import config from "../../../config";
-// import config from "../../../config";
+import { FaPhone } from "react-icons/fa6";
+
 
 const Section = () => {
   const [data, setData] = useState([]);
@@ -42,7 +42,7 @@ const Section = () => {
                 {/* Your dropdown content goes here */}
                 {data.map((item, index) => (
                   <a
-                    href={`/coures/${item._id}`} // Assuming you have routes based on the dropdown items
+                    href={`/coures/${item.name}`} // Assuming you have routes based on the dropdown items
                     className="text-[12px] text-black font-bold font-Poppins"
                     key={index}
                   >
@@ -60,7 +60,10 @@ const Section = () => {
           <li className="cursor-pointer">APPLICATION</li>
           <li className="cursor-pointer">CONTACT US</li>
         </ul>
-        <WhatsAppLink textSize={"text-[19px]"} />
+        <h1 className=" text-lg flex items-center justify-center gap-2">
+          <FaPhone />
+          (718) 785-4636
+        </h1>
       </nav>
     </Layout>
   );

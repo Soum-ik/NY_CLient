@@ -1,9 +1,10 @@
 import styles from "../../style/style";
-import image from "../../../public/images/mainLogo.png";
 import { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import WhatsAppLink from "../WhatsApp";
 import { Link } from "react-router-dom";
+import { useFetch } from "../../libs/fetchData";
+import config from "../../../config";
 
 const MobileNav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -11,16 +12,18 @@ const MobileNav = () => {
   function onClick() {
     setIsNavOpen(!isNavOpen);
   }
+  const { image } = useFetch(`${config.apiUrl}logo`);
+
   return (
     <>
       <div className={`${styles.paddingX} ${styles.flexCenter} my-10`}>
         <div className=" flex items-center justify-between w-full">
           <Link to={"/"}>
-          <img
-            src={image}
-            className="  max-w-[200px]"
-            alt="Farjax Institute of Technology"
-          />
+            <img
+              className=" w-[230px] h-20 object-cover"
+              src={image}
+              alt="Farjax Institute of Technology"
+            />
           </Link>
           <p className=" text-black/75" onClick={onClick}>
             {isNavOpen ? <IoMdClose size={40} /> : <IoMdMenu size={40} />}

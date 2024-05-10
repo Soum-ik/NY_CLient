@@ -58,7 +58,11 @@ const NextStep = () => {
         <h4 className="    text-[30px] font-Headingfont font-bold  text-center  z-50">
           Choose Your Path
         </h4>
-        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10"
+        >
           {cardDetails.map((CardDetail) => (
             <Card
               id={CardDetail._id}

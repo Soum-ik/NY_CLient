@@ -19,7 +19,7 @@ const HomePage = () => {
         <NextStep />
         <Contact />
         <Work />
-        <Testimonial />
+        {/* <Testimonial /> */}
         <SayTO />
       </PageLayout>
 
