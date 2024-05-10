@@ -4,7 +4,7 @@ import Layout from "../Layout/layout";
 const Section = () => {
   return (
     <div
-      className=" hidden sm:block mt-5 py-3 w-full bg-gradient-to-r from-red-800 to-red-700"
+      className=" hidden sm:block mt-5 py-3 w-full bg-[#06074f]"
       data-aos="fade-left"
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"

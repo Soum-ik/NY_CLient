@@ -19,10 +19,10 @@
 
 @layer utilities {
   .bg-color {
-    @apply bg-gradient-to-r from-red-800 to-red-700  border-red-500 text-white;
+    @apply bg-[#06074f] text-white;
   }
   .botton {
-    @apply bg-gradient-to-r from-red-800 to-red-700 rounded-md text-white select-none cursor-pointer font-Poppins;
+    @apply bg-[#06074f] rounded-md text-white select-none cursor-pointer font-Poppins;
   }
   .testing {
     @apply bg-gradient-to-r from-slate-900 via-purple-900/20 to-slate-900 blur-3xl;
@@ -36,7 +36,7 @@
 }
 
 .maincolor {
-  @apply bg-gradient-to-r from-red-800 to-red-700;
+  @apply bg-[#06074f];
 }
 .blue__gradient {
   background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);

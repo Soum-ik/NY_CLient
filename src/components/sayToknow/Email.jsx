@@ -53,7 +53,7 @@ const ContactUs = () => {
 
             <button
               type="submit"
-              className=" shadow-lg bg-gradient-to-r from-red-800 to-red-700 backdrop-blur-2xl px-3 hover:px-[10px] py-1 rounded-lg"
+              className=" shadow-lg bg-[#06074f] backdrop-blur-2xl px-3 hover:px-[10px] py-1 rounded-lg"
             >
               Register
             </button>
