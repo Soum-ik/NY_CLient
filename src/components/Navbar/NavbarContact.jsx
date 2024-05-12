@@ -27,7 +27,7 @@ const NavContact = () => {
         {/* right bar */}
         <div className=" flex justify-center items-center gap-5">
           <div className=" space-x-2  ">
-            <Link to={"/admin"}>Login</Link>
+            <Link to={"/login"}>Login</Link>
             <span>|</span>
             <Link>Singup Now</Link>
           </div>
