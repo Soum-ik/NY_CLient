@@ -30,7 +30,7 @@ const ManageServiceTable = () => {
           type="link"
           onClick={() => console.log("Navigate to add service")}
         >
-          <Link to={"/courses/post"}>
+          <Link to={"/admin/courses/post"}>
             <PlusOutlined /> Add New Service{" "}
           </Link>
         </button>
@@ -69,7 +69,7 @@ const ManageServiceTable = () => {
                     </td>
                     <td className="p-2 flex  text-center">
                       <button className="bg-green-700 text-white px-3 py-1 mr-2 rounded">
-                        <Link to={`/courses/edit/${item._id}`}>Edit</Link>
+                        <Link to={`/admin/courses/edit/${item._id}`}>Edit</Link>
                       </button>
                       <button
                         onClick={() => courseDelate(item._id)}

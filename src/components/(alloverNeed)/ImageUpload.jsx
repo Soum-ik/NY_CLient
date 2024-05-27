@@ -7,7 +7,7 @@ const ImageUploader = ({ onImageUpload, text, type }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleFileChange = async (event) => {
+  const   handleFileChange = async (event) => {
     const file = event.target.files[0];
 
     if (file) {

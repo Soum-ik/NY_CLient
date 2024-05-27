@@ -11,6 +11,9 @@ export default {
         textFont: ["Mallanna", "sans-serif"],
         Headingfont: ["Shippori Mincho B1", "serif"],
       },
+      colors : {
+        primary: '#06074F'
+      },
 
       screens: {
         xxxS: "390px",

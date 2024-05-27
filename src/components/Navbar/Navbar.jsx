@@ -12,7 +12,7 @@ const Navbar = ({ contact }) => {
         </div>
       </div>
       {contact && (
-        <div className=" hidden sm:block mt-5 py-3 w-full bg-gradient-to-r from-red-800 to-red-700">
+        <div className=" hidden sm:block mt-5 py-3 w-full bg-[#06074f]">
           <Section />
         </div>
       )}

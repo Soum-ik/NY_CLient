@@ -15,73 +15,73 @@ const items = [
     name: "Hero Component",
     key: "hero",
     icon: <MailOutlined />,
-    href: "hero",
+    href: "admin/hero",
   },
   {
     name: "Course We Offer",
     key: "course-offer",
     icon: <AppstoreOutlined />,
-    href: "course-offer",
+    href: "admin/course-offer",
   },
   {
     name: "Knowledge",
     key: "knowledge",
     icon: <MailOutlined />,
-    href: "knowledge",
+    href: "admin/knowledge",
   },
   {
     name: "CEO",
     key: "CEO",
     icon: <MailOutlined />,
-    href: "CEO",
+    href: "admin/CEO",
   },
   {
     name: "Courses",
     key: "courses",
     icon: <AppstoreOutlined />,
-    href: "courses",
+    href: "admin/courses",
   },
   {
     name: "Categories",
     key: "Catagori",
     icon: <ContainerOutlined />,
-    href: "categories",
+    href: "admin/categories",
   },
   {
     name: "Customer Review",
     key: "customer-review",
     icon: <DesktopOutlined />,
-    href: "customer-review",
+    href: "admin/customer-review",
   },
   {
     name: "Social Media",
     key: "social-media",
     icon: <ContainerOutlined />,
-    href: "social-media",
+    href: "admin/social-media",
   },
   {
     name: "Banner",
     key: "Banner",
     icon: <ContainerOutlined />,
-    href: "Banner",
+    href: "admin/Banner",
   },
   {
     name: "Apply Student Data",
     key: "Apply Student Data",
     icon: <ContainerOutlined />,
-    href: "Apply-now-data",
+    href: "admin/Apply-now-data",
   },
   {
     name: "Images",
     key: "Images",
     icon: <ContainerOutlined />,
-    href: "Images",
+    href: "admin/Images",
   },
   {
     name: "Logo",
     key: "Images",
     icon: <ContainerOutlined />,
-    href: "Logo",
+    href: "admin/Logo",
   },
 ];
 
@@ -121,7 +121,7 @@ const App = () => {
           >
             {items.map((item) => (
               <Menu.Item key={item.key} icon={item.icon}>
-                <Link to={`/${item.href}`}>{item.name}</Link>
+                <Link to={`/${item.href}`}admin>{item.name}</Link>
               </Menu.Item>
             ))}
           </Menu>

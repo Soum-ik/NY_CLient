@@ -134,7 +134,7 @@ const ContactData = ({ onSubmit }) => {
         <div className="text-center mt-1">
           <button
             type="submit"
-            className="bg-gradient-to-r from-red-800 to-red-700 outline-none hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all disabled:opacity-75 disabled:cursor-progress"
+            className="bg-[#06074f] outline-none hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all disabled:opacity-75 disabled:cursor-progress"
             name="message"
           >
             Send Message
