@@ -87,7 +87,7 @@ const Contact = () => {
 
   return (
     <div
-      data-aos-duration="2000"
+      data-aos-duration="1000"
       data-aos="fade-up"
       data-aos-anchor-placement="center-center"
       id="form"

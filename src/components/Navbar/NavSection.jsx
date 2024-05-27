@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import config from "../../../config";
 import { FaPhone } from "react-icons/fa6";
 
-
 const Section = () => {
   const [data, setData] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -37,7 +36,7 @@ const Section = () => {
             {isDropdownOpen && (
               <div
                 onMouseLeave={() => setIsDropdownOpen(false)}
-                className="absolute bg-white rounded-md min-w-[1000px] p-2 shadow-md mt-2"
+                className="absolute bg-white rounded-md min-w-[1000px] p-2 z-50 shadow-md mt-2"
               >
                 {/* Your dropdown content goes here */}
                 {data.map((item, index) => (
@@ -57,8 +56,10 @@ const Section = () => {
           <Link to={"/aboutus"} className="cursor-pointer">
             ABOUT US
           </Link>
-          <li className="cursor-pointer">APPLICATION</li>
-          <li className="cursor-pointer">CONTACT US</li>
+          {/* <li className="cursor-pointer">APPLICATION</li> */}
+          <Link to={"/contact"} className="cursor-pointer">
+            CONTACT US
+          </Link>
         </ul>
         <h1 className=" text-lg flex items-center justify-center gap-2">
           <FaPhone />

@@ -16,7 +16,7 @@ export default function Welcome() {
   const [image, setImage] = useState("");
  
   return (
-    <div className=" mt-2  min-h-[40vh] xs:min-h[60vh] sm:min-h-[75vh] object-fill bg-cover bg-black relative">
+    <div className=" z-0 min-h-[40vh] xs:min-h[60vh] sm:min-h-[75vh] object-fill bg-cover bg-black relative">
       <img
         src={image}
         className=" opacity-60 w-full  object-cover  z-50 max-h-[40vh] xs:max-h[60vh] sm:max-h-[75vh]"

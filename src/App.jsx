@@ -20,13 +20,14 @@ import ImagesDesh from "./components/(deshboard)/pages/ImagesDesh";
 import ForgotPassword from "./components/(alloverNeed)/forgot-password";
 import ResetPassword from "./components/(alloverNeed)/reset-password";
 import LogoDesh from "./components/(deshboard)/pages/logosDesh";
-import Admin from "./components/(deshboard)/Admin/admin";
+import ContactPage from "./components/pages/ContactPage";
 export default function App() {
   return (
     <div className=" w-full min-h-screen">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/coures/:id" element={<CouresPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/reset_password/:id" element={<ResetPassword />}></Route>

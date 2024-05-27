@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
-const Card = ({ image, name, btn, shortD, id }) => {
-  console.log(name,  "name");
+const Card = ({ image, name, btn, shortD, id, contactForm }) => {
+  console.log(name, "name");
   return (
     <div
       className=" rounded-2xl  px-8  z-30
@@ -14,9 +14,15 @@ const Card = ({ image, name, btn, shortD, id }) => {
       <p className=" max-w-xs text-center tracking-wide text-[12px] sm:text-[14px] line-clamp-3">
         {shortD}
       </p>
-      <button className=" px-3 flex items-center gap-2 py-3 cursor-pointer botton text-center">
-        <a href={`/coures/${name}`}>{btn}</a>
-      </button>
+      {contactForm ? (
+        <button className=" px-3 flex items-center gap-2 py-3 cursor-pointer botton text-center">
+          <a href={`#form`}>{btn}</a>
+        </button>
+      ) : (
+        <button className=" px-3 flex items-center gap-2 py-3 cursor-pointer botton text-center">
+          <a href={`/coures/${name}`}>{btn}</a>
+        </button>
+      )}
     </div>
   );
 };
