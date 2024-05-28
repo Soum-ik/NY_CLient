@@ -19,10 +19,8 @@ function Courses() {
 
   return (
     <Layout className="">
-      {/* <h1 className="  text-[30px] sm:text-[50px]  mt-10 sm:mt-12 font-semibold text-center">
-        The Information Technology Course we offer
-      </h1> */}
-      <p className=" text-center max-w-lg text-lg mx-auto sm:text-4xl my-10">
+    
+      <p className=" text-center max-w-lg text-3xl  mx-auto sm:text-4xl my-10">
       The Information Technology Course we offer
       </p>
       <div

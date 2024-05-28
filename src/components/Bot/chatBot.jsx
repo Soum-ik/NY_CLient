@@ -9,16 +9,17 @@ function Chatbot() {
 
       <p className={` opacity-70 text-lg`}>
         {" "}
-        Connect with a student consultant for course details. 
+        Connect with a student consultant for course details.
       </p>
       <button
-        className="rounded-full bg-primary/80 text-2xl px-7 !py-3
+        className="rounded-full bg-[#1351D8] text-sm lg:text-2xl px-7 !py-3
        "
       >
         Live Chat
       </button>
       <Bot />
     </div>
+    
   );
 }
 

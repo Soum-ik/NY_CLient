@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Logo from "../../../public/images/mainLogo.png";
 import footerItems from "./FooterDatils";
 import FollowUs from "./FollowUs";
 import FooterList from "./FooterList";
@@ -67,7 +66,7 @@ export default function Footer() {
                     <FollowUs icon={<BsInstagram />} link={source.instagram} />
                     <FollowUs icon={<BsTelegram />} link={source.telegram} />
                   </div>
-                  <h1 className=" mt-2  min-w-max">
+                  <h1 className=" mt-2 text-sm min-w-max">
                     {" "}
                     Developed & manage by Farjax Tech & Consulting Inc.
                   </h1>

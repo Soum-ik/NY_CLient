@@ -3,7 +3,7 @@ import PageLayout from "../Layout/PageLayout";
 import Courses from "../all-courses/courses";
 import Welcome from "../welcome";
 import Chatbot from "../Bot/chatBot";
-import Question from "../Officelocation/Question";
+import Question, { Contact_us } from "../Officelocation/Question";
 
 function ContactPage() {
   return (
@@ -12,6 +12,7 @@ function ContactPage() {
         <Welcome />
         <Question />
         <Chatbot />
+        <Contact_us />
         <Courses />
         <SayTo />
       </PageLayout>
