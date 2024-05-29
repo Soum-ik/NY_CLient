@@ -19,9 +19,11 @@ function Courses() {
 
   return (
     <Layout className="">
-    
-      <p className=" text-center max-w-lg text-3xl  mx-auto sm:text-4xl my-10">
+      {/* <p className=" text-center max-w-lg text-3xl  mx-auto sm:text-4xl my-10">
       The Information Technology Course we offer
+      </p> */}
+      <p className="text-center max-w-xl mx-auto font-semibold  text-4xl">
+        The Information Technology Course we offer
       </p>
       <div
         data-aos="fade-up"

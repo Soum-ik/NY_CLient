@@ -37,11 +37,12 @@ const CustomData = ({
           {offer}
         </h6>
       )}
-      <h2
+      {/* <h2
         className={`${styles.heading2} ${customStyleHeading} text-black/70 max-w-[700px] font-Headingfont `}
       >
         {heading}
-      </h2>
+      </h2> */}
+      <h2 className=" max-w-md  font-semibold  text-4xl">{heading}</h2>
       {sub && (
         <h4 className=" text-[13px] md:text-[15px] mt-2 text-black/70">
           {sub}

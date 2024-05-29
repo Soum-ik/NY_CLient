@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { IoClose, IoCloudDoneOutline } from "react-icons/io5";
-
+FaFacebook
 import { PiPhoneCallLight } from "react-icons/pi";
 import { GrMapLocation } from "react-icons/gr";
 
@@ -15,6 +15,7 @@ import { useState } from "react";
 import config from "../../../config";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { FaFacebook } from "react-icons/fa6";
 
 function Question() {
   return (
@@ -57,8 +58,6 @@ function Question() {
 }
 
 export default Question;
-
- 
 
 export const Contact_us = () => {
   const [loading, setLoading] = useState(false);
@@ -165,10 +164,9 @@ export const Contact_us = () => {
           </div>
           <h1 className="  font-semibold text-4xl font-Acme">
             {" "}
-            Stand our in the{" "}
-            <span className=" text-[#558bff] capitalize">
-              digital
-            </span> <br /> crowd presence
+            Distinguish yourself in the
+            <span className=" text-[#558bff] capitalize"> digital</span>{" "}
+            landscape
           </h1>
           <p className=" opacity-70">
             Because helping to improve your business is vital to us, so let’s
@@ -220,7 +218,7 @@ export const Contact_us = () => {
       </div>
 
       {/* button component */}
-      <div className=" bg-black pt-40 py-20 ">
+      <div className=" bg-primary pt-40 py-20 ">
         <div className="max-w-7xl mx-auto">
           <div className=" grid grid-cols-1 md:space-y-0 space-y-10 place-content-center md:grid-cols-2 md:gap-10 lg:gap-0 lg:grid-cols-4">
             {data.map((item, idx) => (
@@ -238,11 +236,8 @@ export const Contact_us = () => {
   );
 };
 
- 
-
 // pop up component
 const ThankYou = ({ onClose }) => {
-   
   return (
     <div className=" z-50 duration-500 ease-in-out fixed inset-0 flex  items-center justify-center bg-black/20">
       <div className=" z-50 max-w-lg min-w-[350px] p-5 rounded-xl bg-white flex items-center justify-center flex-col relative">
@@ -268,23 +263,22 @@ const ThankYou = ({ onClose }) => {
   );
 };
 
-
 const data = [
   {
     icons: <IoCall className=" text-white" size={25} />,
     text: "(718) 785-4636",
   },
   {
-    icons: <BsMessenger className=" text-white" size={25} />,
-    text: "farjaxtc@gmail.com",
+    icons: <FaFacebook className=" text-white" size={25} />,
+    text: "http://www.facebook.com/faxiot",
   },
   {
     icons: <BsWhatsapp className=" text-white" size={25} />,
-    text: "Whatapp Support ",
+    text: "+1917 396 2689",
   },
   {
     icons: <BsClock className=" text-white" size={25} />,
-    text: "08:00 AM - 05:00 PM",
+    text: "08:00 AM - 06:00 PM",
   },
 ];
 
