@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
 import { IoClose, IoCloudDoneOutline } from "react-icons/io5";
-FaFacebook
+FaFacebook;
 import { PiPhoneCallLight } from "react-icons/pi";
 import { GrMapLocation } from "react-icons/gr";
 
 import { FaMailBulk } from "react-icons/fa";
 
-import { BsClock, BsMessenger, BsWhatsapp } from "react-icons/bs";
+import { BsClock, BsWhatsapp } from "react-icons/bs";
 import { IoCall } from "react-icons/io5";
 
 import Layout from "../Layout/layout";
 import image from "../../../public/images/img5.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import config from "../../../config";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -45,8 +45,18 @@ function Question() {
                 <p className="opacity-70 text-center md:text-start">
                   {data.description}
                 </p>
-                <h1 className=" font-semibold text-black/85 text-xl">
-                  {data.contact}
+                <h1 className=" flex flex-col font-semibold text-black/85 text-xl ">
+                  {data.link && (
+                    // eslint-disable-next-line react/jsx-no-target-blank
+                    <a
+                      target="_blank"
+                      className="  !px-5 py-2 shadow-md  rounded-full"
+                      href={data.link}
+                    >
+                      Schedule Now
+                    </a>
+                  )}
+                  {!data.link && data.contact}
                 </h1>
               </div>
             ))}
@@ -147,6 +157,15 @@ export const Contact_us = () => {
     return pattern.test(email);
   };
 
+  useEffect(() => {
+    const fetch = async () => {
+      const res = await axios.get(`${config.apiUrl}about/banner`);
+      // /
+      setImage(res.data[2].Image);
+    };
+    fetch();
+  }, []);
+  const [image, setImage] = useState("");
   return (
     <div className="relative my-10">
       <div className=" shadow-xl  -mb-20 rounded-xl max-w-7xl md:mx-auto h-auto flex mx-5 flex-col lg:flex-row justify-between">
@@ -164,14 +183,16 @@ export const Contact_us = () => {
           </div>
           <h1 className="  font-semibold text-4xl font-Acme">
             {" "}
-            Distinguish yourself in the
-            <span className=" text-[#558bff] capitalize"> digital</span>{" "}
-            landscape
+            Distinguish Yourself in the IT
+            <span className=" text-[#558bff] capitalize"> Profession</span> with
+            Our IT Training
           </h1>
-          <p className=" opacity-70">
-            Because helping to improve your business is vital to us, so let’s
-            keep in touch, send us message and we’ll get back to you as soon as
-            possible.
+
+          <p className=" opacity-70  whitespace-pre-line">
+            {`Acquire the skills and knowledge essential for success in the
+            competitive tech industry. Advance your career with our expert-led
+            courses, designed according to the latest industry standards and
+            technological advancements`}
           </p>
           <form
             onSubmit={sendEmail}
@@ -287,21 +308,22 @@ const contactData = [
     icon: <PiPhoneCallLight size={30} className="text-[#1351D8]" />,
     title: "Give Us A Call",
     description:
-      "Lorem ipsum dolor sit amet consectetur sit dignissim pellentesque egestas.",
+      " Our team is dedicated to providing exceptional service and support. Reach out and experience our commitment to excellence ",
     contact: "(718) 785-4636",
   },
   {
     icon: <FaMailBulk size={30} className=" text-[#1351D8]" />,
     title: "Send Us An Email",
     description:
-      "Lorem ipsum dolor sit amet consectetur sit dignissim pellentesque egestas.",
+      "We're here to help and answer any questions you may have. Reach out to us for prompt and professional support",
     contact: "farjaxtc@gmail.com",
   },
   {
     icon: <GrMapLocation size={30} className=" text-[#1351D8]" />,
-    title: "Visit Our Office",
+    title: "Schedule an introductory call",
     description:
-      "Lorem ipsum dolor sit amet consectetur sit dignissim pellentesque egestas.",
-    contact: "New York, USA",
+      "Let's arrange an introductory call to discuss the details further",
+    contact: "Schedule Now",
+    link: "https://calendar.app.google/Jhk7E87bc9oKPRU77",
   },
 ];

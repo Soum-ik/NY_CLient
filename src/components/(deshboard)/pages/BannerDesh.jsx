@@ -11,6 +11,7 @@ import axios from "axios";
 function BannerDesh() {
   const [Image, setImage] = useState("");
   const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
   const isFormFilled = Image !== "";
 
   console.log("image2", image2);
@@ -22,6 +23,7 @@ function BannerDesh() {
 
         setImage(res.data[0].Image);
         setImage2(res.data[1].Image);
+        setImage3(res.data[2].Image);
       } catch (error) {
         console.error("Error:", error);
         toast.error("Error fetching image");
@@ -35,6 +37,9 @@ function BannerDesh() {
   const handleImageUpload2 = (imageUrl) => {
     setImage2(imageUrl);
   };
+  const handleImageUpload3 = (imageUrl) => {
+    setImage3(imageUrl);
+  };
 
   function handleSubmit(e, data) {
     console.log(data);
@@ -45,6 +50,9 @@ function BannerDesh() {
     }
     if (data == "66579a9d99e81969774124da") {
       imageBody = image2;
+    }
+    if (data == "66589d46441591292fff576f") {
+      imageBody = image3;
     }
     const updateImage = async () => {
       try {
@@ -79,7 +87,7 @@ function BannerDesh() {
       <div className="min-w-[1000px] rounded-lg shadow-2xl overflow-auto min-h-max mt-11 px-5 py-4">
         <Deshboard>
           <h1 className="text-[20px] pb-10 font-semibold">About Banner</h1>
-          <div style={{ maxHeight: "400px" }}>
+          <div className="" style={{ maxHeight: "400px" }}>
             <Flex vertical gap={32}>
               <ImageUploader onImageUpload={handleImageUpload} />
               <div className=" ">
@@ -112,6 +120,27 @@ function BannerDesh() {
                 )}
                 <button
                   onClick={(e) => handleSubmit(e, "66579a9d99e81969774124da")}
+                  className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md ${
+                    !isFormFilled ? "disabled opacity-80" : ""
+                  }`}
+                  disabled={!isFormFilled}
+                >
+                  Save Now
+                </button>
+                <Toaster position="top-center"></Toaster>
+              </div>
+            </Flex>
+            <p className=" mt-10 text-xl font-semibold">Contact Form Image</p>
+            <Flex vertical gap={32}>
+              <ImageUploader onImageUpload={handleImageUpload3} />
+              <div className=" ">
+                {image3 && (
+                  <div>
+                    <img src={image3} className="h-[200px]" alt="Uploaded" />
+                  </div>
+                )}
+                <button
+                  onClick={(e) => handleSubmit(e, "66589d46441591292fff576f")}
                   className={`bg-color max-w-[100px] px-3 py-2 my-3 rounded-md ${
                     !isFormFilled ? "disabled opacity-80" : ""
                   }`}
