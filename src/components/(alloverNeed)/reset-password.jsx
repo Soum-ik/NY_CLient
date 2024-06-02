@@ -16,7 +16,7 @@ function ResetPassword() {
       });
       if (res.data) {
         alert("Password change succes fully");
-        navigate("/admin");
+        navigate("/login");
       }
     } catch (error) {
       alert("Password are not change succes fully");
