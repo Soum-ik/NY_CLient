@@ -5,8 +5,8 @@ function Register() {
   return (
     <div
       data-aos="fade-up"
-      data-aos-duration="2000"
-      className=" mt-10 px-10 sm:px-0 flex w-full justify-center"
+      data-aos-duration="1000"
+      className=" mt-5 px-10 sm:px-0 flex w-full justify-center"
     >
       <div className=" sm:max-w-[1000px] hidden sm:block">
         <img

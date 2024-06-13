@@ -49,12 +49,12 @@ function ContactBaner() {
       <Layout>
         <div className=" px-10 sm:px-20 sm:min-w-[1400px] bg-fixed absolute top-0 py-8 sm:py-16 z-50">
           <div>
-            <h1 className=" text-white text-[12px]">WHO WE ARE</h1>
+            <h1 className=" text-white text-[12px]">Connect With Us</h1>
             <hr className=" border-y-2 w-full" />
           </div>
 
           <h1 className=" text-[30px] sm:text-[60px]  mt-20 sm:mt-32  text-white ">
-            Building On belief
+            How can we help
           </h1>
         </div>
       </Layout>

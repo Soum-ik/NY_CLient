@@ -20,7 +20,9 @@ const Section = () => {
               ABOUT US
             </Link>
             <li className="cursor-pointer">APPLICATION</li>
-            <li className="cursor-pointer">CONTACT US</li>
+            <Link to={"/contact"} className="cursor-pointer">
+              CONTACT US
+            </Link>
           </ul>
         </nav>
       </Layout>

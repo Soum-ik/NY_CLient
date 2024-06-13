@@ -56,7 +56,7 @@ function Question() {
                       Schedule Now
                     </a>
                   )}
-                  {!data.link && data.contact}
+                  {!data.link && <a className="!px-5 py-2 shadow-md  rounded-full">{data.contact}</a>}
                 </h1>
               </div>
             ))}

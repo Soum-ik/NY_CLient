@@ -89,7 +89,7 @@ const Contact = () => {
     <div
       data-aos-duration="1000"
       data-aos="fade-up"
-      data-aos-anchor-placement="center-center"
+      // data-aos-anchor-placement="center-center"
       id="form"
       className=" sm:py-10 py-5 px-5 md:px-0  bg-slate-100"
     >
