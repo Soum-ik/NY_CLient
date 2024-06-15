@@ -87,7 +87,7 @@ function Register() {
                 name="user_email"
               />
             </div>
-            <button className="max-w-min rounded-md bg-white p-2 text-left text-primary">
+            <button className=" col-span-1 ml-4 max-w-min rounded-md bg-white p-2 text-left text-primary">
               Submit
             </button>
           </form>

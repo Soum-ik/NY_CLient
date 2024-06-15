@@ -15,9 +15,9 @@ const WhatsAppLink = ({ marginTop, textSize }) => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`flex gap-3 items-center justify-center ${marginTop}  ${textSize} `}
+      className={`flex gap-3 items-center justify-center uppercase ${marginTop}  ${textSize} `}
     >
-      Contact Us
+      What's Up
       <BsWhatsapp size={20} />
     </a>
   );
