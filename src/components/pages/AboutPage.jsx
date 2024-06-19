@@ -5,12 +5,12 @@ import SayTO from "../sayToknow/Register";
 import PageLayout from "../Layout/PageLayout";
 import Welcome from "../welcome";
 import Futures from "../Motivation/Feture";
-import CEO from "../CEO/Ceo";
+import CEO from "../CEO/Ceo"; 
 
 const AboutPage = () => {
   return (
     <div className=" relative">
-      <PageLayout>
+      <PageLayout contact={true}>
         <Welcome />
         <Futures />
         <Work />

@@ -20,7 +20,7 @@ export default function Learn() {
       <div
         data-aos-duration="1000"
         data-aos="fade-up"
-        data-aos-anchor-placement="center-center"
+ 
         className="sm:px-7"
       >
         <h1 className="headingTextSize">{`What You'll Learn`}</h1>

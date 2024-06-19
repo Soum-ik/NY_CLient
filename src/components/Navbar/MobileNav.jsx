@@ -49,7 +49,7 @@ const MobileNav = () => {
               ABOUT US
             </Link>
             <Link
-              to={"/aboutus"}
+              to={"/contact"}
               onClick={() => setIsNavOpen(false)}
               className="cursor-pointer"
             >

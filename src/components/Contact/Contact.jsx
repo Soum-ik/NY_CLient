@@ -107,7 +107,7 @@ const Contact = () => {
         <form
           data-aos-duration="2000"
           data-aos="fade-up"
-          data-aos-anchor-placement="center-center"
+ 
           onSubmit={sendEmail}
           className={` min-w-[330px] sm:col-span-7 grid-cols-1  lg:col-span-8 sm:min-w-[400px] md:min-w-[600px] h-full flex flex-col justify-between shadow-2xl p-2 border rounded-md `}
         >
