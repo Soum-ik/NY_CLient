@@ -23,31 +23,31 @@ function Timesection() {
       <div
         data-aos="zoom-in-up"
         data-aos-duration="1000"
-        className=" w-full my-10 sm:py-10 sm:flex items-center justify-center lg:gap-16 drop-shadow-lg sm:shadow-lg sm:rounded-lg "
+        className="my-10 w-full items-center justify-center drop-shadow-lg sm:flex sm:rounded-lg sm:py-10 sm:shadow-lg lg:gap-16"
       >
         {/* <div className=" "> */}
-        <h1 className="font-Headingfont min-w-max font-bold text-xs sm:text-sm lg:text-lg">
+        <h1 className="min-w-max text-xs font-semibold sm:text-sm lg:text-lg">
           Upcoming Course
         </h1>
 
         {click ? (
-          <div className="max-w-sm px-1 mt-1">
+          <div className="mt-1 max-w-sm px-1">
             <ContactData onSubmit={handleContactDataSubmit} />
           </div>
         ) : (
-          <div className="flex items-center mt-2  overflow-x-scroll sm:overflow-hidden justify-center space-x-3 lg:space-x-10  xl:space-x-20 ">
+          <div className="mt-2 flex items-center justify-center space-x-3 overflow-x-scroll sm:overflow-hidden lg:space-x-10 xl:space-x-20">
             {choosepath?.map((item, index) => (
               <div
                 key={index}
-                className=" ml-10 sm:ml-0 flex flex-col sm:first:pl-0 first:pl-20 items-center justify-center "
+                className="ml-10 flex flex-col items-center justify-center first:pl-20 sm:ml-0 sm:first:pl-0"
               >
-                <div className="flex items-center justify-center ">
+                <div className="flex items-center justify-center">
                   {/* Format the start_date and end_date */}
-                  <p className="text-black text-xs sm:text-sm lg:text-lg   font-medium">
+                  <p className="text-xs font-medium text-black sm:text-sm lg:text-lg">
                     {new Date(item.start_date).toLocaleDateString()}
                   </p>{" "}
                   -{" "}
-                  <p className="text-black text-xs sm:text-sm lg:text-lg   font-medium">
+                  <p className="text-xs font-medium text-black sm:text-sm lg:text-lg">
                     {new Date(item.end_date).toLocaleDateString()}
                   </p>
                 </div>

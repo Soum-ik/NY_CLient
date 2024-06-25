@@ -75,19 +75,19 @@ function Register() {
 
           <form
             onSubmit={sendToBackend}
-            className="mt-5 grid grid-cols-3 gap-2 sm:gap-5"
+            className="mt-5 grid grid-cols-3 place-content-between gap-2 sm:gap-5"
           >
-            <div className="col-span-2 flex min-w-max items-center rounded-md bg-white py-2 pl-2 pr-3 sm:pr-0">
+            <div className="col-span-2 flex min-w-max items-center  rounded-md bg-white py-2 pl-2 pr-3 sm:pr-0">
               <MdEmail className="text-primary" size={22} />
               <input
-                className="ml-2 min-w-[230px] rounded-md text-sm text-black outline-none md:max-w-[500px] lg:min-w-[300px]"
+                className="ml-2 w-full rounded-md text-sm text-black outline-none md:max-w-[500px] lg:min-w-[300px]"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 name="user_email"
               />
             </div>
-            <button className=" col-span-1 ml-4 max-w-min rounded-md bg-white p-2 text-left text-primary">
+            <button className="col-span-1   max-w-min rounded-md bg-white p-2 text-left text-primary">
               Submit
             </button>
           </form>

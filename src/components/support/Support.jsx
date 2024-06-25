@@ -4,7 +4,7 @@ export default function Support() {
   return (
     <Layout>
       <div className=" sm:px-10">
-        <h1 className=" headingTextSize">
+        <h1 className=" text-4xl font-semibold">
           Carrere Support & Access Study Material{" "}
         </h1>
         <div className=" grid sm:grid-cols-2 grid-cols-1 my-10 gap-5 sm:gap-10">
@@ -16,12 +16,12 @@ export default function Support() {
               key={index}
             >
               <div>{<item.icon className="" size={50} />}</div>
-              <div className=" flex   flex-col">
+              <div className=" flex  space-y-2 flex-col">
                 <h1 className=" font-extralight text-[12px] tracking-widest">
                   {item.name}
                 </h1>
                 <h1 className=" text-[20px]  font-semibold">{item.nameMain}</h1>
-                <p className=" font-light  text-[12px] tracking-widest">
+                <p className=" opacity-70  text-[14px] ">
                   {item.text}
                 </p>
               </div>

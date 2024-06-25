@@ -32,10 +32,10 @@ const ContactUs = () => {
   return (
     <div className=" px-5 sm:px-20 py-10 flex flex-col items-center justify-center bg-primary text-white">
       <div>
-        <h1 className=" text-left font-semibold text-[27px] sm:text-[35px] font-Headingfont">
+        <h1 className=" text-left font-semibold text-[27px] sm:text-[35px] ">
           Stay in the know
         </h1>
-        <h4 className="  font-light   sm:min-w-[500px] text-[14px] text-white/70">
+        <h4 className="    sm:min-w-[500px] opacity-70">
           Stay Up-to-Date with Our Latest News, Insights, and Updates
         </h4>
         <form className="flex flex-col" ref={form} onSubmit={sendEmail}>

@@ -13,7 +13,7 @@ export default function TimeLine() {
         // data-aos-anchor-placement="center-center"
         className=" sm:px-10 py-20 sm:py-32 space-y-5 "
       >
-        <h5 className=" headingTextSize mb-5 ">Timeline</h5>
+        <h5 className=" text-4xl font-semibold mb-5 ">Timeline</h5>
         <h5 className=" -tracking-tighter xs:text-[18px] text-[13px]">
           {!data.timeline ? <Skeleton active /> : data.timeline}
         </h5>

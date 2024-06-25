@@ -55,7 +55,7 @@ const NextStep = () => {
           </Tab.List>
         </Tab.Group>
 
-        <h4 className="    text-[30px] font-Headingfont font-bold  text-center  z-50">
+        <h4 className="   text-4xl  font-semibold  text-center  z-50">
           Choose Your Path
         </h4>
         <div

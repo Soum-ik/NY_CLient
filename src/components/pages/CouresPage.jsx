@@ -38,7 +38,7 @@ const CouresPage = () => {
         <div className="  z-50 cursor-pointer h-16 rounded-full w-40  text-center bg-[#06074f]  border-red-500  backdrop-blur-3xl  bottom-20  hover:right-0 ease-in-out duration-300 sm:-right-5 fixed lg:flex shadow-sm shadow-red-500 items-center justify-center hidden">
           {" "}
           <WhatsAppLink
-            textSize={" text-[18px] font-bold text-white"}
+            textSize={" text-[18px]  text-white"}
             marginTop={""}
           />
         </div>

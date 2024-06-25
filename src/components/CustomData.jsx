@@ -17,49 +17,32 @@ const CustomData = ({
   forYellow,
   sub,
 }) => {
-  // const [click, setClick] = useState(false);
-  // const [btnColorChnager, setBtnColorChnager] = useState(false);
-  // const handleClick = () => {
-  //   setClick(true);
-  // };
-
-  // const colorHandler = () => {
-  //   setBtnColorChnager(true);
-  //   setClick(false);
-  // };
-
   return (
     <div className={layout.sectionInfo}>
       {offer && (
         <h6
-          className={`mb-4 font-Headingfont font-bold text-[15px] text-black/70  p-1 ${forYellow}`}
+          className={`mb-4 p-1 font-Headingfont text-[15px] font-bold text-black/70 ${forYellow}`}
         >
           {offer}
         </h6>
       )}
-      {/* <h2
-        className={`${styles.heading2} ${customStyleHeading} text-black/70 max-w-[700px] font-Headingfont `}
-      >
-        {heading}
-      </h2> */}
-      <h2 className=" max-w-md  font-semibold  text-4xl">{heading}</h2>
+
+      <h2 className="max-w-md text-4xl font-semibold">{heading}</h2>
       {sub && (
-        <h4 className=" text-[13px] md:text-[15px] mt-2 text-black/70">
-          {sub}
-        </h4>
+        <h4 className="mt-2 text-[13px] text-black/70 md:text-[15px]">{sub}</h4>
       )}
       <p
-        className={`whitespace-pre-line  text-justify xs:text-[18px] text-[13px] text mt-5 text-black`}
+        className={`text mt-5 whitespace-pre-line text-justify  text-black opacity-70 xs:text-[18px]`}
       >
         {tittle}
       </p>
-      <div className=" flex  sm:gap-10 items-center justify-center">
+      <div className="flex items-center justify-center sm:gap-10">
         {what ? (
           // eslint-disable-next-line react/jsx-no-target-blank
           <a
             href={what}
             target="_blank"
-            className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont"
+            className="botton mt-5 px-[18px] py-3 font-Headingfont -tracking-tight ease-in-out active:p-3 sm:block"
           >
             {button}
           </a>
@@ -68,7 +51,7 @@ const CustomData = ({
             {button && (
               <a
                 href="#form"
-                className=" -tracking-tight  mt-5  sm:block active:p-3 ease-in-out  botton px-[18px] py-3 font-Headingfont hidden"
+                className="botton mt-5 hidden px-[18px] py-3 font-Headingfont -tracking-tight ease-in-out active:p-3 sm:block"
               >
                 {button}
               </a>
@@ -78,21 +61,11 @@ const CustomData = ({
 
         {more && (
           <button
-            // onClick={handleClick}
-            className={` 
-            
-             border shadow
-             px-[18px]  py-[18px] rounded-lg ease-in-out duration-300 mt-4 font-medium flex cursor-pointer items-center justify-center gap-5 font-Poppins ${customStyle}`}
+            className={`mt-4 flex cursor-pointer items-center justify-center gap-5 rounded-lg border px-[18px] py-[18px] font-Poppins font-medium shadow duration-300 ease-in-out ${customStyle}`}
           >
-            {/* {click ? (
-              <ContactData onSubmit={colorHandler} />
-            ) : (
-              <> */}
-            <a className=" flex gap-2" href="#form">
+            <a className="flex gap-2" href="#form">
               {more} <IoMdArrowRoundForward size={20} />
             </a>
-            {/* </>
-            )} */}
           </button>
         )}
       </div>

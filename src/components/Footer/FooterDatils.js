@@ -8,15 +8,7 @@ const footerItems = [
       },
       {
         name: "Service",
-        link: "#",
-      },
-      {
-        name: "Privacy Policy",
-        link: "#",
-      },
-      {
-        name: "Terms & Conditions",
-        link: "#",
+        link: "/",
       },
     ],
   },
