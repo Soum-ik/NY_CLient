@@ -20,7 +20,7 @@ export default function Learn() {
     <Layout>
       <div data-aos-duration="1000" data-aos="fade-up" className="sm:px-7">
         <h1 className="text-4xl font-semibold">{`What You'll Learn`}</h1>
-        <div className="   mt-10 opacity-80 tracking-wide">
+        <div className="     text-black opacity-70 xs:text-[18px] mt-10">
           {!data.learndic ? <Skeleton /> : data.learndic}
         </div>
         <div className="mt-10">
