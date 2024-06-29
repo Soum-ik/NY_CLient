@@ -87,7 +87,7 @@ const Contact = () => {
 
   return (
     <div
-      data-aos-duration="1000"
+      data-aos-duration="500"
       data-aos="fade-up"
       // data-aos-anchor-placement="center-center"
       id="form"
@@ -109,7 +109,7 @@ const Contact = () => {
       </div>
       <Layout>
         <form
-          data-aos-duration="2000"
+          data-aos-duration="500"
           data-aos="fade-up"
           onSubmit={sendEmail}
           className={`flex h-full min-w-[330px] grid-cols-1 flex-col justify-between rounded-md border p-2 shadow-2xl sm:col-span-7 sm:min-w-[400px] md:min-w-[600px] lg:col-span-8`}

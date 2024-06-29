@@ -11,7 +11,7 @@ export default function Support() {
           {support.map((item, index) => (
             <div
               data-aos="zoom-out-up"
-              data-aos-duration="3000"
+              data-aos-duration="500"
               className=" bg-color text-white   px-5 py-6 rounded-md shadow-xl hover:px-[15px] duration-300 ease-in-out flex items-center  gap-5 sm:gap-10"
               key={index}
             >

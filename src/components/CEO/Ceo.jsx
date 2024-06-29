@@ -15,7 +15,7 @@ const CEO = () => {
         </h1>
         <section
           data-aos="fade-up"
-          data-aos-duration="3000"
+          data-aos-duration="500"
           className={`${layout.section} w-full justify-between gap-16 relative`}
         >
           {/* left section */}

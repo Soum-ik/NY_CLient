@@ -8,7 +8,7 @@ export default function TimeLine() {
   return (
     <Layout>
       <div
-        data-aos-duration="1000"
+        data-aos-duration="500"
         data-aos="fade-up"
         // data-aos-anchor-placement="center-center"
         className="space-y-5 py-20 sm:px-10 sm:py-32"

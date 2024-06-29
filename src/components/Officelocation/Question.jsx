@@ -40,7 +40,7 @@ function Question() {
                   {data.icon}
                 </h1>
                 <h1 className="  font-bold text-black/85 text-2xl ">
-                  {data.title}
+                  {data.title}  
                 </h1>
                 <p className="opacity-70 text-center md:text-start">
                   {data.description}

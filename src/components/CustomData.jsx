@@ -32,7 +32,8 @@ const CustomData = ({
         <h4 className="mt-2 text-[13px] text-black/70 md:text-[15px]">{sub}</h4>
       )}
       <p
-        className={`text mt-5 whitespace-pre-line text-justify  text-black opacity-70 xs:text-[18px]`}
+        className=" mt-5 text text-justify opacity-70 whitespace-pre-line"
+        // className={`text mt-5 whitespace-pre-line text-justify  text-black opacity-70 xs:text-[18px]`}
       >
         {tittle}
       </p>

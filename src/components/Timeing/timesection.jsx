@@ -22,7 +22,7 @@ function Timesection() {
       <Toaster position="top-center" reverseOrder={false} />
       <div
         data-aos="zoom-in-up"
-        data-aos-duration="1000"
+        data-aos-duration="500"
         className="my-10 w-full items-center justify-center drop-shadow-lg sm:flex sm:rounded-lg sm:py-10 sm:shadow-lg lg:gap-16"
       >
         {/* <div className=" "> */}

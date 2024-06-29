@@ -20,7 +20,7 @@ export default function Example() {
   return (
     <div
       data-aos="fade-up"
-      data-aos-duration="3000"
+      data-aos-duration="500"
       className="w-full py-10 lg:px-10 "
     >
       <Tab.Group>
