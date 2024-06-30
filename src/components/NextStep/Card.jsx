@@ -17,7 +17,7 @@ const Card = ({ image, name, btn, shortD, id, contactForm }) => {
         </button>
       ) : (
         <button className="botton flex cursor-pointer items-center gap-2 px-3 py-3 text-center">
-          <a href={`/coures/${name}`}>{btn}</a>
+          <a href={`/course/${name}`}>{btn}</a>
         </button>
       )}
     </div>

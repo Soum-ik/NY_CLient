@@ -28,7 +28,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/coures/:id" element={<CouresPage />} />
+        <Route path="/course/:id" element={<CouresPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/reset_password/:id" element={<ResetPassword />}></Route>
         <Route path="/login" element={<FormFeild />} />

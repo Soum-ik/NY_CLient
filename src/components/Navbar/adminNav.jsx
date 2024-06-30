@@ -23,7 +23,7 @@ const AdminNav = () => {
           <div className=" space-x-10  font-medium">
             <Link to={"/"}>Home</Link>
             <Link to={"/"}>About Us</Link>
-            <Link to={"/"}>Coures</Link>
+            <Link to={"/"}>Course</Link>
           </div>
         </div>
       </nav>
