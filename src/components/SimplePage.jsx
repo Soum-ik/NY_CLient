@@ -10,7 +10,6 @@ const SimplePage = () => {
           name="description"
           content="Explore our innovative EdTech Learning Platform to enhance your education experience."
         />
-
         <meta property="og:title" content="EdTech Learning Platform" />
         <meta
           property="og:description"
@@ -26,14 +25,10 @@ const SimplePage = () => {
         />
         <meta property="og:type" content="website" />
       </Helmet>
-
-      <h1 className=" text-5xl">Welcome to the EdTech Learning Platform</h1>
-      <p>
-        Enhance your education experience with our innovative tools and
-        resources.
-      </p>
+      <h1 className="text-5xl">Welcome to the EdTech Learning Platform</h1>
+      <p>Enhance your education experience with our innovative tools and resources.</p>
     </div>
   );
 };
 
-export default SimplePage ;
+export default SimplePage;
