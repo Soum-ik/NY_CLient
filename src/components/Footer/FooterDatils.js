@@ -8,15 +8,7 @@ const footerItems = [
       },
       {
         name: "Service",
-        link: "#",
-      },
-      {
-        name: "Privacy Policy",
-        link: "#",
-      },
-      {
-        name: "Terms & Conditions",
-        link: "#",
+        link: "/",
       },
     ],
   },
@@ -25,11 +17,11 @@ const footerItems = [
     menu: [
       {
         name: "SQL Server Database Admin",
-        link: `https://farjaxiot.vercel.app/coures/65c2fb1fc401b0139f8495e6`,
+        link: `/course/SQL%20Server%20Database%20Admin`,
       },
       {
-        name: "Azure Database Administrator  ",
-        link: `https://farjaxiot.vercel.app/coures/65c2fb1fc401b0139f8495e6`,
+        name: "Azure SQL Database Administrator",
+        link: `/course/Azure%20SQL%20Database%20Administrator`,
       },
     ],
   },

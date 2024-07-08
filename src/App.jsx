@@ -20,31 +20,33 @@ import ImagesDesh from "./components/(deshboard)/pages/ImagesDesh";
 import ForgotPassword from "./components/(alloverNeed)/forgot-password";
 import ResetPassword from "./components/(alloverNeed)/reset-password";
 import LogoDesh from "./components/(deshboard)/pages/logosDesh";
+import ContactPage from "./components/pages/ContactPage";
 export default function App() {
   return (
     <div className=" w-full min-h-screen">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutPage />} />
-        <Route path="/coures/:id" element={<CouresPage />} />
-        <Route path="/admin" element={<FormFeild />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/course/:id" element={<CouresPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/reset_password/:id" element={<ResetPassword />}></Route>
-        <Route path="/Apply-now-data" element={<ApplyNow />} />
-        <Route path="/Images" element={<ImagesDesh />} />
-        <Route path="/panel" element={<DeshBorad />} />
-        <Route path="/customer-review" element={<RecviewPageDesh />} />
-        <Route path="/social-media" element={<SocialPageDesh />} />
-        <Route path="/hero" element={<HeroDesh />} />
-        <Route path="/course-offer" element={<CourseOfferDesh />} />
-        <Route path="/knowledge" element={<Knowledge />} />
-        <Route path="/ceo" element={<CeoPageDesh />} />
-        <Route path="/courses" element={<CouresPageDesh />} />
-        <Route path="/courses/edit/:id" element={<EditDelete />} />
-        <Route path="/courses/post" element={<PostCourse />} />
-        <Route path="/logo" element={<LogoDesh />} />
-        <Route path="/Banner" element={<Banner />} />
-        <Route path="/categories" element={<CatagoriDesh />} />
+        <Route path="/login" element={<FormFeild />} />
+        <Route path="/admin/hero" element={<HeroDesh />} />
+        <Route path="/admin/courses" element={<CouresPageDesh />} />
+        <Route path="/admin/knowledge" element={<Knowledge />} />
+        <Route path="/admin/Apply-now-data" element={<ApplyNow />} />
+        <Route path="/admin/Images" element={<ImagesDesh />} />
+        <Route path="/admin/panel" element={<DeshBorad />} />
+        <Route path="/admin/customer-review" element={<RecviewPageDesh />} />
+        <Route path="/admin/social-media" element={<SocialPageDesh />} />
+        <Route path="/admin/course-offer" element={<CourseOfferDesh />} />
+        <Route path="/admin/ceo" element={<CeoPageDesh />} />
+        <Route path="/admin/courses/edit/:id" element={<EditDelete />} />
+        <Route path="/admin/courses/post" element={<PostCourse />} />
+        <Route path="/admin/logo" element={<LogoDesh />} />
+        <Route path="/admin/Banner" element={<Banner />} />
+        <Route path="/admin/categories" element={<CatagoriDesh />} />
       </Routes>
     </div>
   );

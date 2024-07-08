@@ -17,7 +17,7 @@ const NavContact = () => {
         <div className=" flex items-center gap-3 justify-center ">
           <Link to={"/"} className="mix-blend-multiply">
             <img
-              className=" w-[230px] h-20 object-cover"
+              className=" w-[310px] h-20 object-cover"
               src={image}
               alt="Farjax Institute of Technology"
             />
@@ -27,9 +27,9 @@ const NavContact = () => {
         {/* right bar */}
         <div className=" flex justify-center items-center gap-5">
           <div className=" space-x-2  ">
-            <Link to={"/admin"}>Login</Link>
+            <Link to={"/login"}>Login</Link>
             <span>|</span>
-            <Link>Singup Now</Link>
+            <Link to={'/contact'}>Live Chat</Link>
           </div>
           <div className=" flex items-center justify-center gap-3">
             <FollowUs icon={<IoLogoFacebook />} link={source.facebook} />

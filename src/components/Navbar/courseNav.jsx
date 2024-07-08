@@ -4,7 +4,7 @@ import Layout from "../Layout/layout";
 const Section = () => {
   return (
     <div
-      className=" hidden sm:block mt-5 py-3 w-full bg-gradient-to-r from-red-800 to-red-700"
+      className=" hidden sm:block mt-5 py-3 w-full bg-[#06074f]"
       data-aos="fade-left"
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"
@@ -20,7 +20,9 @@ const Section = () => {
               ABOUT US
             </Link>
             <li className="cursor-pointer">APPLICATION</li>
-            <li className="cursor-pointer">CONTACT US</li>
+            <Link to={"/contact"} className="cursor-pointer">
+              CONTACT US
+            </Link>
           </ul>
         </nav>
       </Layout>

@@ -17,6 +17,7 @@ export default function FooterList({ items }) {
                 return (
                   <li key={id}>
                     <Link
+                      target="_top"
                       to={link}
                       className=" block text-base leading-loose text-black/70 hover:text-black"
                     >

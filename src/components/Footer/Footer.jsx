@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Logo from "../../../public/images/mainLogo.png";
 import footerItems from "./FooterDatils";
 import FollowUs from "./FollowUs";
 import FooterList from "./FooterList";
@@ -27,20 +26,20 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="relative z-50 bg-slate-600/10 pt-16 pb-10 lg:pt-[70px] overflow-hidden">
+      <footer className="relative z-50 overflow-hidden bg-slate-600/10 pb-10 pt-16 lg:pt-[70px]">
         <div className="px-5 lg:px-24 xl:px-32">
-          <div className="container mx-auto ">
+          <div className="container mx-auto">
             <div className="-mx-4 flex flex-wrap">
               <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
                 <div className="flex items-center">
-                <img
-              className=" w-[230px] h-20 object-cover"
-              src={image}
-              alt="Farjax Institute of Technology"
-            />
+                  <img
+                    className="h-20 w-[230px] object-cover"
+                    src={image}
+                    alt="Farjax Institute of Technology"
+                  />
                 </div>
 
-                <p className="mb-7 text-body-color text-[15px] mt-5 text-black">
+                <p className="mb-7 opacity-70">
                   The Farjax Institute of Technology is a training institute
                   that provides training in various technology-related courses
                 </p>
@@ -51,9 +50,9 @@ export default function Footer() {
               ))}
 
               <div className="w-full px-4 sm:w-1/2 lg:w-3/12">
-                <div className=" w-full">
-                  <h4 className="mb-9 text-lg text-dark">Follow Us On</h4>
-                  <div className=" flex items-center gap-3">
+                <div className="w-full">
+                  <h4 className="text-dark mb-9 text-lg">Follow Us On</h4>
+                  <div className="flex items-center gap-3">
                     <FollowUs
                       icon={<IoLogoFacebook />}
                       link={source.facebook}
@@ -67,7 +66,7 @@ export default function Footer() {
                     <FollowUs icon={<BsInstagram />} link={source.instagram} />
                     <FollowUs icon={<BsTelegram />} link={source.telegram} />
                   </div>
-                  <h1 className=" mt-2  min-w-max">
+                  <h1 className="mt-2 min-w-max text-sm">
                     {" "}
                     Developed & manage by Farjax Tech & Consulting Inc.
                   </h1>
@@ -77,17 +76,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <span className="block mt-10 text-sm text-gray-500 text-center dark:text-gray-400">
+        <span className="mt-10 block text-center text-sm text-gray-500 dark:text-gray-400">
           © 2024{" "}
           <Link to={"/"} className="hover:text-black">
             Farjax Institute of Technology
           </Link>
           . All Rights Reserved.
         </span>
-        {/* <h1 className=" text-center">
-          {" "}
-          Developed & manage by Farjax Tech & Consulting Inc.
-        </h1> */}
       </footer>
     </>
   );

@@ -14,74 +14,74 @@ const items = [
   {
     name: "Hero Component",
     key: "hero",
-    icon: <MailOutlined />,
-    href: "hero",
+    icon: <MailOutlined className=" !text-black" color="black" />,
+    href: "admin/hero",
   },
   {
     name: "Course We Offer",
     key: "course-offer",
-    icon: <AppstoreOutlined />,
-    href: "course-offer",
+    icon: <AppstoreOutlined className=" !text-black" color="black" />,
+    href: "admin/course-offer",
   },
   {
     name: "Knowledge",
     key: "knowledge",
-    icon: <MailOutlined />,
-    href: "knowledge",
+    icon: <MailOutlined className=" !text-black" color="black" />,
+    href: "admin/knowledge",
   },
   {
     name: "CEO",
     key: "CEO",
-    icon: <MailOutlined />,
-    href: "CEO",
+    icon: <MailOutlined className=" !text-black" color="black" />,
+    href: "admin/CEO",
   },
   {
     name: "Courses",
     key: "courses",
-    icon: <AppstoreOutlined />,
-    href: "courses",
+    icon: <AppstoreOutlined className=" !text-black" color="black" />,
+    href: "admin/courses",
   },
   {
     name: "Categories",
     key: "Catagori",
-    icon: <ContainerOutlined />,
-    href: "categories",
+    icon: <ContainerOutlined className=" !text-black" color="black" />,
+    href: "admin/categories",
   },
   {
     name: "Customer Review",
     key: "customer-review",
-    icon: <DesktopOutlined />,
-    href: "customer-review",
+    icon: <DesktopOutlined className=" !text-black" color="black" />,
+    href: "admin/customer-review",
   },
   {
     name: "Social Media",
     key: "social-media",
-    icon: <ContainerOutlined />,
-    href: "social-media",
+    icon: <ContainerOutlined className=" !text-black" color="black" />,
+    href: "admin/social-media",
   },
   {
     name: "Banner",
     key: "Banner",
-    icon: <ContainerOutlined />,
-    href: "Banner",
+    icon: <ContainerOutlined className=" !text-black" color="black" />,
+    href: "admin/Banner",
   },
   {
     name: "Apply Student Data",
     key: "Apply Student Data",
-    icon: <ContainerOutlined />,
-    href: "Apply-now-data",
+    icon: <ContainerOutlined className=" !text-black" color="black" />,
+    href: "admin/Apply-now-data",
   },
   {
     name: "Images",
     key: "Images",
-    icon: <ContainerOutlined />,
-    href: "Images",
+    icon: <ContainerOutlined className=" !text-black" color="black" />,
+    href: "admin/Images",
   },
   {
     name: "Logo",
     key: "Images",
-    icon: <ContainerOutlined />,
-    href: "Logo",
+    icon: <ContainerOutlined className=" !text-black" color="black" />,
+    href: "admin/Logo",
   },
 ];
 
@@ -121,7 +121,7 @@ const App = () => {
           >
             {items.map((item) => (
               <Menu.Item key={item.key} icon={item.icon}>
-                <Link to={`/${item.href}`}>{item.name}</Link>
+                <Link to={`/${item.href}`}admin>{item.name}</Link>
               </Menu.Item>
             ))}
           </Menu>

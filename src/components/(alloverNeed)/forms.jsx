@@ -22,10 +22,10 @@ const Security = () => {
         const adminData = res.data;
 
         if (adminData.email === username && adminData.password === password) {
-          navigate("/panel");
+          navigate("/admin/panel");
           generateToken();
         } else {
-          navigate("/admin");
+          navigate("/login");
           alert("Your credential is not valid");
         }
       }

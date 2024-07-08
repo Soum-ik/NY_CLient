@@ -8,16 +8,18 @@ export default function TimeLine() {
   return (
     <Layout>
       <div
-        data-aos-duration="1000"
+        data-aos-duration="500"
         data-aos="fade-up"
-        data-aos-anchor-placement="center-center"
-        className=" sm:px-10 py-20 sm:py-32 space-y-5 "
+        // data-aos-anchor-placement="center-center"
+        className="space-y-5 py-20 sm:px-10 sm:py-32"
       >
-        <h5 className=" headingTextSize mb-5 ">Timeline</h5>
-        <h5 className=" -tracking-tighter xs:text-[18px] text-[13px]">
+        <h5 className="mb-5 text-4xl font-semibold">Timeline</h5>
+        <h5 className="  text-black opacity-90 xs:text-[18px]">
           {!data.timeline ? <Skeleton active /> : data.timeline}
         </h5>
-        <p className=" paragrahp ">{data.timelinedic}</p>
+        <p className="  mt-5  text-black opacity-70 xs:text-[18px]">
+          {data.timelinedic}
+        </p>
       </div>
     </Layout>
   );

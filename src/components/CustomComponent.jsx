@@ -15,9 +15,9 @@ const CustomComponent = ({
   return (
     <Layout>
       <section
-         data-aos-duration="1000"
+         data-aos-duration="500"
         data-aos="fade-up"
-        data-aos-anchor-placement="center-center"
+   
         className={`${layout.section} w-full gap-5`}
       >
         {/* left section */}

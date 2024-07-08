@@ -16,7 +16,7 @@ function ForgotPassword() {
       });
       console.log(res, "res data");
       if (res.data.Status === "Success") {
-        navigate("/admin");
+        navigate("/login");
         alert("Check Your Email Please");
       } else {
         alert("Operation faild");

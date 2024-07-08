@@ -48,6 +48,13 @@ const MobileNav = () => {
             >
               ABOUT US
             </Link>
+            <Link
+              to={"/contact"}
+              onClick={() => setIsNavOpen(false)}
+              className="cursor-pointer"
+            >
+              CONTACT US
+            </Link>
           </ul>
           <WhatsAppLink marginTop={"mt-[20px]"} textSize={"text-[25px]"} />
         </div>

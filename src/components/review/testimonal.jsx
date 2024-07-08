@@ -14,9 +14,9 @@ const Testimonial = () => {
           Student<span className=" md:ml-3">Feedback </span>
         </h1>
         <div
-          data-aos-duration="1000"
+          data-aos-duration="500"
           data-aos="fade-up"
-          data-aos-anchor-placement="center-center"
+          // data-aos-anchor-placement="center-center"
           className={`flex gap-8 ${
             datas.length > 3
               ? "  snap-x overflow-x-scroll"

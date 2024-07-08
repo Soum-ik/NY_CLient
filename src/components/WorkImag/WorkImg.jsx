@@ -20,7 +20,7 @@ export default function Example() {
   return (
     <div
       data-aos="fade-up"
-      data-aos-duration="3000"
+      data-aos-duration="500"
       className="w-full py-10 lg:px-10 "
     >
       <Tab.Group>
@@ -43,7 +43,7 @@ export default function Example() {
                 "rounded-xl bg-white p-3 text-black/80 max-w-2xl"
               )}
             >
-              <h1 className=" text-[18px]  text-center">{item.title}</h1>
+              <h1 className=" text-[18px] opacity-80 text-center">{item.title}</h1>
 
               <div className="p-4 h-auto max-w-2xl  sm:min-h-[350px]  min-w-[280px] rounded-2xl mt-10  bg-black/5">
                 <img

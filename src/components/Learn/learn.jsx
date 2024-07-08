@@ -15,28 +15,24 @@ export default function Learn() {
     const rowItems = topics.slice(i, i + itemsPerRow);
     rows.push(rowItems);
   }
+
   return (
     <Layout>
-      <div
-        data-aos-duration="1000"
-        data-aos="fade-up"
-        data-aos-anchor-placement="center-center"
-        className="sm:px-7"
-      >
-        <h1 className="headingTextSize">{`What You'll Learn`}</h1>
-        <div className="paragrahp  mt-10 tracking-wide">
+      <div data-aos-duration="500" data-aos="fade-up" className="sm:px-7">
+        <h1 className="text-4xl font-semibold">{`What You'll Learn`}</h1>
+        <div className="     text-black opacity-70 xs:text-[18px] mt-10">
           {!data.learndic ? <Skeleton /> : data.learndic}
         </div>
         <div className="mt-10">
           {rows.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className=" grid grid-cols-1  lg:grid-cols-3 md:grid-cols-2 md:px-10 "
+              className="grid grid-cols-1 md:grid-cols-2 md:px-10 lg:grid-cols-3"
             >
               {row.map((topic, topicIndex) => (
                 <div
                   key={topicIndex}
-                  className="w-1/4 line-clamp-5 mb-2  ease-in-out delay-200 min-w-[370px] text-justify"
+                  className="mb-2 line-clamp-5 w-1/4 min-w-[370px] text-justify delay-200 ease-in-out"
                 >
                   <li className="">{topic}</li>
                 </div>
@@ -44,10 +40,10 @@ export default function Learn() {
             </div>
           ))}
         </div>
-        <div className="flex gap-3 sm:gap-10 mt-10">
+        <div className="mt-10 flex gap-3 sm:gap-10">
           <a
             href="#form"
-            className="sm:px-3 px-2 sm:text-[16px] text-[14px] sm:py-3  py-2 botton"
+            className="botton px-2 py-2 text-[14px] sm:px-3 sm:py-3 sm:text-[16px]"
           >
             Download Full Sylabus
           </a>
@@ -55,7 +51,7 @@ export default function Learn() {
           <a
             href={data.link}
             target="_blank"
-            className="sm:px-3 px-2 sm:text-[16px] text-[14px] sm:py-3  py-2 botton"
+            className="botton px-2 py-2 text-[14px] sm:px-3 sm:py-3 sm:text-[16px]"
           >
             Schedule a Call
           </a>

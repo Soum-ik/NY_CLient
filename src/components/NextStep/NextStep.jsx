@@ -55,12 +55,12 @@ const NextStep = () => {
           </Tab.List>
         </Tab.Group>
 
-        <h4 className="    text-[30px] font-Headingfont font-bold  text-center  z-50">
+        <h4 className="   text-4xl  font-semibold  text-center  z-50">
           Choose Your Path
         </h4>
         <div
           data-aos="fade-up"
-          data-aos-duration="3000"
+          data-aos-duration="500"
           className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10"
         >
           {cardDetails.map((CardDetail) => (
