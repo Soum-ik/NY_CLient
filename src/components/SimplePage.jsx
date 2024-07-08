@@ -21,7 +21,7 @@ const SimplePage = () => {
         />
         <meta
           property="og:url"
-          content="https://edtech-learning-ny.vercel.app/"
+          content="https://edtech-learning-ny.vercel.app/page"
         />
         <meta property="og:type" content="website" />
       </Helmet>

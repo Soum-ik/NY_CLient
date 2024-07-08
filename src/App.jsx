@@ -23,18 +23,17 @@ import LogoDesh from "./components/(deshboard)/pages/logosDesh";
 import ContactPage from "./components/pages/ContactPage";
 import SimplePage from "./components/SimplePage";
 
-
 export default function App() {
   return (
-    <div className=" w-full min-h-screen">
+    <div className="w-full min-h-screen">
       <Routes>
         <Route path="/page" element={<SimplePage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/course/:id" element={<CouresPage />} />
-        <Route path="/forgot-password" element={<ForgotPassword />}></Route>
-        <Route path="/reset_password/:id" element={<ResetPassword />}></Route>
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset_password/:id" element={<ResetPassword />} />
         <Route path="/login" element={<FormFeild />} />
         <Route path="/admin/hero" element={<HeroDesh />} />
         <Route path="/admin/courses" element={<CouresPageDesh />} />
