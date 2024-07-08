@@ -5,11 +5,18 @@ import SayTO from "../sayToknow/Register";
 import PageLayout from "../Layout/PageLayout";
 import Welcome from "../welcome";
 import Futures from "../Motivation/Feture";
-import CEO from "../CEO/Ceo"; 
+import CEO from "../CEO/Ceo";
 
 const AboutPage = () => {
   return (
     <div className=" relative">
+
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>The Farjax Institute of Technology is a training institute that provides training in various technology-related courses
+        </title>
+        <link rel="canonical" href="https://www.farjaxit.com/aboutus" />
+      </Helmet>
       <PageLayout contact={true}>
         <Welcome />
         <Futures />
@@ -28,4 +35,3 @@ const AboutPage = () => {
   );
 };
 export default AboutPage;
- 

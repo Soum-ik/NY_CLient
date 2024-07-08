@@ -9,10 +9,18 @@ import SayTO from "../sayToknow/Register";
 import PageLayout from "../Layout/PageLayout";
 import NextStep from "../NextStep/NextStep";
 import Contact from "../Contact/Contact";
-
+import { Helmet } from 'react-helmet';
 const HomePage = () => {
   return (
     <div className="  ">
+
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>The Farjax Institute of Technology is a training institute that provides training in various technology-related courses
+        </title>
+        <link rel="canonical" href="https://www.farjaxit.com/" />
+      </Helmet>
+
       <PageLayout contact={true}>
         <Hero />
         <Explore />
