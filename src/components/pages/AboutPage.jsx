@@ -6,6 +6,8 @@ import PageLayout from "../Layout/PageLayout";
 import Welcome from "../welcome";
 import Futures from "../Motivation/Feture";
 import CEO from "../CEO/Ceo";
+import { Helmet } from "react-helmet";
+import logo from '../../../public/images/new_logo.png'
 
 const AboutPage = () => {
   return (
@@ -15,6 +17,7 @@ const AboutPage = () => {
         <meta charSet="utf-8" />
         <title>The Farjax Institute of Technology is a training institute that provides training in various technology-related courses
         </title>
+        <img src={logo} alt="Logo" />
         <link rel="canonical" href="https://www.farjaxit.com/aboutus" />
       </Helmet>
       <PageLayout contact={true}>
