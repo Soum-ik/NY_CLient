@@ -15,7 +15,7 @@ function ContactPage() {
     <div className="relative">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>About Us - Farjax Institute of Technology</title>
+        <title>Contact Us - Farjax Institute of Technology</title>
         <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
         <link rel="canonical" href="https://www.farjaxit.com" />                <img src={logo} alt="" />
 
@@ -25,6 +25,7 @@ function ContactPage() {
         <meta property="og:title" content="Farjax Institute of Technology" />
 
 
+      </Helmet>
         <PageLayout contact={true}>
           <ContactBaner />
           <Question />
@@ -36,7 +37,6 @@ function ContactPage() {
           <NextStep />
           <SayTo />
         </PageLayout>
-      </Helmet>
     </div>
   );
 }

@@ -21,6 +21,7 @@ const AboutPage = () => {
         <meta property="og:title" content="Farjax Institute of Technology" />
         <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
 
+      </Helmet>
         <PageLayout contact={true}>
           <Welcome />
           <Futures />
@@ -28,7 +29,6 @@ const AboutPage = () => {
           <CEO />
           <SayTO />
         </PageLayout>
-      </Helmet>
 
       <div className="  z-50 cursor-pointer h-16 rounded-full w-40  text-center bg-[#06074f]   bottom-20  hover:right-0 ease-in-out duration-300 sm:-right-5 fixed lg:flex shadow-sm shadow-red-500 items-center justify-center hidden">
         {" "}
