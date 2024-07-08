@@ -14,6 +14,7 @@ import Support from "../support/Support";
 import Contact from "../Contact/Contact";
 import { DataProvider } from "../../Context/Context-api";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const CouresPage = () => {
   const { id } = useParams();
@@ -21,6 +22,25 @@ const CouresPage = () => {
   return (
     <DataProvider id={id}>
       <div className=" relative">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>About Us - Farjax Institute of Technology</title>
+          <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
+          <link rel="canonical" href="https://www.farjaxit.com" />
+          <link rel="icon" type="image/svg+xml" href={logo} />
+
+          {/* facebook meta */}
+          <meta charSet="utf-8" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Farjax Institute of Technology" />
+          <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
+
+          {/* twitter meta data */}
+          <meta name="twitter:site" content="Farjax Institute of Technology" />
+          <meta name="twitter:title" content="Farjax Institute of Technology" />
+          <meta name="twitter:description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
+          <link rel="icon" type="image/svg+xml" href={logo} />
+        </Helmet>
         <PageLayout>
           <Section />
           <BootCamp />
