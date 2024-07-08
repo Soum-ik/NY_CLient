@@ -10,13 +10,15 @@ import PageLayout from "../Layout/PageLayout";
 import NextStep from "../NextStep/NextStep";
 import Contact from "../Contact/Contact";
 import { Helmet } from 'react-helmet';
+import logo from '../../../public/images/new_logo.png';
+
 const HomePage = () => {
   return (
     <div className="  ">
 
       <Helmet>
         <meta charSet="utf-8" />
-        <title>About Us - Farjax Institute of Technology</title>
+        <title>Home - Farjax Institute of Technology</title>
         <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
         <link rel="canonical" href="https://www.farjaxit.com" />
         <link rel="icon" type="image/svg+xml" href={logo} />

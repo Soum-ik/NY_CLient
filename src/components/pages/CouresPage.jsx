@@ -15,6 +15,7 @@ import Contact from "../Contact/Contact";
 import { DataProvider } from "../../Context/Context-api";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import logo from '../../../public/images/new_logo.png';
 
 const CouresPage = () => {
   const { id } = useParams();
@@ -24,7 +25,7 @@ const CouresPage = () => {
       <div className=" relative">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>About Us - Farjax Institute of Technology</title>
+          <title>Course  - Farjax Institute of Technology</title>
           <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
           <link rel="canonical" href="https://www.farjaxit.com" />
           <link rel="icon" type="image/svg+xml" href={logo} />
