@@ -22,7 +22,7 @@ const HomePage = () => {
 
         <meta property="og:title" content="Farjax Institute of Technology" />
         <meta property="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
-        <meta property="og:image" content='/images/new_logo.png' />
+        <meta property="og:image" content='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwNLcCUBaC99r3nN10jX1asJQgcmxVzbtkgg&s' />
         <meta property="og:url" content="https://www.farjaxit.com" />
         <meta property="og:type" content="website" />
       </Helmet>
