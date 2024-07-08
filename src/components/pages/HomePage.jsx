@@ -10,7 +10,6 @@ import PageLayout from "../Layout/PageLayout";
 import NextStep from "../NextStep/NextStep";
 import Contact from "../Contact/Contact";
 import { Helmet } from 'react-helmet';
-import logo from '../../../public/images/new_logo.png';
 
 const HomePage = () => {
   return (
@@ -19,13 +18,13 @@ const HomePage = () => {
       <Helmet>
         <title>Home - Farjax Institute of Technology</title>
         <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
-      
+
 
         <meta property="og:title" content="Farjax Institute of Technology" />
         <meta property="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
-        <meta property="og:image" content={logo} />
+        <meta property="og:image" content='/images/new_logo.png' />
         <meta property="og:url" content="https://www.farjaxit.com" />
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="website" />
       </Helmet>
       {/* <PageLayout contact={true}>
         <Hero />
