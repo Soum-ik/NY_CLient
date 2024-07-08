@@ -8,6 +8,7 @@ import Layout from "../../components/Layout/layout";
 import axios from "axios";
 import config from "../../../config";
 import { Helmet } from "react-helmet";
+import logo from '../../../public/images/new_logo.png';
 
 function ContactPage() {
   return (
