@@ -14,45 +14,36 @@ import logo from '../../../public/images/new_logo.png';
 
 const HomePage = () => {
   return (
-    <div className="  ">
+    <div className="">
 
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Home - Farjax Institute of Technology</title>
         <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
-        <link rel="canonical" href="https://www.farjaxit.com" />
-        <link rel="icon" type="image/svg+xml" href={logo} />
+      
 
-        {/* facebook meta */}
-        <meta charSet="utf-8" />
-        <meta property="og:type" content="website" />
         <meta property="og:title" content="Farjax Institute of Technology" />
-        <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
-
-        {/* twitter meta data */}
-        <meta name="twitter:site" content="Farjax Institute of Technology" />
-        <meta name="twitter:title" content="Farjax Institute of Technology" />
-        <meta name="twitter:description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
-        <link rel="icon" type="image/svg+xml" href={logo} />
+        <meta property="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
+        <meta property="og:image" content={logo} />
+        <meta property="og:url" content="https://www.farjaxit.com" />
+        <meta property="og:type" content="website"/>
       </Helmet>
-
-      <PageLayout contact={true}>
+      {/* <PageLayout contact={true}>
         <Hero />
         <Explore />
         <NextStep />
         <Contact />
         <Work />
-        {/* <Testimonial /> */}
         <SayTO />
-      </PageLayout>
+      </PageLayout> */}
 
-      <div className="  z-50 cursor-pointer h-16 rounded-full w-40  text-center bg-[#06074f]  backdrop-blur-3xl  bottom-20  hover:right-0 ease-in-out duration-300 sm:-right-5 fixed lg:flex shadow-sm  items-center justify-center hidden">
+
+      {/* <div className="  z-50 cursor-pointer h-16 rounded-full w-40  text-center bg-[#06074f]  backdrop-blur-3xl  bottom-20  hover:right-0 ease-in-out duration-300 sm:-right-5 fixed lg:flex shadow-sm  items-center justify-center hidden">
         {" "}
         <WhatsAppLink
           textSize={" text-[18px] text-white"}
           marginTop={""}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
