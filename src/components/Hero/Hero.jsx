@@ -3,7 +3,7 @@ import { useFetch } from "../../libs/fetchData";
 import config from "../../../config";
 const Hero = () => {
   const hero = useFetch(`${config.apiUrl}hero`);
-  console.log(hero);  
+  
   return (
     <div>
       <CustomComponent
@@ -16,3 +16,4 @@ const Hero = () => {
   );
 };
 export default Hero;
+;

@@ -5,6 +5,7 @@ import WhatsAppLink from "../WhatsApp";
 import { Link } from "react-router-dom";
 import { useFetch } from "../../libs/fetchData";
 import config from "../../../config";
+import { FaPhone } from "react-icons/fa6";
 
 const MobileNav = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -55,8 +56,11 @@ const MobileNav = () => {
             >
               CONTACT US
             </Link>
+            <h1 className=" text-lg flex items-center justify-center gap-2">
+              <FaPhone />
+              (718) 785-4636
+            </h1>
           </ul>
-          <WhatsAppLink marginTop={"mt-[20px]"} textSize={"text-[25px]"} />
         </div>
       ) : (
         <></>

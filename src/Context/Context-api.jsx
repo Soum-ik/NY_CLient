@@ -5,7 +5,7 @@ const DataContext = createContext();
 
 export const DataProvider = ({ children, id }) => {
   const [data, setData] = useState({});
-
+   
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -19,9 +19,12 @@ import logo from '../../../public/images/new_logo.png';
 
 const CouresPage = () => {
   const { id } = useParams();
-
+   
+  const removeBlack = id.split('-').join(' ')
+   
+ 
   return (
-    <DataProvider id={id}>
+    <DataProvider id={removeBlack}>
       <div className=" relative">
         <Helmet>
           <meta charSet="utf-8" />

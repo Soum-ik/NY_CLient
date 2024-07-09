@@ -7,7 +7,7 @@ import { FaPhone } from "react-icons/fa6";
 const Section = () => {
   const [data, setData] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  console.log(data);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,12 +40,13 @@ const Section = () => {
               >
                 {/* Your dropdown content goes here */}
                 {data.map((item, index) => (
+                  
                   <a
-                    href={`/course/${item.name}`} // Assuming you have routes based on the dropdown items
+                    href={`/course/${item.name.split(' ').join('-')}`} // Assuming you have routes based on the dropdown items
                     className="text-[12px] text-black font-bold font-Poppins"
                     key={index}
                   >
-                    {`  ${item.name}`}
+                    {`${item.name}`}
                     <br />
                   </a>
                 ))}
