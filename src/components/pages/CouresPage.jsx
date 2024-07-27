@@ -20,47 +20,9 @@ import { Helmet } from "react-helmet";
 const CouresPage = () => {
   const { id } = useParams();
   const removeBlack = id.split('-').join(' ');
-
-  const getMetaTags = () => {
-    switch (id) {
-      case 'SQL-Server-Database-Admin':
-        return {
-          title: 'SQL-Server-Database-Admin',
-          description: 'Master the art of SQL Server Database Administration with our expert-led course. Elevate your skills and advance your career today',
-          image: 'https://images.app.goo.gl/VWAhjP6rgsm3q9bU6',
-        };
-      case 'Azure-SQL-Database-Administrator':
-        return {
-          title: 'Azure-SQL-Database-Administrator',
-          description: 'Explore the intricacies of managing Azure SQL Server databases with our comprehensive course on Azure SQL Server Database Administration. Designed for both novice and experienced professionals, this course delves into the essential concepts and practical techniques required to effectively administer Azure SQL databases',
-          image: 'https://images.app.goo.gl/AuMgQX6e9EVhLjrL6',
-        };
-      case 'Oracle-Database-Administrator':
-        return {
-          title: 'Oracle-Database-Administrator',
-          description: 'This course provides essential training for managing Oracle databases, covering installation, configuration, maintenance, and security. Participants will learn through both theory and practical exercises, preparing them for Oracle certification exams and real-world challenges.',
-          image: 'https://example.com/images/default.jpg',
-        };
-
-      default: {
-        return {
-
-        };
-      }
-    }
-  };
-
-  const meta = getMetaTags();
-
+  
   return (
     <DataProvider id={removeBlack}>
-      <Helmet>
-        <title>{meta.title}</title>
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={meta.image} />
-        <meta property="og:url" content={`https://www.farjaxit.com/${id}`} />
-      </Helmet>
       <div className=" relative">
         <PageLayout>
           <Section />

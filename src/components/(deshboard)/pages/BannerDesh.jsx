@@ -13,9 +13,7 @@ function BannerDesh() {
   const [image2, setImage2] = useState("");
   const [image3, setImage3] = useState("");
   const isFormFilled = Image !== "";
-
-  console.log("image2", image2);
-  console.log("image1", Image);
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -42,7 +40,7 @@ function BannerDesh() {
   };
 
   function handleSubmit(e, data) {
-    console.log(data);
+     
     e.preventDefault();
     let imageBody;
     if (data == "65c30914e5485a2a8effc763") {

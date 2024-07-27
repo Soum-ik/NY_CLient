@@ -21,7 +21,7 @@ export default function CTDesh() {
   }, []);
   const catagorisData = (id) => {
     const fetch = async () => {
-      console.log(id);
+      // console.log(id);
       await axios.delete(`${config.apiUrl}catagori/${id}`);
       toast.success("Successfully Delete.......");
     };
@@ -44,7 +44,7 @@ export default function CTDesh() {
 
         if (response.ok) {
           const responseData = await response.json();
-          console.log(responseData);
+          // console.log(responseData);
           setCt("");
           toast.success("Catagoris Added Successfully ");
         } else {
