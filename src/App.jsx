@@ -21,11 +21,9 @@ import ForgotPassword from "./components/(alloverNeed)/forgot-password";
 import ResetPassword from "./components/(alloverNeed)/reset-password";
 import LogoDesh from "./components/(deshboard)/pages/logosDesh";
 import ContactPage from "./components/pages/ContactPage";
-import Meta from './components/meta';
 export default function App() {
   return (
     <div className=" w-full min-h-screen">
-      <Meta />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutPage />} />

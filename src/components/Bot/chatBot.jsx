@@ -24,13 +24,15 @@ function Chatbot() {
 
 export default Chatbot;
 
-function Bot() {
+export function Bot() {
   return (
     <Helmet>
       <script
         src="//code.tidio.co/opzwjdxl7qrxy5orjtzsebhwrf1kj8da.js"
         async
       ></script>
+
+      {/* <script src="//code.tidio.co/kjjupi6wfkrja4pceibueyvpamb0zdlz.js" async></script> */}
     </Helmet>
   );
 }

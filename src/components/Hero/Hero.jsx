@@ -1,9 +1,5 @@
 import CustomComponent from "../CustomComponent";
-import { useFetch } from "../../libs/fetchData";
-import config from "../../../config";
-const Hero = () => {
-  const hero = useFetch(`${config.apiUrl}hero`);
-  
+const Hero = ({ hero }) => {
   return (
     <div>
       <CustomComponent

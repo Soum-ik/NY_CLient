@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 
 const Card = ({ image, name, btn, shortD, id, contactForm }) => {
-  const removeWhiteSpace = name.split(' ').join('-')
- 
-    console.log(removeWhiteSpace, 'filter');
+  const removeWhiteSpace = name.split(' ').join('-');
+
   return (
     <div className="z-30 flex flex-col items-center justify-center space-y-4 rounded-2xl bg-white/70 px-8 py-10 duration-500">
       <img className="h-[200px] w-[200px]" src={image} alt="" />

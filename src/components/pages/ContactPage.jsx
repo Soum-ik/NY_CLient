@@ -1,42 +1,42 @@
 import SayTo from "../sayToknow/Register";
 import PageLayout from "../Layout/PageLayout";
-import Chatbot from "../Bot/chatBot";
+
 import Question, { Contact_us } from "../Officelocation/Question";
 import NextStep from "../NextStep/NextStep";
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/layout";
 import axios from "axios";
 import config from "../../../config";
-import { Helmet } from "react-helmet";
-import logo from '../../../public/images/new_logo.png';
+import Chatbot from "../Bot/chatBot";
+import { Helmet } from 'react-helmet';
+
 
 function ContactPage() {
   return (
     <div className="relative">
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Contact Us - Farjax Institute of Technology</title>
-        <meta name="description" content="The Farjax Institute of Technology is a training institute that provides training in various technology-related courses" />
-        <link rel="canonical" href="https://www.farjaxit.com" />                <img src={logo} alt="" />
+        {/* HTML Meta Tags */}
+        <title>{`Farjax Institute of Technology`}</title>
+        <meta name="description" content={'The Farjax Institute of Technology is a training institute that provides training in various technology-related courses'} />
 
-        {/* facebook meta */}
-        <meta charSet="utf-8" />
+        {/* Facebook Meta Tags */}
+        <meta property="og:url" content={`https://www.farjaxit.com/`} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Farjax Institute of Technology" />
-
-
+        <meta property="og:title" content={'Farjax Institute of Technology'} />
+        <meta property="og:description" content={'The Farjax Institute of Technology is a training institute that provides training in various technology-related courses'} />
+        {/* <meta property="og:image" content={hero.image} /> */}
       </Helmet>
-        <PageLayout contact={true}>
-          <ContactBaner />
-          <Question />
-          <Chatbot />
-          <Contact_us />
-          <p className="text-center max-w-xl mx-auto font-semibold mt-10 text-4xl">
-            The Information Technology Course we offer
-          </p>
-          <NextStep />
-          <SayTo />
-        </PageLayout>
+      <PageLayout contact={true}>
+        <ContactBaner />
+        <Question />
+        <Chatbot />
+        <Contact_us />
+        <p className="text-center max-w-xl mx-auto font-semibold mt-10 text-4xl">
+          The Information Technology Course we offer
+        </p>
+        <NextStep />
+        <SayTo />
+      </PageLayout>
     </div>
   );
 }
